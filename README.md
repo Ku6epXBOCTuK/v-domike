@@ -1,45 +1,75 @@
-# sv
+# В Домике
 
-Everything you need to build a Svelte project, powered by
-[`sv`](https://github.com/sveltejs/cli).
+Уютный симулятор доставки еды. Не настоящая еда, настоящий ритуал: меню →
+корзина → путь курьера, без калорий, денег и чувства вины. Концепция — в
+[`docs/idea.md`](docs/idea.md), план переноса дизайна и все решённые развилки —
+в [`docs/port-plan.md`](docs/port-plan.md).
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+## Запуск
 
 ```sh
-# recreate this project
-pnpm dlx sv@0.17.1 create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" sveltekit-adapter="adapter:static" experimental="versions:kit+features:async,remoteFunctions,explicitEnvironmentVariables,handleRenderingErrors" --install pnpm .
+pnpm install
+pnpm dev        # http://localhost:5173
 ```
 
-## Developing
+## Команды
 
-Once you've created a project and installed dependencies with `npm install` (or
-`pnpm install` or `yarn`), start a development server:
+| Команда             | Что делает                                         |
+| ------------------- | -------------------------------------------------- |
+| `pnpm dev`          | dev-сервер                                         |
+| `pnpm build`        | пререндер в `build/` через `adapter-static`        |
+| `pnpm preview`      | локальный просмотр собранного сайта                |
+| `pnpm check`        | `svelte-check` + тайпчек                           |
+| `pnpm lint`         | prettier, eslint **и контраст токенов**            |
+| `pnpm check:tokens` | только проверка контраста                          |
+| `pnpm test`         | vitest, node-проект (рендер через `svelte/server`) |
 
-```sh
-npm run dev
+`pnpm lint` включает `scripts/check-contrast.mjs`: он читает `tokens.css`,
+разбирает обе темы и прогоняет 48 реально используемых пар «текст/графика на
+фоне» через формулу WCAG. Провал контраста роняет линт.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+## Стек
+
+SvelteKit 2 (runes) · TypeScript · `adapter-static` · `unplugin-icons` +
+Iconify. **Без Tailwind, без CSS-in-JS, без препроцессоров** — только `<style>`
+в каждом компоненте и дизайн-токены.
+
+## Структура
+
+```
+src/
+├── app.html                     lang=ru, data-theme, инлайн-скрипт темы
+├── lib/
+│   ├── styles/
+│   │   ├── tokens.css           92 токена: цвет, шрифт, шкалы, тени, движение
+│   │   └── base.css             reset, .icon, .sr-only, focus-visible
+│   ├── data/                    dishes.ts, profile.ts — только данные
+│   ├── state/app.svelte.ts      createAppState() — единственный источник состояния
+│   └── components/
+│       ├── ui/                  переиспользуемые примитивы
+│       ├── app/                 шелл, шапка, плавающий навбар
+│       └── features/            карточка блюда, карта, табы
+└── routes/                      +layout.ts (prerender), +page.svelte (композитор)
 ```
 
-## Building
+`ui/` не знает про приложение, `features/` — привязан к нему. Состояние живёт в
+фабрике `createAppState()`, а не размазано по компонентам, поэтому тестируется в
+обычном node-окружении без браузера.
 
-To create a production version of your app:
+## Правила
 
-```sh
-npm run build
-```
+- **Цвет, радиус, тень, длительность — только токеном.** Сырых hex в компонентах
+  нет; `pnpm lint` это проверяет косвенно, аудитом бандла.
+- **Стили иконок — только через `:global(svg)` на родителе.** `class` иконкам не
+  передаётся никогда: виртуальные модули `unplugin-icons` не получают scope-хэш
+  Svelte, и `class` попадёт в разметку без него. Это же сохраняет
+  `defaultClass: "icon"`.
+- **Импорты через `#lib` с расширением `.js`** для `.ts`-файлов: маппинг
+  буквальный, без вывода расширения.
+- **Тёмная тема — через `data-theme` на `<html>`.** Инлайн-скрипт в `app.html`
+  ставит атрибут до первой отрисовки, стор читает его же, поэтому нет FOUC и нет
+  расхождения при гидрации.
 
-You can preview the production build with `npm run preview`.
+## Лицензия
 
-> To deploy your app, you may need to install an
-> [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+MIT — см. [LICENSE](LICENSE).

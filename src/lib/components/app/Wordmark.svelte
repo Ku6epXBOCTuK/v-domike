@@ -8,9 +8,9 @@
 
 <button type="button" class="wordmark" {onselect}>
 	<span class="wordmark__name"
-		>virtual<span class="wordmark__accent">bite</span></span
+		>В<span class="wordmark__accent">Домике</span></span
 	>
-	<span class="wordmark__tagline">private dining</span>
+	<span class="wordmark__tagline">уютная доставка</span>
 </button>
 
 <style>

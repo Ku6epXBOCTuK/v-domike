@@ -19,10 +19,10 @@
 </script>
 
 <svelte:head>
-	<title>VirtualBite — уют рядом</title>
+	<title>В Домике — уютная доставка</title>
 	<meta
 		name="description"
-		content="Виртуальная доставка уютных блюд для спокойного вечера."
+		content="Уютный симулятор доставки блюд для спокойного вечера."
 	/>
 	<meta name="color-scheme" content="light dark" />
 	<meta

@@ -12,7 +12,7 @@ describe("+page.svelte", () => {
 		expect(body).toContain("<main");
 		expect(body).toContain("app__frame");
 		expect(body).toContain("app-header");
-		expect(body).toContain(">bite</span>");
+		expect(body).toContain(">Домике</span>");
 		expect(body).toContain("app__content");
 		expect(body).toContain("bottom-nav");
 	});
@@ -55,7 +55,7 @@ describe("+page.svelte", () => {
 
 	it("ставит title и description в head", () => {
 		const { head } = render(Page, { props: {} });
-		expect(head).toContain("VirtualBite — уют рядом");
-		expect(head).toContain("Виртуальная доставка уютных блюд");
+		expect(head).toContain("В Домике — уютная доставка");
+		expect(head).toContain("Уютный симулятор доставки блюд");
 	});
 });

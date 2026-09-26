@@ -69,14 +69,14 @@ describe("AppHeader", () => {
 });
 
 describe("Wordmark", () => {
-	it("рендерит virtualbite с акцентом на «bite»", () => {
+	it("рендерит «В Домике» с акцентом на «Домике»", () => {
 		const { body } = render(Wordmark, { props: { onselect: noop } });
 
 		expect(hasClass(body, "wordmark")).toBe(true);
 		expect(hasClass(body, "wordmark__name")).toBe(true);
 		expect(hasClass(body, "wordmark__accent")).toBe(true);
-		expect(body).toContain(">bite</span>");
-		expect(body).toContain("private dining");
+		expect(body).toContain(">Домике</span>");
+		expect(body).toContain("уютная доставка");
 	});
 
 	it("это кнопка с type=button, а не ссылка", () => {
