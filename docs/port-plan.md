@@ -750,6 +750,77 @@ node-проекта:
 
 ---
 
+## Итоги Этапа 4 (выполнен)
+
+### `BottomNav` владеет списком табов, страница — нет
+
+Иконки обязаны импортироваться в `.svelte`-файле, но в `+page.svelte` им не
+место: страница тогда знает про иконки и подписи. Поэтому `BottomNav` сам
+импортирует 4 иконки lucide и держит массив `items`, а от страницы получает
+`active: Tab`, `badgeOn: Tab | null` и `onselect: (tab: Tab) => void`.
+
+`NavItem` при этом остаётся отдельной компонентой со своим API
+(`label`/`icon`/`active`/`badge`) — `BottomNav` её собирает, но не диктует ей
+внутренности.
+
+### `NavItem` получил `aria-current="page"`
+
+В рефе у навигации не было ни одной accessibility-метки. `aria-current="page"` —
+честная метка для переключаемого раздела. Частичные `role="tablist"` без
+`role="tabpanel"` не ставил: половина tab-семантики хуже, чем никакой.
+
+`Wordmark` — `<button type="button">`, потому что он переключает таб, а не
+переходит по ссылке. В рефе тоже `<button>`, но без `type`, то есть внутри формы
+стал бы `submit`.
+
+### Полупрозрачный навбар через `color-mix`, а не через два цвета
+
+Реф держал `rgb(255 250 245 / 94%)` для светлой и `rgb(43 34 54 / 94%)` для
+тёмной темы двумя литералами. Теперь:
+
+```css
+background: color-mix(in srgb, var(--surface-base) 94%, transparent);
+```
+
+Значение `94%` осталось константой, а цвет тянется из токена — смена темы
+автоматическая.
+
+### Четыре новых layout-токена
+
+Градиент полотна в рефе различался **и по цвету, и по геометрии**: светлая
+`circle at 15% 8% … transparent 32%`, тёмная
+`circle at 82% 4% … transparent 30%`. Добавлены:
+
+| Токен                  | Значение                            |
+| ---------------------- | ----------------------------------- |
+| `--canvas-glow-at`     | `15% 8%` → `82% 4%`                 |
+| `--canvas-glow-extent` | `32%` → `30%`                       |
+| `--nav-height`         | `62px`                              |
+| `--content-bottom-pad` | `96px` (запас под плавающий навбар) |
+
+`--content-bottom-pad` в рефе был `pb-24` — магическое число, отражающее высоту
+плавающего навбара. Теперь оно выражено токеном рядом с `--nav-height`.
+
+### Радиальный градиент в AppShell
+
+Радиал собирается из `--canvas-glow-at` / `--surface-canvas-glow` /
+`--canvas-glow-extent`, поэтому тёмная тема получает свою геометрию без
+`:global([data-theme=dark])`-хака. Ровно то, чего не умел реф.
+
+### Ошибка в моём тесте, не в коде
+
+`expect(body).toContain('class="wordmark__name"')` падал: Svelte дописывает
+scope-хэш, и в разметке `class="wordmark__name svelte-7chvu3"`. Добавлен хелпер
+`hasClass(body, name)` на регулярке. Раньше в `ui.spec.ts` проверки шли по
+substring и `data-*`, поэтому там хэш не мешал — но на будущее хелпер нужен
+везде, где проверяется класс.
+
+### Итог
+
+`test` 35/35 · `check` 0/0 · `lint` PASS · `build` OK.
+
+---
+
 ## Карта файлов
 
 ```sh
@@ -769,6 +840,7 @@ node-проекта:
     ├── ui/        (8)  IconButton Chip Overline TabHeading SectionHeader
     │                  TextButton EmptyState Avatar   [Этап 3 — готово]
     ├── app/       (5)  AppShell AppHeader Wordmark BottomNav NavItem
+    │                  [Этап 4 — готово]
     └── features/  (10) DishCard DeliveryMap MapMarker EtaPanel IdentityCard
                        ProfileRow MenuTab OrderTab FavoritesTab ProfileTab
 

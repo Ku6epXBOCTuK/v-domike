@@ -13,6 +13,8 @@
 	/* ── Surfaces ──────────────────────────────────────────────────────── */
 	--surface-canvas: #f2e8df;
 	--surface-canvas-glow: #fff6ed;
+	--canvas-glow-at: 15% 8%;
+	--canvas-glow-extent: 32%;
 	--surface-base: #fffaf5;
 	--surface-raised: #fffaf8;
 	--surface-sunken: #f0e3e0;
@@ -61,6 +63,8 @@
 
 	--surface-canvas: #211b2b;
 	--surface-canvas-glow: #4d3446;
+	--canvas-glow-at: 82% 4%;
+	--canvas-glow-extent: 30%;
 	--surface-base: #2b2236;
 	--surface-raised: #3a2d49;
 	--surface-sunken: #4a3047;
@@ -174,4 +178,6 @@
 	--frame-max: 430px;
 	--frame-min-height: 850px;
 	--nav-max: 406px;
+	--nav-height: 62px;
+	--content-bottom-pad: 96px;
 }
