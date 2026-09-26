@@ -1,9 +1,7 @@
 <script lang="ts">
-	import IconHeart from "~icons/lucide/heart";
-	import IconPlus from "~icons/lucide/plus";
-
 	import type { Dish } from "#lib/data/dishes.js";
-	import IconButton from "#lib/components/ui/IconButton.svelte";
+	import AddDishButton from "./AddDishButton.svelte";
+	import FavoriteButton from "./FavoriteButton.svelte";
 
 	type Props = {
 		dish: Dish;
@@ -26,19 +24,7 @@
 			loading="lazy"
 			decoding="async"
 		/>
-		<div class="dish-card__heart">
-			<IconButton
-				tone="glass"
-				size="sm"
-				pressed={favorite}
-				label={favorite
-					? `Убрать ${dish.name} из любимого`
-					: `Добавить ${dish.name} в любимое`}
-				onclick={onFavorite}
-			>
-				<IconHeart />
-			</IconButton>
-		</div>
+		<FavoriteButton {dish} {favorite} onToggle={onFavorite} />
 		<span class="dish-card__eta">{dish.eta}</span>
 	</div>
 
@@ -48,16 +34,7 @@
 				<h3 class="dish-card__name">{dish.name}</h3>
 				<p class="dish-card__detail">{dish.detail}</p>
 			</div>
-			<div class="dish-card__add">
-				<IconButton
-					tone="sunken"
-					size="xs"
-					label={`Добавить ${dish.name}`}
-					onclick={onAdd}
-				>
-					<IconPlus />
-				</IconButton>
-			</div>
+			<AddDishButton {dish} {onAdd} />
 		</div>
 		<p class="dish-card__price">{dish.price} coins</p>
 	</div>
@@ -106,12 +83,6 @@
 		transform: scale(1.05);
 	}
 
-	.dish-card__heart {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-	}
-
 	.dish-card__eta {
 		position: absolute;
 		bottom: 10px;
@@ -138,10 +109,6 @@
 
 	.dish-card__text {
 		min-width: 0;
-	}
-
-	.dish-card__add {
-		margin-top: var(--space-1);
 	}
 
 	.dish-card__name {
