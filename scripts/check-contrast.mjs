@@ -200,13 +200,73 @@ for (const r of rows) {
 	);
 }
 
+// Тона блюд — не поверхности, а подложка под mix-blend-mode: multiply у фотографии.
+// Умножение на тёмный цвет гасит снимок примерно до 23% яркости, поэтому токен
+// обязан оставаться светлым в обеих темах. Ловим возврат тёмных значений.
+console.log("");
+const darkTones = Object.keys(parsed.dark).filter((name) =>
+	name.startsWith("--tone-"),
+);
+if (darkTones.length > 0) {
+	console.error("FAIL  --tone-* переопределены в тёмной теме.");
+	for (const name of darkTones) {
+		console.error(
+			`        ${name}: ${parsed.light[name]} -> ${parsed.dark[name]}` +
+				"   фото блюда погаснет",
+		);
+	}
+	failed++;
+} else {
+	console.log(
+		"PASS  --tone-* в тёмной теме не переопределены (multiply-подложка должна быть светлой)",
+	);
+}
+
+// Инверсные токены обязаны МЕНЯТЬ РОЛЬ между темами. «Выделенная кнопка в тёмной
+// теме светлая» — это инвариант, а не разовое совпадение, поэтому проверяем явно.
+// Пара взаимодополняющая и потому флипает в противоположные стороны:
+// фон тёмный -> светлый, текст на нём светлый -> тёмный.
+console.log("");
+const MUST_FLIP = [
+	{
+		name: "surface-inverse",
+		from: "dark",
+		to: "light",
+		note: "фон активного чипа и таба, пина курьера",
+	},
+	{
+		name: "content-inverse",
+		from: "light",
+		to: "dark",
+		note: "текст на инверсной поверхности",
+	},
+];
+const DARK_MAX = 0.35;
+const LIGHT_MIN = 0.6;
+const isDark = (l) => l < DARK_MAX;
+const isLight = (l) => l > LIGHT_MIN;
+
+for (const { name, from, to, note } of MUST_FLIP) {
+	const l = luminance(parseColor(parsed.light[`--${name}`]));
+	const d = luminance(parseColor(parsed.dark[`--${name}`]));
+	const ok =
+		(from === "dark" ? isDark(l) : isLight(l)) &&
+		(to === "dark" ? isDark(d) : isLight(d));
+	if (!ok) failed++;
+	console.log(
+		`${ok ? "PASS" : "FAIL"}  --${name.padEnd(16)} ` +
+			`L ${l.toFixed(2)} -> ${d.toFixed(2)}  ` +
+			`(ждём ${from} -> ${to})  ${note}`,
+	);
+}
+
 console.log("");
 console.log(`Проверено пар: ${checked}, провалов: ${failed}`);
 
 if (failed > 0) {
 	console.error("");
 	console.error(
-		`Контраст ниже порога: ${failed}. Светлая тема — только значения из :root.`,
+		`Провалов: ${failed}. Светлая тема — только значения из :root.`,
 	);
 	process.exit(1);
 }

@@ -9,6 +9,19 @@ import ts from "typescript-eslint";
 const gitignorePath = path.resolve(import.meta.dirname, ".gitignore");
 
 export default defineConfig(
+	{
+		// includeIgnoreFile читает ТОЛЬКО корневой .gitignore — вложенные
+		// (например refs/.gitignore) он не учитывает. refs/ — это отдельный
+		// Next.js-проект, мы его не линтуем; без этого после `pnpm install`
+		// в refs/ рутовое `pnpm lint` залезает в refs/node_modules.
+		ignores: [
+			"refs/**",
+			".svelte-kit/**",
+			"build/**",
+			"static/**",
+			"node_modules/**",
+		],
+	},
 	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
 	ts.configs.recommended,

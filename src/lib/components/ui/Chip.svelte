@@ -40,6 +40,10 @@
 		color: var(--content-inverse);
 	}
 
+	.chip[data-active="false"] {
+		border-color: var(--border-subtle);
+	}
+
 	.chip[data-active="false"]:hover {
 		border-color: var(--border-strong);
 		color: var(--content-primary);

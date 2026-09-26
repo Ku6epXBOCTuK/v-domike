@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Design tokens — single source of truth for the whole app.
  * Nothing outside this file may hardcode a colour, radius, shadow or duration.
  *
@@ -24,6 +24,10 @@
 	--surface-map: #e8e1dd;
 
 	/* ── Dish tones ─────────────────────────────────────────────────────── */
+	/* Это НЕ поверхности интерфейса, а подложка под mix-blend-mode: multiply
+	   у фотографии блюда. Умножение на тёмный цвет гасит снимок до ~23%
+	   яркости, поэтому тон обязан быть светлым в обеих темах. В рефе так и
+	   было: тёмная тема не трогала тона блюд. */
 	--tone-warm: #f0e4df;
 	--tone-blush: #eee4e7;
 	--tone-cream: #f2e5e1;
@@ -79,10 +83,7 @@
 	--surface-inverse: #fff2f1;
 	--surface-map: #49344b;
 
-	--tone-warm: #4a3243;
-	--tone-blush: #453049;
-	--tone-cream: #4d2f44;
-	--tone-butter: #4a352c;
+	/* --tone-* намеренно НЕ переопределяются: см. комментарий в :root. */
 
 	--content-primary: #fff2f1;
 	--content-secondary: #c1a2b4;
