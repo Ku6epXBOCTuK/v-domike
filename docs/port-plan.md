@@ -388,16 +388,16 @@ type Dish = {
 
 ## Этап 3 — примитивы (`src/lib/components/ui/`)
 
-| Компонент       | API                                                    | Переиспользование                            |
-| --------------- | ------------------------------------------------------ | -------------------------------------------- |
-| `IconButton`    | `label`, `size: sm\|md`, `pressed?`, `onclick`         | toggle темы, bell, сердце в карточке         |
-| `Chip`          | `label`, `active`, `onclick`                           | 4 категории                                  |
-| `Eyebrow`       | `children`                                             | 4 таба + `SectionHeader`                     |
-| `TabHeading`    | `eyebrow`, `title` (слот — у Меню две строки + курсив) | 4 таба                                       |
-| `SectionHeader` | `overline`, `title`, слот actions                      | 1 (Menu), задаёт паттерн                     |
-| `TextButton`    | `variant: inline\|outline`, слот                       | «Корзина →», «Выбрать что-нибудь красивое →» |
-| `EmptyState`    | `icon`, `title`                                        | пустое «Любимое»                             |
-| `Avatar`        | `initial`                                              | карточка профиля                             |
+| Компонент       | API                                                                                | Переиспользование                            |
+| --------------- | ---------------------------------------------------------------------------------- | -------------------------------------------- |
+| `IconButton`    | `label`, `tone: warm\|plain\|glass`, `size: sm\|md`, `pressed?`, `dot?`, `onclick` | toggle темы, bell, сердце в карточке         |
+| `Chip`          | `label`, `active`, `onclick`                                                       | 4 категории                                  |
+| `Overline`      | `variant: muted\|accent`, `children`                                               | eyebrow 4 табов + overline секции            |
+| `TabHeading`    | `eyebrow`, `title` (слот — у Меню две строки + курсив)                             | 4 таба                                       |
+| `SectionHeader` | `overline`, `title`, слот actions                                                  | 1 (Menu), задаёт паттерн                     |
+| `TextButton`    | `variant: inline\|outline`, слот                                                   | «Корзина →», «Выбрать что-нибудь красивое →» |
+| `EmptyState`    | `icon`, `title`                                                                    | пустое «Любимое»                             |
+| `Avatar`        | `initial`                                                                          | карточка профиля                             |
 
 Все — на `<button type="button">` / `<a>` с aria, без единой утилитарной строки.
 
@@ -672,6 +672,84 @@ node-проекта:
 
 ---
 
+## Итоги Этапа 3 (выполнен)
+
+### `Eyebrow` переименован в `Overline` и получил вариант
+
+Планировался один `Eyebrow` на 5 мест, но два употребления в рефе визуально
+разные: eyebrow таба — 11px / трекинг 0.18em / серый; overline секции — 10px /
+трекинг 0.2em / розовый, и у него `mt-1` вместо `mb-3`. Один компонент с
+`margin-bottom: 12px` пришлось бы переопределять в `SectionHeader`. Сделано
+честнее: `Overline` с `variant: "muted" | "accent"`, отступ — часть варианта.
+
+`TabHeading` поэтому **не** переиспользует `Overline` — у него свой маркер (11px
+/ 0.18em / вторичный), и оба они совпадают с `Overline[data-variant=muted]`.
+Дублирование в 4 строки сознательное: `TabHeading` не должен зависеть от
+внутреннего устройства `Overline`.
+
+`TabHeading` вместо слота-заголовка принимает `title: string` +
+`accent?: string`. Все четыре таба покрываются этой парой, слот был бы лишней
+абстракцией. Курсив сделан на `<span>`, а не на `<i>` из рефа — `<i>` ничего не
+значит семантически.
+
+### `IconButton` — 3 тона, и почему `aria-pressed` в селекторе
+
+Тона из рефа: `warm` (переключатель темы, с rotate-анимацией), `plain` (bell),
+`glass` (сердце в карточке). Размеры `sm` 32px / `md` 40px.
+
+Заливка включённого сердца ключуется по `[aria-pressed="true"]`, а не по
+`data-pressed`. Причина — не вкус: на `data-pressed` svelte-check выдаёт
+`Unused CSS selector`, потому что иконка приходит снапетом и в разметке этого
+компонента селектор не встречается. `aria-pressed` компонент и так пишет на
+кнопку, поэтому анализатор его видит.
+
+Цепочка селекторов: `.icon-button[aria-pressed="true"] :global(svg g)` —
+`fill="none"` у lucide лежит на обёртке `<g>`, а не на `<svg>`, поэтому именно
+`:global(svg g)`. Связано со структурой иконки, но для сердца это и есть нужный
+эффект.
+
+Все размеры иконок — через `:global(svg)` по размеру кнопки, как и решили на
+Этапе 0. Класс иконкам не передаётся никогда (иначе `defaultClass` затирается).
+
+### `TextButton` рендерит `<a>` или `<button>` по наличию `href`
+
+«Корзина →» — ссылка, «Выбрать что-нибудь красивое» — действие. Одна компонента
+с веткой по `href`, вместо того чтобы заставлять ярлык врать про `href="#"` на
+кнопке.
+
+### Тесты: 14 на примитивы, через `svelte/server`
+
+`ui.spec.ts` рендерит каждый примитив и проверяет то, что реально может
+сломаться: `aria-label` / `aria-pressed` у `IconButton`, `type="button"` у
+`Chip`, ветку `<a>`/`<button>` у `TextButton`, появление точки только при `dot`,
+`aria-pressed` не просочивается в разметку когда не задан, отсутствие лишнего
+`<p>` без overline.
+
+Снапеты в тестах собираются через `createRawSnippet` — фикстурных `.svelte`
+файлов не понадобилось. `EmptyState` принимает иконку компонентой
+(`Component<SvelteHTMLElements["svg"]>`), в тесте передаётся настоящий
+`~icons/lucide/heart` — виртуальный модуль работает и в node-проекте vitest.
+
+### Мелкие отклонения от рефа
+
+- `p-7` (28px) в empty state → 24px `--space-8`: держать шкалу 4px-кратной
+  важнее, чем лишние 4px
+- `text-xl` (20px) в аватаре → `--text-emphasis` (18px): в круге 56px 20px
+  выглядит тяжело
+- У toggle темы убран внутренний `sr-only`-спан из рефа: он складывался с
+  `aria-label` в имя «Включить тёмную тему Светлая тема»
+- У неактивного `Chip` добавлен hover — в рефе его не было
+
+### Итог
+
+`test` 24/24 · `check` 0/0 · `lint` PASS · `build` OK.
+
+⚠️ Scoped-стили примитивов не попадают в CSS-бандл, пока их не импортирует
+какой-нибудь маршрут — это произойдёт на Этапах 4–6. Токен-связность проверена
+на Этапе 1, компиляция `:global(svg)` — пробником на Этапе 0.
+
+---
+
 ## Карта файлов
 
 ```sh
@@ -688,8 +766,8 @@ node-проекта:
 ├── src/lib/data/{dishes.ts, profile.ts}
 ├── src/lib/state/app.svelte.ts               ← юнит-тестируется (10 тестов)
 └── src/lib/components/
-    ├── ui/        (8)  IconButton Chip Eyebrow TabHeading SectionHeader
-    │                  TextButton EmptyState Avatar
+    ├── ui/        (8)  IconButton Chip Overline TabHeading SectionHeader
+    │                  TextButton EmptyState Avatar   [Этап 3 — готово]
     ├── app/       (5)  AppShell AppHeader Wordmark BottomNav NavItem
     └── features/  (10) DishCard DeliveryMap MapMarker EtaPanel IdentityCard
                        ProfileRow MenuTab OrderTab FavoritesTab ProfileTab
