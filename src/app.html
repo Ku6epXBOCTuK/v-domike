@@ -1,9 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru" data-theme="light">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="text-scale" content="scale" />
+		<script>
+			const stored = localStorage.getItem("vb-theme");
+			document.documentElement.dataset.theme =
+				stored === "dark" || stored === "light" ? stored : "light";
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
