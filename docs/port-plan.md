@@ -1,4 +1,4 @@
-# План: порт дизайна `refs/` на SvelteKit (без Tailwind, на дизайн-токенах)
+﻿# План: порт дизайна `refs/` на SvelteKit (без Tailwind, на дизайн-токенах)
 
 > Статус: план согласован, к реализации не приступать без команды. Источник:
 > `refs/` (Next.js 16 + React 19 + Tailwind v4 + shadcn, сгенерировано v0.app).
@@ -161,10 +161,13 @@ hardcoded hex-хартеджей. Плюс `refs/app/globals.css` (260 стро�
 `src/lib/styles/tokens.css` — единственный источник правды. Только custom
 properties, никаких `@theme` / `@apply` / препроцессоров.
 
-### Цвет (26 токенов)
+### Цвет (25 токенов)
 
-Светлое = точно из рефа; тёмное = из `globals.css`, где его не было — подобрано
-по роли и проверено на контраст.
+**Светлая тема НЕ 1:1 к рефу** — по решению от 2026-09-26 весь вторичный текст
+поднят до WCAG AA (4.5:1). В рефе 10 из 12 приглушённых цветов давали 2.2–4.1:1
+при 11px шрифте. Тёмная тема проходила и до правок менялась только в местах, где
+её не было в `globals.css`. Полный аудит — `scripts/check-contrast.mjs`, палитра
+ниже железно проходит его (48 пар, 0 провалов).
 
 ```css
 /* Поверхности */
@@ -172,8 +175,7 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 --surface-canvas-glow     #fff6ed  →  #4d3446      (радиал градиента)
 --surface-base            #fffaf5  →  #2b2236      (шелл приложения)
 --surface-raised          #fffaf8  →  #3a2d49      (пин на карте, строки профиля)
---surface-sunken          #f0e3e0  →  #4a3047      (ETA-панель, empty state, иконка-чип)
---surface-sunken-strong   #eee2df  →  #50334b      (кнопка «+»)
+--surface-sunken          #f0e3e0  →  #4a3047      (ETA-панель, empty state, иконка-чип, «+»)
 --surface-warm            #fff3e8  →  #3e2e4b      (переключатель темы)
 --surface-glass        rgb(255 250 248/.85) → rgb(58 45 73/.85)
 --surface-inverse         #2d2928  →  #fff2f1      (активный чип/таб, курьер)  ← ФЛИП
@@ -185,16 +187,17 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 --tone-cream              #f2e5e1  →  #4d2f44
 --tone-butter             #eee5d9  →  #4a352c
 
-/* Текст */
---content-primary         #2d2928  →  #fff2f1      (h1..h3, тело)
---content-secondary       #a89691  →  #c9abbc      (eyebrow, detail, inactive nav)
---content-tertiary        #968985  →  #a8939f      (чипы, бейджи, chevron, bell)
---content-accent          #b88988  →  #dda9a3      (бренд, «для души?», сердце, маршрут)
---content-accent-soft     #a67677  →  #c99b9a      (цена, «Корзина →», toggle)
+/* Текст. Контраст в скобках — на своём фоне в светлой теме */
+--content-primary         #2d2928  →  #fff2f1      (h1..h3, тело)             13.9:1
+--content-secondary       #736462  →  #c1a2b4      (eyebrow, detail, nav)      5.4:1
+--content-ui              #5e514e  →  #d3becb      (chevron, bell, бейдж, CTA) 7.3:1
+--content-accent          #b08282  →  #dda9a3      (крупный 34px, иконки)      3.2:1
+--content-accent-strong   #8a5c5d  →  #eecac4      (wordmark, overline, маршрут) 5.4:1
+--content-accent-soft     #7f5657  →  #c99b9a      (цена, «Корзина →», toggle) 6.0:1
 --content-inverse         #fffaf8  →  #2d2928      (на surface-inverse)  ← ФЛИП
 --content-inverse-muted   #cbb8b5  →  #6b5a58      (Member since 2024)
 --content-on-sunken       #73595a  →  #f2dcd6      (ETA-заголовок)
---content-on-sunken-muted #a77b7c  →  #d3a3a2      (ETA-лейбл, часы)
+--content-on-sunken-muted #7a5859  →  #d3a3a2      (ETA-лейбл, часы)
 
 /* Границы */
 --border-subtle           #e8dfdb  →  #58435b
@@ -205,6 +208,17 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 в тёмной теме (светлый фон + тёмный текст). Это сознательно: в рефе активный таб
 в тёмной теме был тёмным блоком на тёмном шелле (нечитаемо).
 
+**Акцент разложен на 3 уровня вместо одного.** `#b88988` из рефа даёт 2.9:1 —
+его можно ставить только на крупный текст (≥24px) и графику, где порог 3:1.
+Мелкий текст бренда (wordmark 21px, «Curated for you» 10px) и маршрут на карте
+(2.55:1 в рефе) ушли на `--content-accent-strong`. Цена и «Корзина →» — на
+`--content-accent-soft`.
+
+**`--content-tertiary` переименован в `--content-ui`.** В рефе «третичный» цвет
+(`#968985`) темнее «вторичного» (`#a89691`), то есть иерархия по имени соврала.
+Он используется на интерактивных и служебных элементах (chevron, bell, бейдж
+времени, CTA), поэтому названо по роли: `--content-ui`.
+
 **Свёртка 15 near-identical приглушённых серых** в 3 уровня вместо 15 случайных
 оттенков. Соответствия (для ревью):
 
@@ -214,14 +228,14 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 | `#aa9d98` detail блюда          | `--content-secondary`       |
 | `#aaa09c` inactive nav          | `--content-secondary`       |
 | `#a99b98` «private dining»      | `--content-secondary`       |
-| `#aa9a95` цитата пустой корзины | `--content-tertiary`        |
-| `#968985` inactive chip         | `--content-tertiary`        |
-| `#927d79` текст CTA заказа      | `--content-tertiary`        |
-| `#796c69` подпись на карте      | `--content-tertiary`        |
-| `#9b7e7d` текст ETA-панели      | `--content-tertiary`        |
-| `#867775` иконка bell           | `--content-tertiary`        |
-| `#766967` бейдж времени         | `--content-tertiary`        |
-| `#b9aaa5` chevron в профиле     | `--content-tertiary`        |
+| `#aa9a95` цитата пустой корзины | `--content-ui`              |
+| `#968985` inactive chip         | `--content-ui`              |
+| `#927d79` текст CTA заказа      | `--content-ui`              |
+| `#796c69` подпись на карте      | `--content-ui`              |
+| `#9b7e7d` текст ETA-панели      | `--content-ui`              |
+| `#867775` иконка bell           | `--content-ui`              |
+| `#766967` бейдж времени         | `--content-ui`              |
+| `#b9aaa5` chevron в профиле     | `--content-ui`              |
 | `#cbb8b5` Member since 2024     | `--content-inverse-muted`   |
 | `#9f7778` «Корзина →»           | `--content-accent-soft`     |
 | `#a77b7c` ETA-лейбл + часы      | `--content-on-sunken-muted` |
@@ -230,32 +244,49 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 `#a66e70` (theme toggle) → `--content-accent-soft`. `#c8a6a4` (кольцо аватара) →
 `--content-accent-soft`.
 
+**Схлопнутые пары-дубли** (разница 1–2/255, на глаз неразличимы, поэтому два
+токена ради них — мусор):
+
+- `#eee2df` (кнопка «+») слита в `--surface-sunken` (`#f0e3e0`)
+- `#e9dfdc` (кнопка bell) слита в `--border-subtle` (`#e8dfdb`)
+- `#fffefa` (в рефе не использовалась) выброшена
+- `#fffaf5` (шелл) и `#fffaf8`/`#fffdfa` (карточки) оставлены как
+  `--surface-base` / `--surface-raised` — разница 3/255, но роли структурно
+  разные
+
 ### Типографика
 
 - `--font-display`:
-  `Iowan Old Style, "Palatino Linotype", Palatino, Georgia, serif` (в рефе шрифт
-  не загружен — работал браузерный дефолтный serif)
+  `"Palatino Linotype", Palatino, "Iowan Old Style", Georgia, "Times New Roman", serif`
+  (в рефе шрифт не загружен — работал браузерный дефолтный serif; в стеке только
+  кириллические шрифты, у всех есть русский)
 - `--font-sans`:
   `ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`
 
-| Токен            | Значение | Где                                          |
-| ---------------- | -------- | -------------------------------------------- |
-| `--text-display` | 34px     | h1 таба                                      |
-| `--title`        | 24px     | h2 секции                                    |
-| `--lead`         | 19px     | имя в профиле, заголовок empty state         |
-| `--card`         | 16px     | название блюда                               |
-| `--brand`        | 21px     | wordmark                                     |
-| `--body`         | 12px     | строки профиля, CTA заказа                   |
-| `--sm`           | 11px     | вторичный текст, чипы, eyebrow               |
-| `--xs`           | 10px     | микро-лейблы, Member since, подпись на карте |
-| `--2xs`          | 9px      | бейдж времени                                |
+Имена токенов размера — по роли, а не «title/lead/card»:
 
-Трекинг: `--track-display: -0.05em`, `--track-title: -0.03em`,
-`--track-brand: -0.04em`, `--track-eyebrow: 0.18em`, `--track-overline: 0.2em`,
-`--track-sub: 0.25em`, `--track-wide: 0.025em`.
+| Токен             | Значение | Где                             |
+| ----------------- | -------- | ------------------------------- |
+| `--text-display`  | 34px     | h1 таба                         |
+| `--text-hero`     | 27px     | ETA                             |
+| `--text-section`  | 24px     | h2 секции                       |
+| `--text-wordmark` | 21px     | логотип                         |
+| `--text-emphasis` | 18px     | имя в профиле, пустое состояние |
+| `--text-card`     | 16px     | название блюда                  |
+| `--text-quote`    | 13px     | курсивная цитата                |
+| `--text-row`      | 12px     | строки списков                  |
+| `--text-meta`     | 11px     | подписи, чипы, цены             |
+| `--text-label`    | 10px     | микро-лейблы                    |
+| `--text-badge`    | 9px      | бейдж времени                   |
 
-Интерлиньяжи: `--leading-heading: 0.98`, `--tight: 1.15`, `--snug: 1.4`,
-`--relaxed: 1.7`. Веса: `--weight-regular: 400`, `--weight-medium: 500`.
+Трекинг: `--tracking-display: -0.05em`, `--tracking-section: -0.03em`,
+`--tracking-wordmark: -0.04em`, `--tracking-eyebrow: 0.18em`,
+`--tracking-overline: 0.2em`, `--tracking-brand: 0.25em`,
+`--tracking-wide: 0.025em`.
+
+Интерлиньяжи: `--leading-heading: 0.98`, `--leading-tight: 1.15`,
+`--leading-snug: 1.4`, `--leading-relaxed: 1.65`, `--leading-none: 1`. Веса:
+`--weight-regular: 400`, `--weight-medium: 500`.
 
 ### Радиусы
 
@@ -268,8 +299,10 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 
 ### Тени
 
-- `--shadow-shell` / `--shadow-shell-dark` (0 30px 100px)
-- `--shadow-nav` / `--shadow-nav-dark` (0 12px 35px)
+Токены переопределяются в тёмной теме, а не `-dark`-суффиксом:
+
+- `--shadow-shell` (0 30px 100px)
+- `--shadow-nav` (0 12px 35px)
 - `--shadow-pin` (`shadow-lg`)
 - `--shadow-marker` (`shadow-xl`)
 
@@ -282,6 +315,11 @@ properties, никаких `@theme` / `@apply` / препроцессоров.
 ### Слои
 
 `--z-nav: 10`.
+
+### Габариты фрейма
+
+`--frame-max: 430px`, `--frame-min-height: 850px`, `--nav-max: 406px` — чтобы
+AppShell и BottomNav не хранили магические числа.
 
 ### `src/lib/styles/base.css`
 
@@ -513,6 +551,47 @@ pnpm build     # adapter-static prerender должен завершиться
   обёртки `kit`). Сборку не ломает; не трогаем, пока не понадобится.
 - `pnpm test` в browser-проекте падает: Playwright-браузеры не установлены и
   качать их не будем → тесты переезжают на `svelte/server` (Этап 8).
+
+---
+
+## Итоги Этапа 1 (выполнен)
+
+### `scripts/check-contrast.mjs` — автоматический a11y-гейт
+
+Скрипт читает `tokens.css`, разбирает оба блока (`:root` и
+`[data-theme="dark"]`), и прогоняет 48 реально используемых пар «текст/графика
+на фоне» через формулу WCAG. Полупрозрачные поверхности композится над своим
+родителем, чтобы стекло считалось честно. Порог: 4.5:1 для текста, 3:1 для
+графики (1.4.11).
+
+Прогнан вручную: **48 пар, 0 провалов** в обеих темах. Скрипт срабатывает при
+изменении любого токена — если новый цвет не проходит, `pnpm lint` упадёт.
+
+Найдено при первом прогоне: 3 провала в светлой теме, все из-за `#b08282`
+(бренд-розовый) на средних тонах — исправлены, пара переназначена (`+` →
+`accent-soft`, маршрут → `accent-strong`).
+
+ESLint поймал реальный баг в самом скрипте: `const fg` с переприсваиванием —
+упало бы при первом же токене с альфой. Исправлено на `let`.
+
+### Решения, принятые на этапе
+
+1. **Контраст → WCAG AA** (решение пользователя). Светлая тема перестала быть
+   1:1 к рефу: 10 из 12 приглушённых цветов были 2.2–4.1:1 при 11px. Тёмная тема
+   проходила и до правок.
+2. **Акцент разложен на 3 уровня** (`accent` / `accent-strong` / `accent-soft`).
+   `#b88988` = 2.9:1 — годится только для ≥24px и графики.
+3. **`--content-tertiary` → `--content-ui`.** Имя врало: в рефе этот цвет темнее
+   «вторичного» и используется на интерактивных элементах.
+4. **Схлопнуты пары-дубли** в 1–2/255: `#eee2df`, `#e9dfdc`, неиспользуемая
+   `#fffefa`. Токенов цветом стало 25, а не 26 — при полном покрытии.
+
+### Итог
+
+31 цветовой токен (9 поверхностей + 4 тона + 10 текстовых + 2 границы + 4 тени +
+2 карты) и 55 не-цветовых (шрифты, 11 размеров, 5 интерлиньяжей, 7 трекингов, 2
+веса, 12 шагов пространства, 7 радиусов, 5 движений, слой, 3 габарита фрейма).
+CSS в бандле — 4.3 KB.
 
 ---
 

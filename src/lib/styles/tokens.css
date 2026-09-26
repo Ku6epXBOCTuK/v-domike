@@ -1,0 +1,177 @@
+/*
+ * Design tokens — single source of truth for the whole app.
+ * Nothing outside this file may hardcode a colour, radius, shadow or duration.
+ *
+ * Light is the default (:root). Dark overrides every colour token under
+ * [data-theme="dark"], which app.html sets before first paint. No token exists
+ * in one theme and not the other — scripts/check-contrast.mjs enforces this.
+ */
+
+:root {
+	color-scheme: light;
+
+	/* ── Surfaces ──────────────────────────────────────────────────────── */
+	--surface-canvas: #f2e8df;
+	--surface-canvas-glow: #fff6ed;
+	--surface-base: #fffaf5;
+	--surface-raised: #fffaf8;
+	--surface-sunken: #f0e3e0;
+	--surface-warm: #fff3e8;
+	--surface-glass: rgb(255 250 248 / 0.85);
+	--surface-inverse: #2d2928;
+	--surface-map: #e8e1dd;
+
+	/* ── Dish tones ─────────────────────────────────────────────────────── */
+	--tone-warm: #f0e4df;
+	--tone-blush: #eee4e7;
+	--tone-cream: #f2e5e1;
+	--tone-butter: #eee5d9;
+
+	/* ── Content ────────────────────────────────────────────────────────── */
+	--content-primary: #2d2928;
+	--content-secondary: #736462;
+	--content-ui: #5e514e;
+	--content-accent: #b08282;
+	--content-accent-strong: #8a5c5d;
+	--content-accent-soft: #7f5657;
+	--content-inverse: #fffaf8;
+	--content-inverse-muted: #cbb8b5;
+	--content-on-sunken: #73595a;
+	--content-on-sunken-muted: #7a5859;
+
+	/* ── Borders ────────────────────────────────────────────────────────── */
+	--border-subtle: #e8dfdb;
+	--border-strong: #ead8cf;
+
+	/* ── Elevation ──────────────────────────────────────────────────────── */
+	--shadow-shell: 0 30px 100px rgb(64 45 37 / 0.15);
+	--shadow-nav: 0 12px 35px rgb(64 45 37 / 0.14);
+	--shadow-pin:
+		0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--shadow-marker:
+		0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+	/* ── Map grid ───────────────────────────────────────────────────────── */
+	--map-grid-line: rgb(61 45 43 / 0.08);
+	--map-grid-size: 22px;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	--surface-canvas: #211b2b;
+	--surface-canvas-glow: #4d3446;
+	--surface-base: #2b2236;
+	--surface-raised: #3a2d49;
+	--surface-sunken: #4a3047;
+	--surface-warm: #3e2e4b;
+	--surface-glass: rgb(58 45 73 / 0.85);
+	--surface-inverse: #fff2f1;
+	--surface-map: #49344b;
+
+	--tone-warm: #4a3243;
+	--tone-blush: #453049;
+	--tone-cream: #4d2f44;
+	--tone-butter: #4a352c;
+
+	--content-primary: #fff2f1;
+	--content-secondary: #c1a2b4;
+	--content-ui: #d3becb;
+	--content-accent: #dda9a3;
+	--content-accent-strong: #eecac4;
+	--content-accent-soft: #c99b9a;
+	--content-inverse: #2d2928;
+	--content-inverse-muted: #6b5a58;
+	--content-on-sunken: #f2dcd6;
+	--content-on-sunken-muted: #d3a3a2;
+
+	--border-subtle: #58435b;
+	--border-strong: #70506d;
+
+	--shadow-shell: 0 30px 100px rgb(10 6 18 / 0.45);
+	--shadow-nav: 0 12px 35px rgb(10 6 18 / 0.4);
+	--shadow-pin:
+		0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+	--shadow-marker:
+		0 20px 25px -5px rgb(0 0 0 / 0.35), 0 8px 10px -6px rgb(0 0 0 / 0.25);
+
+	--map-grid-line: rgb(255 242 241 / 0.07);
+}
+
+:root {
+	/* ── Type ───────────────────────────────────────────────────────────── */
+	--font-display:
+		"Palatino Linotype", Palatino, "Iowan Old Style", Georgia,
+		"Times New Roman", serif;
+	--font-sans:
+		ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+
+	--text-display: 2.125rem; /* 34px — заголовок таба */
+	--text-hero: 1.6875rem; /* 27px — ETA */
+	--text-section: 1.5rem; /* 24px — заголовок секции */
+	--text-wordmark: 1.3125rem; /* 21px — логотип */
+	--text-emphasis: 1.125rem; /* 18px — имя в профиле, пустое состояние */
+	--text-card: 1rem; /* 16px — название блюда */
+	--text-quote: 0.8125rem; /* 13px — курсивная цитата */
+	--text-row: 0.75rem; /* 12px — строки списков */
+	--text-meta: 0.6875rem; /* 11px — подписи, чипы, цены */
+	--text-label: 0.625rem; /* 10px — микро-лейблы */
+	--text-badge: 0.5625rem; /* 9px  — бейдж времени */
+
+	--leading-none: 1;
+	--leading-tight: 1.15;
+	--leading-snug: 1.4;
+	--leading-heading: 0.98;
+	--leading-relaxed: 1.65;
+
+	--tracking-display: -0.05em;
+	--tracking-section: -0.03em;
+	--tracking-wordmark: -0.04em;
+	--tracking-eyebrow: 0.18em;
+	--tracking-overline: 0.2em;
+	--tracking-brand: 0.25em;
+	--tracking-wide: 0.025em;
+
+	--weight-regular: 400;
+	--weight-medium: 500;
+
+	/* ── Space ──────────────────────────────────────────────────────────── */
+	--space-0: 0;
+	--space-1: 2px;
+	--space-2: 4px;
+	--space-3: 6px;
+	--space-4: 8px;
+	--space-5: 12px;
+	--space-6: 16px;
+	--space-7: 20px;
+	--space-8: 24px;
+	--space-9: 32px;
+	--space-10: 40px;
+	--space-11: 48px;
+
+	/* ── Radius ─────────────────────────────────────────────────────────── */
+	--radius-xs: 6px;
+	--radius-sm: 12px;
+	--radius-md: 16px;
+	--radius-lg: 22px;
+	--radius-xl: 24px;
+	--radius-2xl: 30px;
+	--radius-pill: 999px;
+
+	/* ── Motion ─────────────────────────────────────────────────────────── */
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--duration-fast: 180ms;
+	--duration-base: 250ms;
+	--duration-slow: 500ms;
+	--duration-image: 700ms;
+
+	/* ── Layers ─────────────────────────────────────────────────────────── */
+	--z-nav: 10;
+
+	/* ── Frame ──────────────────────────────────────────────────────────── */
+	--frame-max: 430px;
+	--frame-min-height: 850px;
+	--nav-max: 406px;
+}
