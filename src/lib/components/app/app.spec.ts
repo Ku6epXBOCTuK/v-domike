@@ -129,7 +129,7 @@ describe("BottomNav", () => {
 		for (const label of ["Меню", "Заказ", "Любимое", "Профиль"]) {
 			expect(body).toContain(label);
 		}
-		expect(body.match(/class="nav-item/g)?.length).toBe(4);
+		expect(body.match(/class="nav-item(?: |")/g)?.length).toBe(4);
 	});
 
 	it("ставит aria-current ровно на активный таб", () => {

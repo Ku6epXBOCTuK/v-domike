@@ -56,6 +56,12 @@
 	/* ── Map grid ───────────────────────────────────────────────────────── */
 	--map-grid-line: rgb(61 45 43 / 0.08);
 	--map-grid-size: 22px;
+
+	/* ── Delivery map illustration ──────────────────────────────────────── */
+	--delivery-map-height: 285px;
+	--map-marker-size: 44px;
+	--map-route-angle: -22deg;
+	--map-ring-width: 4px;
 }
 
 [data-theme="dark"] {

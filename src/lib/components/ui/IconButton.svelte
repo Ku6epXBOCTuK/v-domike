@@ -3,8 +3,8 @@
 
 	type Props = {
 		label: string;
-		tone?: "warm" | "plain" | "glass";
-		size?: "sm" | "md";
+		tone?: "warm" | "plain" | "glass" | "sunken";
+		size?: "xs" | "sm" | "md";
 		pressed?: boolean;
 		dot?: boolean;
 		onclick: () => void;
@@ -60,6 +60,11 @@
 		height: 32px;
 	}
 
+	.icon-button[data-size="xs"] {
+		width: 28px;
+		height: 28px;
+	}
+
 	/* unplugin-icons не отдаёт scope-хэш своему корню, поэтому размер иконки
 	   задаётся селектором по :global(svg) — см. docs/port-plan.md, Этап 3. */
 	.icon-button :global(svg) {
@@ -67,6 +72,7 @@
 		height: 16px;
 	}
 
+	.icon-button[data-size="xs"] :global(svg),
 	.icon-button[data-size="sm"] :global(svg) {
 		width: 14px;
 		height: 14px;
@@ -98,6 +104,16 @@
 	}
 
 	.icon-button[data-tone="glass"]:hover {
+		color: var(--content-accent-strong);
+	}
+
+	.icon-button[data-tone="sunken"] {
+		background: var(--surface-sunken);
+		color: var(--content-accent-soft);
+	}
+
+	.icon-button[data-tone="sunken"]:hover {
+		background: var(--surface-sunken);
 		color: var(--content-accent-strong);
 	}
 

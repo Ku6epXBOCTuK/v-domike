@@ -2,7 +2,7 @@
 	import type { Snippet } from "svelte";
 
 	type Props = {
-		variant?: "muted" | "accent";
+		variant?: "muted" | "accent" | "panel";
 		children: Snippet;
 	};
 
@@ -23,6 +23,13 @@
 	.overline[data-variant="accent"] {
 		margin-bottom: var(--space-2);
 		color: var(--content-accent-strong);
+		font-size: var(--text-label);
+		letter-spacing: var(--tracking-overline);
+	}
+
+	.overline[data-variant="panel"] {
+		margin-bottom: 0;
+		color: var(--content-on-sunken-muted);
 		font-size: var(--text-label);
 		letter-spacing: var(--tracking-overline);
 	}
