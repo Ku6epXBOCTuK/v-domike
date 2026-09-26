@@ -1,30 +1,22 @@
-<script lang="ts">
-	type Props = {
-		onselect: () => void;
-	};
-
-	let { onselect }: Props = $props();
-</script>
-
-<button type="button" class="wordmark" {onselect}>
-	<span class="wordmark__name"
-		>В<span class="wordmark__accent">Домике</span></span
+<span class="wordmark">
+	<a class="wordmark__name" href="/"
+		>В<span class="wordmark__accent">Домике</span></a
 	>
 	<span class="wordmark__tagline">уютная доставка</span>
-</button>
+</span>
 
 <style>
 	.wordmark {
-		display: block;
-		text-align: left;
 		color: var(--content-primary);
 	}
 
 	.wordmark__name {
+		color: inherit;
 		font-family: var(--font-display);
 		font-size: var(--text-wordmark);
 		line-height: var(--leading-none);
 		letter-spacing: var(--tracking-wordmark);
+		text-decoration: none;
 	}
 
 	.wordmark__accent {

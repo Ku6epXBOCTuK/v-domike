@@ -8,10 +8,9 @@
 
 	type Props = {
 		cartIsEmpty: boolean;
-		onOpenMenu: () => void;
 	};
 
-	let { cartIsEmpty, onOpenMenu }: Props = $props();
+	let { cartIsEmpty }: Props = $props();
 </script>
 
 <TabHeading eyebrow="Твой заказ" title="В пути" />
@@ -20,7 +19,7 @@
 <EtaPanel />
 
 {#if cartIsEmpty}
-	<TextButton variant="outline" onclick={onOpenMenu}>
+	<TextButton variant="outline" href="/">
 		Выбрать что-нибудь красивое <IconArrowRight />
 	</TextButton>
 {/if}

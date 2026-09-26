@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from "$app/state";
 	import type { Component } from "svelte";
 	import type { SvelteHTMLElements } from "svelte/elements";
 	import IconHeart from "~icons/lucide/heart";
@@ -6,38 +7,34 @@
 	import IconNavigation from "~icons/lucide/navigation";
 	import IconUserRound from "~icons/lucide/user-round";
 
-	import type { Tab } from "#lib/state/app.svelte.js";
+	import { TABS } from "#lib/state/app.svelte.js";
 
 	import NavItem from "./NavItem.svelte";
 
 	type Props = {
-		active: Tab;
-		badgeOn?: Tab | null;
-		onselect: (tab: Tab) => void;
+		badgeOn?: string | null;
 	};
 
-	let { active, badgeOn = null, onselect }: Props = $props();
+	let { badgeOn = null }: Props = $props();
 
-	const items: {
-		id: Tab;
-		label: string;
-		icon: Component<SvelteHTMLElements["svg"]>;
-	}[] = [
-		{ id: "menu", label: "Меню", icon: IconHouse },
-		{ id: "order", label: "Заказ", icon: IconNavigation },
-		{ id: "favorites", label: "Любимое", icon: IconHeart },
-		{ id: "profile", label: "Профиль", icon: IconUserRound },
-	];
+	const icons: Record<string, Component<SvelteHTMLElements["svg"]>> = {
+		menu: IconHouse,
+		order: IconNavigation,
+		favorites: IconHeart,
+		profile: IconUserRound,
+	};
+
+	const current = $derived(page.url.pathname);
 </script>
 
 <nav class="bottom-nav">
-	{#each items as item (item.id)}
+	{#each TABS as tab (tab.id)}
 		<NavItem
-			label={item.label}
-			icon={item.icon}
-			active={active === item.id}
-			badge={badgeOn === item.id}
-			onselect={() => onselect(item.id)}
+			label={tab.label}
+			icon={icons[tab.id]}
+			href={tab.path}
+			active={current === tab.path}
+			badge={badgeOn === tab.id}
 		/>
 	{/each}
 </nav>

@@ -1,7 +1,13 @@
 import { dishes, type CategoryId, type Dish } from "#lib/data/dishes.js";
 
-export const TABS = ["menu", "order", "favorites", "profile"] as const;
-export type Tab = (typeof TABS)[number];
+export const TABS = [
+	{ id: "menu", path: "/", label: "Меню" },
+	{ id: "order", path: "/order", label: "Заказ" },
+	{ id: "favorites", path: "/favorites", label: "Любимое" },
+	{ id: "profile", path: "/profile", label: "Профиль" },
+] as const;
+
+export type Tab = (typeof TABS)[number]["id"];
 
 export type Theme = "light" | "dark";
 
@@ -25,7 +31,6 @@ function persistTheme(theme: Theme) {
 }
 
 export function createAppState() {
-	let tab = $state<Tab>("menu");
 	let category = $state<CategoryId>("all");
 	const cart = $state<Dish[]>([]);
 	let favoriteIds = $state<string[]>(["latte"]);
@@ -48,13 +53,6 @@ export function createAppState() {
 	}
 
 	return {
-		get tab() {
-			return tab;
-		},
-		set tab(value: Tab) {
-			tab = value;
-		},
-
 		get category() {
 			return category;
 		},
@@ -103,3 +101,13 @@ export function createAppState() {
 }
 
 export type AppState = ReturnType<typeof createAppState>;
+
+/*
+ * Синглтон приложения. Один на все роуты: SvelteKit перехватывает клик по
+ * внутренней ссылке и делает клиентскую навигацию, поэтому модуль не
+ * перезагружается и корзина с избранным переживают переход между страницами.
+ *
+ * createAppState() экспортируется отдельно, чтобы тесты работали на свежих
+ * экземплярах и не делили состояние.
+ */
+export const app: AppState = createAppState();

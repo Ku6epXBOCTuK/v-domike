@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { categories, dishes } from "#lib/data/dishes.js";
-import { createAppState, THEME_STORAGE_KEY } from "./app.svelte.js";
+import { createAppState, TABS, THEME_STORAGE_KEY } from "./app.svelte.js";
 
 function installDom(initialTheme = "light") {
 	const doc = {
@@ -23,13 +23,28 @@ describe("createAppState", () => {
 		installDom();
 	});
 
-	it("стартует на табе Меню с пустой корзиной и одним избранным", () => {
+	it("стартует с категорией «всё», пустой корзиной и одним избранным", () => {
 		const app = createAppState();
 
-		expect(app.tab).toBe("menu");
+		expect(app.category).toBe("all");
 		expect(app.isCartEmpty).toBe(true);
 		expect(app.cartCount).toBe(0);
 		expect(app.favoriteIds).toEqual(["latte"]);
+	});
+
+	it("TABS покрывает четыре маршрута и совпадает с роутами", () => {
+		expect(TABS.map((t) => t.path)).toEqual([
+			"/",
+			"/order",
+			"/favorites",
+			"/profile",
+		]);
+		expect(TABS.map((t) => t.label)).toEqual([
+			"Меню",
+			"Заказ",
+			"Любимое",
+			"Профиль",
+		]);
 	});
 
 	it("фильтрует visibleDishes по категории, «Всё» не фильтрует", () => {

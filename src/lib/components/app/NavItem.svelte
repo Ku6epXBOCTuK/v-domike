@@ -5,25 +5,24 @@
 	type Props = {
 		label: string;
 		icon: Component<SvelteHTMLElements["svg"]>;
+		href: string;
 		active: boolean;
 		badge?: boolean;
-		onselect: () => void;
 	};
 
-	let { label, icon: Icon, active, badge = false, onselect }: Props = $props();
+	let { label, icon: Icon, href, active, badge = false }: Props = $props();
 </script>
 
-<button
-	type="button"
+<a
 	class="nav-item"
 	data-active={active}
 	aria-current={active ? "page" : undefined}
-	{onselect}
+	{href}
 >
 	<Icon />
 	<span>{label}</span>
 	{#if badge}<span class="nav-item__badge"></span>{/if}
-</button>
+</a>
 
 <style>
 	.nav-item {
@@ -40,6 +39,7 @@
 		color: var(--content-secondary);
 		font-size: var(--text-label);
 		line-height: var(--leading-snug);
+		text-decoration: none;
 		transition:
 			background-color var(--duration-fast) ease,
 			color var(--duration-fast) ease;

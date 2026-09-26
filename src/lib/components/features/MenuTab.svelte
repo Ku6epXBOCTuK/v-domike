@@ -17,7 +17,6 @@
 		onCategory: (id: CategoryId) => void;
 		onFavorite: (id: string) => void;
 		onAdd: (id: string) => void;
-		onOpenOrder: () => void;
 	};
 
 	let {
@@ -28,7 +27,6 @@
 		onCategory,
 		onFavorite,
 		onAdd,
-		onOpenOrder,
 	}: Props = $props();
 </script>
 
@@ -49,7 +47,7 @@
 </div>
 
 <SectionHeader overline="Curated for you" title="Маленькие радости">
-	<TextButton onclick={onOpenOrder}>Корзина <IconArrowRight /></TextButton>
+	<TextButton href="/order">Корзина <IconArrowRight /></TextButton>
 </SectionHeader>
 
 <div class="menu__grid">

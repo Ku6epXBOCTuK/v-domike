@@ -2,22 +2,15 @@
 	import type { Snippet } from "svelte";
 
 	type Props = {
+		href: string;
 		variant?: "inline" | "outline";
-		href?: string;
-		onclick?: () => void;
 		children: Snippet;
 	};
 
-	let { variant = "inline", href, onclick, children }: Props = $props();
+	let { href, variant = "inline", children }: Props = $props();
 </script>
 
-{#if href}
-	<a class="text-button" data-variant={variant} {href}>{@render children()}</a>
-{:else}
-	<button type="button" class="text-button" data-variant={variant} {onclick}>
-		{@render children()}
-	</button>
-{/if}
+<a class="text-button" data-variant={variant} {href}>{@render children()}</a>
 
 <style>
 	.text-button {
@@ -26,6 +19,7 @@
 		color: var(--content-accent-soft);
 		font-size: var(--text-meta);
 		letter-spacing: var(--tracking-wide);
+		text-decoration: none;
 		transition:
 			background-color var(--duration-fast) ease,
 			color var(--duration-fast) ease;
