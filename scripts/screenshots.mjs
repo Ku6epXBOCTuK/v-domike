@@ -105,7 +105,8 @@ async function settle(page) {
 	await page.waitForTimeout(150);
 }
 
-/** Корзина живёт в памяти страницы, поэтому наполняем её до ухода на /order. */
+/** Наполняем корзину кликами, а не сеем localStorage: снимок должен показывать
+    то, что видит человек, и не зависеть от прошлого прогона. */
 async function openOrder(page, origin) {
 	await page.goto(`${origin}/`);
 	await settle(page);

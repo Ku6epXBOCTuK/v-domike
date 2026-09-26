@@ -1,7 +1,12 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { categories, dishes } from "#lib/data/dishes.js";
-import { createAppState, TABS, THEME_STORAGE_KEY } from "./app.svelte.js";
+import {
+	createAppState,
+	CART_STORAGE_KEY,
+	TABS,
+	THEME_STORAGE_KEY,
+} from "./app.svelte.js";
 
 function installDom(initialTheme = "light") {
 	const doc = {
@@ -88,6 +93,60 @@ describe("createAppState", () => {
 		app.add("nope");
 
 		expect(app.cartCount).toBe(0);
+	});
+
+	it("корзина переживает перезагрузку: в хранилище id, обратно — ссылки на каталог", () => {
+		const { store } = installDom();
+		const app = createAppState();
+
+		app.add("ramen");
+		app.add("latte");
+		app.add("ramen");
+
+		expect(store.get(CART_STORAGE_KEY)).toBe('["ramen","latte","ramen"]');
+
+		// Новый инстанс — это перезагрузка страницы: модуль создан заново.
+		const reloaded = createAppState();
+
+		expect(reloaded.cart.map((d) => d.id)).toEqual(["ramen", "latte", "ramen"]);
+		expect(reloaded.cart[0]).toBe(dishes.find((d) => d.id === "ramen"));
+		expect(reloaded.isCartEmpty).toBe(false);
+	});
+
+	it("выкидывает из хранилища всё, чего нет в каталоге", () => {
+		const { store } = installDom();
+		store.set(CART_STORAGE_KEY, '["ramen","нет-такого",42,null,["ramen"]]');
+
+		const app = createAppState();
+
+		expect(app.cart.map((d) => d.id)).toEqual(["ramen"]);
+	});
+
+	it("битое значение в хранилище даёт пустую корзину, а не падение", () => {
+		const { store } = installDom();
+		store.set(CART_STORAGE_KEY, "{не json");
+
+		expect(createAppState().isCartEmpty).toBe(true);
+
+		store.set(CART_STORAGE_KEY, '{"ramen":1}');
+		expect(createAppState().isCartEmpty).toBe(true);
+	});
+
+	it("add() переживает приватный режим: корзина есть, записи нет", () => {
+		installDom();
+		Object.assign(globalThis, {
+			localStorage: {
+				getItem: () => null,
+				setItem: () => {
+					throw new Error("QuotaExceededError");
+				},
+			},
+		});
+		const app = createAppState();
+
+		app.add("ramen");
+
+		expect(app.cart.map((d) => d.id)).toEqual(["ramen"]);
 	});
 
 	it("toggleFavorite() добавляет и убирает, не плодя дубли", () => {
