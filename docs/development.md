@@ -78,7 +78,7 @@ src/
 │   ├── styles/
 │   │   ├── tokens.css           дизайн-токены: цвет, шрифт, шкалы, тени, движение
 │   │   └── base.css             reset, .icon, .sr-only, focus-visible
-│   ├── data/                    dishes.ts, profile.ts — только данные
+│   ├── data/                    dishes.ts, orders.ts, profile.ts — только данные
 │   ├── state/
 │   │   ├── app.svelte.ts        createAppState() + синглтон app
 │   │   └── app.spec.ts
@@ -93,7 +93,10 @@ src/
     ├── +page.svelte             /            меню
     ├── order/+page.svelte       /order       заказ
     ├── favorites/+page.svelte   /favorites   любимое
-    └── profile/+page.svelte     /profile     профиль
+    ├── profile/+page.svelte     /profile     профиль
+    └── profile/
+        ├── history/+page.svelte   история заказов
+        └── notifications/+page.svelte
 
 scripts/
 ├── check-contrast.mjs           контрастный гейт, встроен в lint
@@ -121,6 +124,10 @@ scripts/
 
 Маршруты лежат плоско, поэтому хостинг должен отдавать `/order` как
 `order.html`. На GH Pages это работает само, на Netlify и Vercel — из коробки.
+
+Ссылки внутри приложения относительные (`./order`, `../profile`): их даёт
+`resolve()`, типизированный `RouteId`. Приложение поэтому работает и в
+подкаталоге хостинга, а опечатка в адресе падает на `pnpm check`.
 
 ## Известные проблемы
 

@@ -1,11 +1,13 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+	import type { RouteId } from "$app/types";
 	import type { Component } from "svelte";
 	import type { SvelteHTMLElements } from "svelte/elements";
 
 	type Props = {
 		label: string;
 		icon: Component<SvelteHTMLElements["svg"]>;
-		href: string;
+		href: RouteId;
 		active: boolean;
 		badge?: boolean;
 	};
@@ -17,7 +19,7 @@
 	class="nav-item"
 	data-active={active}
 	aria-current={active ? "page" : undefined}
-	{href}
+	href={resolve(href)}
 >
 	<Icon />
 	<span>{label}</span>

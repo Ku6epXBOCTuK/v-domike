@@ -12,7 +12,7 @@
 <ul class="profile__rows">
 	{#each profileLinks as link (link.id)}
 		<li>
-			<ProfileRow label={link.label} icon={link.icon} />
+			<ProfileRow label={link.label} icon={link.icon} href={link.href} />
 		</li>
 	{/each}
 </ul>

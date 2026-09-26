@@ -1,9 +1,12 @@
-export type ProfileLinkIcon = "clock" | "pin" | "bell";
+import type { RouteId } from "$app/types";
+
+export type ProfileLinkIcon = "clock" | "bell";
 
 export type ProfileLink = {
 	id: string;
 	label: string;
 	icon: ProfileLinkIcon;
+	href: RouteId;
 };
 
 export const profile = {
@@ -13,7 +16,16 @@ export const profile = {
 };
 
 export const profileLinks: ProfileLink[] = [
-	{ id: "history", label: "История заказов", icon: "clock" },
-	{ id: "address", label: "Адрес для курьера", icon: "pin" },
-	{ id: "notifications", label: "Настроить уведомления", icon: "bell" },
+	{
+		id: "history",
+		label: "История заказов",
+		icon: "clock",
+		href: "/profile/history",
+	},
+	{
+		id: "notifications",
+		label: "Настроить уведомления",
+		icon: "bell",
+		href: "/profile/notifications",
+	},
 ];

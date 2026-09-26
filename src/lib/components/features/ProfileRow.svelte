@@ -1,30 +1,31 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+	import type { RouteId } from "$app/types";
 	import type { Component } from "svelte";
 	import type { SvelteHTMLElements } from "svelte/elements";
 	import IconArrowRight from "~icons/lucide/arrow-right";
 	import IconBell from "~icons/lucide/bell";
 	import IconClock3 from "~icons/lucide/clock-3";
-	import IconMapPin from "~icons/lucide/map-pin";
 
 	import type { ProfileLinkIcon } from "#lib/data/profile.js";
 
 	type Props = {
 		label: string;
 		icon: ProfileLinkIcon;
+		href: RouteId;
 	};
 
-	let { label, icon }: Props = $props();
+	let { label, icon, href }: Props = $props();
 
 	const icons: Record<ProfileLinkIcon, Component<SvelteHTMLElements["svg"]>> = {
 		clock: IconClock3,
-		pin: IconMapPin,
 		bell: IconBell,
 	};
 
 	const Icon = $derived(icons[icon]);
 </script>
 
-<button type="button" class="profile-row">
+<a class="profile-row" href={resolve(href)}>
 	<span class="profile-row__lead">
 		<span class="profile-row__chip">
 			<Icon />
@@ -32,7 +33,7 @@
 		{label}
 	</span>
 	<IconArrowRight />
-</button>
+</a>
 
 <style>
 	.profile-row {
@@ -48,6 +49,7 @@
 		color: var(--content-primary);
 		font-size: var(--text-row);
 		text-align: left;
+		text-decoration: none;
 		transition:
 			background-color var(--duration-fast) ease,
 			border-color var(--duration-fast) ease;
@@ -78,7 +80,7 @@
 	}
 
 	/* Иконка чипа наследует color от .profile-row__chip, шеврон — прямой
-	   потомок кнопки, поэтому ему нужен собственный селектор. Через
+	   потомок ссылки, поэтому ему нужен собственный селектор. Через
 	   :global(svg), потому что ~icons не получает scope-хэш компонента. */
 	.profile-row :global(svg) {
 		width: 16px;

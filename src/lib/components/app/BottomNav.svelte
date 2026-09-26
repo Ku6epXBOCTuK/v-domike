@@ -25,6 +25,12 @@
 	};
 
 	const current = $derived(page.url.pathname);
+
+	/* Раздел активен и на своих вложенных страницах: /profile/history — это
+	   всё ещё профиль, просто глубже. Отсюда же и «назад» работает. */
+	function isActive(path: string) {
+		return current === path || current.startsWith(`${path}/`);
+	}
 </script>
 
 <nav class="bottom-nav">
@@ -33,7 +39,7 @@
 			label={tab.label}
 			icon={icons[tab.id]}
 			href={tab.path}
-			active={current === tab.path}
+			active={isActive(tab.path)}
 			badge={badgeOn === tab.id}
 		/>
 	{/each}

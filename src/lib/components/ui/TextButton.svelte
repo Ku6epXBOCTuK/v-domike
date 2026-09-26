@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+	import type { RouteId } from "$app/types";
 	import type { Snippet } from "svelte";
 
 	type Props = {
-		href: string;
+		href: RouteId;
 		variant?: "inline" | "outline";
 		children: Snippet;
 	};
@@ -10,7 +12,9 @@
 	let { href, variant = "inline", children }: Props = $props();
 </script>
 
-<a class="text-button" data-variant={variant} {href}>{@render children()}</a>
+<a class="text-button" data-variant={variant} href={resolve(href)}
+	>{@render children()}</a
+>
 
 <style>
 	.text-button {
