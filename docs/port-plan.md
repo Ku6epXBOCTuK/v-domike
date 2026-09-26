@@ -595,12 +595,89 @@ CSS в бандле — 4.3 KB.
 
 ---
 
+## Итоги Этапа 2 (выполнен)
+
+### Маппинг импортов потребовал второго паттерна
+
+`#lib/*` → `./src/lib/*` — буквальный, без вывода расширения. Extensionless
+`#lib/data/dishes` не резолвится ни TS, ни Vite. Добавлен парный паттерн, и в
+спецификаторе импорта теперь обязательно `.js`:
+
+```json
+"imports": {
+  "#lib": "./src/lib/index.js",
+  "#lib/*": "./src/lib/*",
+  "#lib/*.svelte.js": "./src/lib/*.svelte.ts",
+  "#lib/*.js": "./src/lib/*.ts"
+}
+```
+
+**Правило проекта:** импортируешь через `#lib` — пиши расширение `.js` (для
+`.ts`-файлов) или точное имя файла (`.svelte`, `.css`, `.svg`).
+
+### Три бага рефа, закрытые в данных
+
+1. **Избранное по `name`.** В рефе ключом был строковый `name` — переименование
+   блюда ломало избранное. Теперь `Dish.id`.
+2. **ETA считалась от индекса.** `index % 2 === 0 ? "15–20 мин" : "5–10 мин"` —
+   из-за этого одно и то же блюдо показывало разное время в Меню и в Любимом (в
+   Любимом массив переиндексируется). Теперь `eta` в данных. Единственное
+   расхождение с рефом: «Пицца из печи» была 5–10 мин, стала 15–20 — значение из
+   арифметики индекса, а не из логики.
+3. **`tone` хранил Tailwind-класс.** Теперь union
+   `"warm" | "blush" | "cream" | "butter"`, компонент мапит его в
+   `var(--tone-*)` через `data-tone`.
+
+### `createAppState()` — форма и решения
+
+- `cart` — массив **ссылок** на блюда из каталога, а не копий. `add(id)` ищет в
+  `Map` по id, поэтому цена/ETA/картинка в корзине никогда не устареют. API
+  принимает `id`, а не объект.
+- `setTheme` пишет и `data-theme`, и `localStorage`; `localStorage` обёрнут в
+  `try/catch` — приватный режим и переполнение не ломают переключение темы.
+- `readStoredTheme()` читает `document.documentElement.dataset.theme`, а не
+  `localStorage` напрямую: источник истины — атрибут на `<html>`, который ставит
+  инлайн-скрипт в `app.html`. Так SSR и клиент гарантированно согласованы. Под
+  `typeof document === "undefined"` возвращается `"light"`.
+- `const cart = $state([])` — массив мутируется через `push`, переприсваивания
+  нет, поэтому `const`. ESLint это подтвердил.
+
+### Тесты переехали на `svelte/server` раньше плана
+
+Browser-проект vitest требовал Playwright-браузер (~300 MB), которого нет и
+качать не будем. Чтобы `pnpm test` вообще работал, конфиг упрощён до одного
+node-проекта:
+
+- `vite.config.ts` — плоский `test` вместо `projects`
+- удалены `playwright`, `@vitest/browser-playwright`, `vitest-browser-svelte`
+- удалён `src/lib/vitest-examples/*` (4 файла) — существовал только чтобы
+  проверять browser-сетап
+
+`app.spec.ts` — 10 тестов на фабрику: фильтр категорий, корзина с дублями, `add`
+с неизвестным id, toggle избранного, порядок `favoriteDishes`, запись темы в DOM
+и `localStorage`, чтение стартовой темы из `data-theme`, устойчивость к
+`QuotaExceededError`.
+
+Одна ошибка была в моём же тесте: я забыл сид `latte` в ожидании
+`favoriteDishes` — код был прав, тест нет.
+
+Имя спеки — `app.spec.ts`, а **не** `app.svelte.spec.ts`: в старом конфиге
+`*.svelte.spec.ts` попадал в browser-проект и исключался из node.
+
+### Итог
+
+`test` 10/10 · `check` 0/0 · `lint` PASS · `build` prerender OK.
+
+⚠️ Картинки блюд (`/dishes/*.webp`) ещё не существуют — 404 до Этапа 7.
+
+---
+
 ## Карта файлов
 
 ```sh
 Изменяются существующие:
 ├── package.json                    ← + unplugin-icons, @iconify-json/lucide, imports
-├── vite.config.ts                  ← + Icons({ compiler: "svelte", scale: 1, defaultClass: "icon" })
+├── vite.config.ts                  ← + Icons(...); vitest упрощён до node-проекта
 ├── src/app.d.ts                    ← + import "unplugin-icons/types/svelte"
 ├── src/app.html                    ← lang=ru, data-theme, инлайн-скрипт
 ├── .vscode/extensions.json         ← + antfu.iconify
@@ -609,7 +686,7 @@ CSS в бандле — 4.3 KB.
 Новое:
 ├── src/lib/styles/{tokens.css, base.css}    ← единственный источник правды
 ├── src/lib/data/{dishes.ts, profile.ts}
-├── src/lib/state/app.svelte.ts               ← юнит-тестируется
+├── src/lib/state/app.svelte.ts               ← юнит-тестируется (10 тестов)
 └── src/lib/components/
     ├── ui/        (8)  IconButton Chip Eyebrow TabHeading SectionHeader
     │                  TextButton EmptyState Avatar
@@ -619,16 +696,17 @@ CSS в бандле — 4.3 KB.
 
 Новое в routes/:
 ├── +layout.ts      ← prerender = true            [Этап 0 — готово]
-├── +layout.svelte  ← импорт base.css + tokens.css
+├── +layout.svelte  ← импорт base.css + tokens.css [Этап 1 — готово]
 ├── +page.svelte    ← композитор
-└── *.spec.ts       ← 2 спеки (state + DishCard)
+└── *.spec.ts       ← 2 спеки (state [готово] + DishCard [Этап 8])
 
 static/dishes/*.webp                ← 4 файла
 ```
 
 Итого: **6 существующих файлов изменяются, 9 файлов кода-инфраструктуры
-создаются, 23 Svelte-компонента, 2 спеки, 4 webp**; удаляется 5 файлов болванки
-(`src/lib/vitest-examples/*` — 4 шт. и `src/lib/assets/favicon.svg`).
+создаются, 23 Svelte-компонента, 2 спеки, 4 webp**; удаляется 6 файлов болванки
+(`src/lib/vitest-examples/*` — 4 шт. уже удалены на Этапе 2, и
+`src/lib/assets/favicon.svg` на Этапе 7).
 
 ---
 
