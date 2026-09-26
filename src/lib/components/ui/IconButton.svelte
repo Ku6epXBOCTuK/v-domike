@@ -7,7 +7,7 @@
 		size?: "xs" | "sm" | "md";
 		pressed?: boolean;
 		dot?: boolean;
-		onclick: () => void;
+		onclick?: () => void;
 		children: Snippet;
 	};
 
