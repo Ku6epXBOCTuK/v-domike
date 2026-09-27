@@ -36,7 +36,7 @@
 			</div>
 			<AddDishButton {dish} {onAdd} />
 		</div>
-		<p class="dish-card__price">{dish.price} coins</p>
+		<p class="dish-card__price">{dish.price} ✦</p>
 	</div>
 </article>
 
