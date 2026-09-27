@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { asset } from "$app/paths";
-	import type { Dish } from "#lib/data/dishes.js";
+	import { dishImage, type Dish } from "#lib/data/dishes.js";
 	import AddDishButton from "./AddDishButton.svelte";
 	import FavoriteButton from "./FavoriteButton.svelte";
 
@@ -16,15 +15,17 @@
 
 <article class="dish-card">
 	<div class="dish-card__media" data-tone={dish.tone}>
-		<img
-			class="dish-card__photo"
-			src={asset(dish.image)}
-			alt={dish.name}
-			width="600"
-			height="682"
-			loading="lazy"
-			decoding="async"
-		/>
+		{#if dish.image}
+			<img
+				class="dish-card__photo"
+				src={dishImage(dish.image)}
+				alt={dish.name}
+				width="600"
+				height="682"
+				loading="lazy"
+				decoding="async"
+			/>
+		{/if}
 		<FavoriteButton {dish} {favorite} onToggle={onFavorite} />
 		<span class="dish-card__eta">{dish.eta}</span>
 	</div>

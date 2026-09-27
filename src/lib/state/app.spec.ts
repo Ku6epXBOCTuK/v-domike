@@ -65,14 +65,14 @@ describe("createAppState", () => {
 
 		expect(app.visibleDishes).toHaveLength(dishes.length);
 
-		app.category = "drinks";
-		expect(app.visibleDishes.map((d) => d.id)).toEqual(["latte"]);
+		for (const category of ["soups", "pasta", "desserts", "drinks"] as const) {
+			app.category = category;
 
-		app.category = "warming";
-		expect(app.visibleDishes.map((d) => d.id)).toEqual(["ramen", "pizza"]);
-
-		app.category = "sweets";
-		expect(app.visibleDishes.map((d) => d.id)).toEqual(["dessert"]);
+			expect(app.visibleDishes.length).toBeGreaterThan(0);
+			expect(app.visibleDishes.every((d) => d.category === category)).toBe(
+				true,
+			);
+		}
 	});
 
 	it("имеет по одной категории на каждый id из categories", () => {

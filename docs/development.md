@@ -37,6 +37,7 @@ pnpm dev        # http://localhost:5173/v-domike/
 | `pnpm check:watch`  | то же самое в watch-режиме                 |
 | `pnpm lint`         | prettier, eslint **и проверка токенов**    |
 | `pnpm check:tokens` | только проверка токенов                    |
+| `pnpm check:dishes` | форма и снимки меню                        |
 | `pnpm test`         | vitest                                     |
 | `pnpm format`       | prettier --write                           |
 | `pnpm screenshots`  | переснять скриншоты для README             |
@@ -92,7 +93,7 @@ src/
 │   ├── styles/
 │   │   ├── tokens.css           дизайн-токены: цвет, шрифт, шкалы, тени, движение
 │   │   └── base.css             reset, .icon, .sr-only, focus-visible
-│   ├── data/                    dishes.ts, orders.ts, profile.ts — только данные
+│   ├── data/                    dishes.json, orders.ts, profile.ts — только данные
 │   ├── state/
 │   │   ├── app.svelte.ts        createAppState() + синглтон app
 │   │   └── app.spec.ts
@@ -115,12 +116,34 @@ src/
 
 scripts/
 ├── check-contrast.mjs           контрастный гейт, встроен в lint
+├── check-dishes.mjs             форма меню и наличие снимков, встроен в lint
 ├── screenshots.mjs              скриншоты для README
 ├── make-icons.mjs               иконки PWA и манифест из refs/
 └── make-og.mjs                  OG-картинка из refs/ и build/
 
 refs/                             исходники иконки, в сборку не попадают
 ```
+
+## Меню
+
+`src/lib/data/dishes.json` — источник правды: категории и блюда. Форму блюда
+объявляет `dishes.ts`, а проверяет `scripts/check-dishes.mjs`: уникальность `id`
+и названия, kebab-case, цена кратна десяти, `eta` вида «15–20 мин», тон из
+списка, категория объявлена, файл снимка существует. Скрипт встроен в
+`pnpm lint`, отдельно гоняется как `pnpm check:dishes`.
+
+Добавил блюдо — напиши его в JSON и прогони `pnpm check:dishes`. `id` латиницей
+в kebab-case и совпадает с именем файла: `image: "dishes/<id>.webp"`. **Пустой
+`image` означает «снимка пока нет»**: карточка рисует тон-подложку без
+фотографии. Так пустое поле не роняет пререндер и не превращается в битую
+картинку; блюда без снимка печатает `pnpm check:dishes` в конце. Снимок кладётся
+в `static/dishes/` webp, 600×682, десятки килобайт — как у нынешних четырёх
+блюд.
+
+**Ни одна кухня не должна быть в приоритете или ущемлена.** Задача владельца —
+меню со всего мира, а не копия «корейских дофамин-приложений»: корейские блюда
+есть наравне с остальными, и в каждой категории их должно быть столько же,
+сколько у любой другой крупной кухни.
 
 ## Иконки и манифест
 

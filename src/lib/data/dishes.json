@@ -1,0 +1,926 @@
+{
+	"categories": [
+		{
+			"id": "all",
+			"label": "Всё"
+		},
+		{
+			"id": "soups",
+			"label": "Супы"
+		},
+		{
+			"id": "pasta",
+			"label": "Паста и выпечка"
+		},
+		{
+			"id": "desserts",
+			"label": "Десерты"
+		},
+		{
+			"id": "drinks",
+			"label": "Напитки"
+		}
+	],
+	"dishes": [
+		{
+			"id": "borsh",
+			"name": "Борщ со сметаной",
+			"detail": "свёкла · капуста · сметана",
+			"price": 380,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "shchi",
+			"name": "Щи из квашеной капусты",
+			"detail": "говядина · капуста · лаврушка",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "solyanka",
+			"name": "Солянка с говядиной",
+			"detail": "говядина · оливки · корнишоны",
+			"price": 420,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "rassolnik",
+			"name": "Рассольник с перловкой",
+			"detail": "перловка · огурец · говядина",
+			"price": 340,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "okroshka",
+			"name": "Окрошка на квасе",
+			"detail": "огурец · зелень · яйцо",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kholodnik",
+			"name": "Холодник с клюквой",
+			"detail": "свёкла · клюква · сметана",
+			"price": 330,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "svekolnik",
+			"name": "Свекольник с яйцом",
+			"detail": "свёкла · яйцо · зелень",
+			"price": 310,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "ulyi",
+			"name": "Уха из трёх видов рыб",
+			"detail": "треска · судак · зелень",
+			"price": 480,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "bulon-s-vermishel",
+			"name": "Куриный бульон с вермишелью",
+			"detail": "курица · вермишель · морковь",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "gribnoy-sup",
+			"name": "Грибной суп с пшеницей",
+			"detail": "белые грибы · пшеница · тимьян",
+			"price": 400,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "ramen",
+			"name": "Нежный рамён",
+			"detail": "мисо · яйцо · нори",
+			"price": 420,
+			"image": "dishes/ramen.webp",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "frantsuzskiy-lukovyy-sup",
+			"name": "Французский луковый суп",
+			"detail": "лук · бульон · гренки",
+			"price": 390,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "gazpacho",
+			"name": "Гаспачо из томатов",
+			"detail": "томаты · огурец · базилик",
+			"price": 340,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "minestrone",
+			"name": "Минestrone с фасолью",
+			"detail": "фасоль · тыква · шпинат",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "krem-sup-iz-tykvy",
+			"name": "Крем-суп из тыквы",
+			"detail": "тыква · сливки · мускат",
+			"price": 350,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "krem-sup-iz-shpinata",
+			"name": "Крем-суп из шпината",
+			"detail": "шпинат · картофель · сливки",
+			"price": 340,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "krem-sup-iz-cvetnoy-kapusty",
+			"name": "Крем-суп из цветной капусты",
+			"detail": "капуста · чеснок · пармезан",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kartofelnyy-sup-s-kolbasoy",
+			"name": "Немецкий суп с колбасой",
+			"detail": "картофель · колбаса · сельдерей",
+			"price": 420,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "chesnochnyy-sup",
+			"name": "Чесночный суп с гренками",
+			"detail": "чеснок · картофель · петрушка",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-frikadelkami",
+			"name": "Суп с фрикадельками",
+			"detail": "фрикадельки · рис · зелень",
+			"price": 410,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "tomatnyy-sup-s-bazilikom",
+			"name": "Томатный суп с базиликом",
+			"detail": "томаты · лук · базилик",
+			"price": 330,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "morskoy-sup-s-midiyami",
+			"name": "Морской суп с мидиями",
+			"detail": "мидии · картофель · сливки",
+			"price": 520,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "grecheskiy-holodnyy-sup",
+			"name": "Греческий холодный суп",
+			"detail": "йогурт · огурец · чеснок",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "tom-yam",
+			"name": "Том Ям с креветками",
+			"detail": "креветки · лемонграсс · кокос",
+			"price": 540,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "laksa",
+			"name": "Лакса с кокосом",
+			"detail": "курица · кокос · лемонграсс",
+			"price": 500,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "pho-s-govyadinoy",
+			"name": "Фо с говядиной",
+			"detail": "говядина · рисовая лапша · зелень",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "miso-sup-s-vodoroslyami",
+			"name": "Мисо-суп с водорослями",
+			"detail": "мисо · вакамэ · тофу",
+			"price": 400,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "vondon-s-krevetkami",
+			"name": "Вондон с креветками",
+			"detail": "пельмени · креветки · зелень",
+			"price": 430,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-tofu-i-shiitake",
+			"name": "Суп с тофу и шиитаке",
+			"detail": "тофу · грибы шиитаке · кунжут",
+			"price": 410,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kimi-chiga",
+			"name": "Кимчи-чига",
+			"detail": "свинина · кимчи · тофу",
+			"price": 460,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sundubu-chiga",
+			"name": "Сундубу-чига",
+			"detail": "тофу · кимчи · яйцо",
+			"price": 420,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "doenjang-chiga",
+			"name": "Денджан-чига",
+			"detail": "паста из бобов · тофу · овощи",
+			"price": 450,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "gyeran-chiga",
+			"name": "Гиран-чига",
+			"detail": "яйцо · лук · зелень",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "ttokguk",
+			"name": "Ттокгук с говядиной",
+			"detail": "рисовые палочки · говядина · водоросли",
+			"price": 400,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kimbi",
+			"name": "Кимби с говядиной",
+			"detail": "рис · говядина · соевый соус",
+			"price": 440,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "ttreonyan-jjorba",
+			"name": "Треньян-джорба",
+			"detail": "свинина · тофу · чили",
+			"price": 480,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "hotteok",
+			"name": "Хотток с сосисками",
+			"detail": "сосиски · спагетти · капуста",
+			"price": 430,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "budae-chiga",
+			"name": "Будэ-чига",
+			"detail": "сосиски · фасоль · сладкий картофель",
+			"price": 500,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "yukgaejang",
+			"name": "Юкгехан с чили",
+			"detail": "говядина · редька · чили",
+			"price": 470,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "dal-so-shpinatom",
+			"name": "Дал со шпинатом",
+			"detail": "чечевица · шпинат · кокос",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "yogurtovyy-sup-s-kurkumoy",
+			"name": "Йогуртовый суп с куркумой",
+			"detail": "йогурт · имбирь · зелень",
+			"price": 350,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "mandikyendyuk",
+			"name": "Мендикентюк с айрагом",
+			"detail": "чечевица · айран · лук",
+			"price": 370,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "harira",
+			"name": "Харира с фиником",
+			"detail": "томаты · чечевица · нут",
+			"price": 380,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "shurpa-iz-baraniny",
+			"name": "Шурпа из баранины",
+			"detail": "баранина · картофель · нут",
+			"price": 500,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "harcho-so-svininoy",
+			"name": "Харчо со свининой",
+			"detail": "свинина · рис · кинза",
+			"price": 440,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "hinkali-v-bulone",
+			"name": "Хинкали в бульоне",
+			"detail": "хинкали · говядина · зелень",
+			"price": 460,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "lobio-s-risom",
+			"name": "Лобио с рисом",
+			"detail": "фасоль · рис · копчёная грудка",
+			"price": 420,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "pozole",
+			"name": "Позоле с кукурузой",
+			"detail": "свинина · кукуруза · кинза",
+			"price": 450,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-avokado-i-chili",
+			"name": "Суп с авокадо и чили",
+			"detail": "авокадо · томаты · чили",
+			"price": 340,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-chernoy-fasolyu",
+			"name": "Суп с чёрной фасолью",
+			"detail": "фасоль · лук · кинза",
+			"price": 350,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-morskoy-ryboy",
+			"name": "Суп с морской рыбой",
+			"detail": "рыбный бульон · лаврушка · морковь",
+			"price": 530,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kurinyy-sup-s-kletskami",
+			"name": "Куриный суп с клецками",
+			"detail": "курица · клецки · зелень",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "krem-sup-iz-kukuryzy",
+			"name": "Крем-суп из кукурузы",
+			"detail": "кукуруза · сливки · чили",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-chili-i-fasolyu",
+			"name": "Суп с чили и фасолью",
+			"detail": "фасоль · чили · томаты",
+			"price": 370,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "kartofelnyy-sup-s-syrom",
+			"name": "Картофельный суп с сыром",
+			"detail": "картофель · сыр · лук",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-iz-batat-s-kokosom",
+			"name": "Суп из батата с кокосом",
+			"detail": "батат · кокос · имбирь",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "morkovnyy-sup-s-imbirem",
+			"name": "Морковный суп с имбирём",
+			"detail": "морковь · имбирь · кокос",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-tykvoi-i-imbrem",
+			"name": "Суп с тыквой и имбирём",
+			"detail": "тыква · имбирь · кокос",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "gribnoy-bulon-s-ovoshchami",
+			"name": "Грибной бульон с овощами",
+			"detail": "грибы · лук · морковь",
+			"price": 370,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-kapustoy-i-grybami",
+			"name": "Суп с капустой и грибами",
+			"detail": "капуста · белые грибы · сметана",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-krabovymi",
+			"name": "Суп с крабовыми",
+			"detail": "краб · кукуруза · сливки",
+			"price": 560,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-indeykoy",
+			"name": "Суп с индейкой и овощами",
+			"detail": "индейка · кабачок · морковь",
+			"price": 390,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-ovoshchami-i-rysoy",
+			"name": "Овощной суп с рисом",
+			"detail": "рис · морковь · горох",
+			"price": 300,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-govyadinoy-i-fasolyu",
+			"name": "Суп с говядиной и фасолью",
+			"detail": "говядина · фасоль · сельдерей",
+			"price": 430,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-kurinyimi-serdechkami",
+			"name": "Суп с овощами на куриных сердечках",
+			"detail": "сердечки · морковь · зелень",
+			"price": 410,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-iz-ovoshchey-i-fasoli",
+			"name": "Суп из овощей и фасоли",
+			"detail": "фасоль · сельдерей · морковь",
+			"price": 330,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "tuskhiy-sup-s-kapustoy",
+			"name": "Суп из тушёной капусты",
+			"detail": "капуста · картофель · лук",
+			"price": 310,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-tykvoi-i-fasolyu",
+			"name": "Суп с тыквой и фасолью",
+			"detail": "тыква · фасоль · розмарин",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-veselnoy-ryboy",
+			"name": "Суп с рыбой и овощами",
+			"detail": "рыба · морковь · зелень",
+			"price": 480,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-kartofelem-na-moloke",
+			"name": "Суп с молочной базой",
+			"detail": "картофель · лук · сливки",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-mangom",
+			"name": "Манговый суп с чили",
+			"detail": "манго · чили · кокос",
+			"price": 350,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-ovoshchami-i-kokosom",
+			"name": "Суп с овощами и кокосом",
+			"detail": "кокос · морковь · имбирь",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-pomidorami-i-yogurtom",
+			"name": "Суп с томатами и йогуртом",
+			"detail": "томаты · йогурт · чеснок",
+			"price": 330,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-belym-vinom",
+			"name": "Суп с белым вином",
+			"detail": "рыба · вино · сливки",
+			"price": 560,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-telyatinoy",
+			"name": "Суп с телятиной и овощами",
+			"detail": "телятина · морковь · сельдерей",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-grechnevoy-kashi",
+			"name": "Суп с гречневой кашей",
+			"detail": "гречка · говядина · лук",
+			"price": 340,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-makaronami",
+			"name": "Суп с макаронами и сыром",
+			"detail": "макароны · сыр · зелень",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-ovoshchami-i-lapshoy",
+			"name": "Суп с овощами и лапшой",
+			"detail": "лапша · морковь · горох",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-tuntsom",
+			"name": "Суп с тунцом и яйцом",
+			"detail": "тунец · картофель · яйцо",
+			"price": 330,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-kopychenoy-ryboy",
+			"name": "Суп с копчёной рыбой",
+			"detail": "рыба · картофель · лук",
+			"price": 470,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-kuritsey-i-ovoshchami",
+			"name": "Суп с курицей и овощами",
+			"detail": "курица · кабачок · морковь",
+			"price": 330,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-zelenyi-ovoshchami",
+			"name": "Суп с зелёными овощами",
+			"detail": "шпинат · горох · картофель",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-shampinonami",
+			"name": "Суп с шампиньонами",
+			"detail": "шампиньоны · сливки · тимьян",
+			"price": 370,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-lososem-i-shpinatom",
+			"name": "Суп с лососем и шпинатом",
+			"detail": "лосось · шпинат · сливки",
+			"price": 550,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-morskoy-kabely",
+			"name": "Суп с морской капустой",
+			"detail": "капуста · морковь · яйцо",
+			"price": 300,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-baraninoy-i-fasolyu",
+			"name": "Суп с бараниной и фасолью",
+			"detail": "баранина · фасоль · розмарин",
+			"price": 490,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "soups"
+		},
+		{
+			"id": "sup-s-tomatom-i-ovoshchami",
+			"name": "Суп с томатами и овощами",
+			"detail": "томаты · кабачок · лук",
+			"price": 330,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "soups"
+		},
+		{
+			"id": "pizza",
+			"name": "Пицца из печи",
+			"detail": "моцарелла · базилик",
+			"price": 590,
+			"image": "dishes/pizza.webp",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "dessert",
+			"name": "Клубничный торт",
+			"detail": "сливки · ваниль · ягоды",
+			"price": 350,
+			"image": "dishes/dessert.webp",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "latte",
+			"name": "Розовый матча",
+			"detail": "клубника · овсяное молоко",
+			"price": 280,
+			"image": "dishes/latte.webp",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		}
+	]
+}

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { asset } from "$app/paths";
-	import type { Dish } from "#lib/data/dishes.js";
+	import { dishImage, type Dish } from "#lib/data/dishes.js";
 
 	type Props = {
 		dish: Dish;
@@ -10,15 +9,17 @@
 </script>
 
 <span class="dish-thumb" data-tone={dish.tone}>
-	<img
-		class="dish-thumb__photo"
-		src={asset(dish.image)}
-		alt=""
-		width="120"
-		height="120"
-		loading="lazy"
-		decoding="async"
-	/>
+	{#if dish.image}
+		<img
+			class="dish-thumb__photo"
+			src={dishImage(dish.image)}
+			alt=""
+			width="120"
+			height="120"
+			loading="lazy"
+			decoding="async"
+		/>
+	{/if}
 </span>
 
 <style>
