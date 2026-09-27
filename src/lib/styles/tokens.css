@@ -190,5 +190,20 @@
 	--frame-max: 430px;
 	--frame-min-height: 850px;
 	--nav-max: 406px;
-	--content-bottom-pad: 96px;
+	/* Высота навигации: поля 8+8, иконка 16, gap 4, строка подписи 14, поля
+	   пункта 6+6. Объявлена токеном, потому что от неё зависит нижний отступ
+	   контента — иначе полоса наезжает на последний экран. */
+	--nav-height: 62px;
+	--content-bottom-pad: calc(
+		var(--nav-height) + var(--space-9) + var(--safe-bottom)
+	);
+
+	/* ── Safe areas ─────────────────────────────────────────────────────── */
+	/* Вырез камеры и домашняя полоса. Без viewport-fit=cover в app.html все
+	   инсеты равны нулю, поэтому токены безопасны и в десктопном превью, и в
+	   обычном браузере, и в landscape с вырезом. */
+	--safe-top: env(safe-area-inset-top, 0px);
+	--safe-right: env(safe-area-inset-right, 0px);
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
+	--safe-left: env(safe-area-inset-left, 0px);
 }

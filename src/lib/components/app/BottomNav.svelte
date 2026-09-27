@@ -48,26 +48,29 @@
 <style>
 	.bottom-nav {
 		position: fixed;
-		bottom: var(--space-5);
-		left: 50%;
+		/* inset вместо left: 50% + transform: полоса центрируется полями, и в
+		   landscape с вырезом не заезжает под него. */
+		inset-inline: max(var(--space-5), var(--safe-left))
+			max(var(--space-5), var(--safe-right));
+		bottom: calc(var(--safe-bottom) + var(--space-5));
 		z-index: var(--z-nav);
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		width: calc(100% - 2 * var(--space-5));
 		max-width: var(--nav-max);
+		min-height: var(--nav-height);
+		margin-inline: auto;
 		padding: var(--space-4);
 		border: 1px solid var(--border-strong);
 		border-radius: var(--radius-lg);
 		background: color-mix(in srgb, var(--surface-base) 94%, transparent);
 		box-shadow: var(--shadow-nav);
-		transform: translateX(-50%);
 		backdrop-filter: blur(8px);
 	}
 
 	@media (min-width: 640px) {
 		.bottom-nav {
-			bottom: var(--space-9);
+			bottom: calc(var(--safe-bottom) + var(--space-9));
 		}
 	}
 </style>

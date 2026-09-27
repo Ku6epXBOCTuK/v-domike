@@ -22,7 +22,9 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--space-4);
-		padding: var(--space-8) var(--space-8) var(--space-4);
+		padding-block: calc(var(--safe-top) + var(--space-8)) var(--space-4);
+		padding-inline: max(var(--space-8), var(--safe-left))
+			max(var(--space-8), var(--safe-right));
 	}
 
 	.app-header__actions {

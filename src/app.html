@@ -2,7 +2,12 @@
 <html lang="ru" data-theme="light">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- viewport-fit=cover включает env(safe-area-inset-*): без него вырез и
+		     домашняя полоса не отдают инсеты и --safe-* остаются нулями. -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
 		<script>
 			const stored = localStorage.getItem("vb-theme");
 			document.documentElement.dataset.theme =
