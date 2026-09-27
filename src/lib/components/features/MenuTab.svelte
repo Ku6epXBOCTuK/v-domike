@@ -47,7 +47,7 @@
 </div>
 
 <SectionHeader overline="Curated for you" title="Маленькие радости">
-	<TextButton href="/order">Корзина <IconArrowRight /></TextButton>
+	<TextButton href="/cart">Корзина <IconArrowRight /></TextButton>
 </SectionHeader>
 
 <div class="menu__grid">

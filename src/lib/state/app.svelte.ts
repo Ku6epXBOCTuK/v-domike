@@ -23,6 +23,9 @@ export const ORDER_STORAGE_KEY = "vb-order";
    потому не могут устареть. Порядок строк — порядок добавления, как в baskets. */
 export type CartLine = { id: string; count: number };
 
+/* То же, но уже развёрнутое в каталог — так это видно на экране. */
+export type CartEntry = { dish: Dish; count: number };
+
 /* Оформленный заказ — снимок корзины на момент оформления. Корзина после
    оформления пустая, поэтому состав заказа живёт здесь. */
 export type PlacedOrder = { lines: CartLine[]; placedAt: number };
@@ -168,7 +171,7 @@ export function orderPhase(placedAt: number, now: number): OrderPhase {
 	return "delivered";
 }
 
-function toLines(lines: CartLine[]): { dish: Dish; count: number }[] {
+function toLines(lines: CartLine[]): CartEntry[] {
 	return lines.flatMap((line) => {
 		const dish = catalog.get(line.id);
 		return dish ? [{ dish, count: line.count }] : [];

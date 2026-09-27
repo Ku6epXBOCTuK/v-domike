@@ -91,7 +91,8 @@ src/
     ├── +layout.ts               prerender = true
     ├── +error.svelte            404 и прочие ошибки, внутри шелла
     ├── +page.svelte             /            меню
-    ├── order/+page.svelte       /order       заказ
+    ├── cart/+page.svelte        /cart        корзина
+    ├── order/+page.svelte       /order       заказ (распределитель по статусу)
     ├── favorites/+page.svelte   /favorites   любимое
     ├── profile/+page.svelte     /profile     профиль
     └── profile/
