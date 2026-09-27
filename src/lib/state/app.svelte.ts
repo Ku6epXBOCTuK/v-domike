@@ -15,6 +15,8 @@ export const THEME_STORAGE_KEY = "vb-theme";
 
 export const CART_STORAGE_KEY = "vb-cart";
 
+export const FAVORITES_STORAGE_KEY = "vb-favorites";
+
 const catalog = new Map(dishes.map((dish) => [dish.id, dish]));
 
 function readStoredTheme(): Theme {
@@ -66,10 +68,35 @@ function persistCart(cart: Dish[]) {
 	}
 }
 
+function readStoredFavorites(): string[] {
+	if (typeof document === "undefined") return [];
+	try {
+		const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+		if (raw === null) return [];
+		const ids: unknown = JSON.parse(raw);
+		if (!Array.isArray(ids)) return [];
+		return ids
+			.filter((id): id is string => typeof id === "string")
+			.filter((id) => catalog.has(id));
+	} catch {
+		// Приватный режим или битое значение — просто пустое избранное.
+		return [];
+	}
+}
+
+function persistFavorites(ids: string[]) {
+	if (typeof document === "undefined") return;
+	try {
+		localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(ids));
+	} catch {
+		// Приватный режим или переполненное хранилище — избранное живёт до перезагрузки.
+	}
+}
+
 export function createAppState() {
 	let category = $state<CategoryId>("all");
 	const cart = $state<Dish[]>(readStoredCart());
-	let favoriteIds = $state<string[]>(["latte"]);
+	let favoriteIds = $state<string[]>(readStoredFavorites());
 	let theme = $state<Theme>(readStoredTheme());
 
 	/* Любая мутация корзины обязана заканчиваться persistCart — иначе id из
@@ -85,6 +112,7 @@ export function createAppState() {
 		favoriteIds = favoriteIds.includes(id)
 			? favoriteIds.filter((item) => item !== id)
 			: [...favoriteIds, id];
+		persistFavorites(favoriteIds);
 	}
 
 	function setTheme(next: Theme) {
@@ -146,8 +174,8 @@ export type AppState = ReturnType<typeof createAppState>;
  * Синглтон приложения. Один на все роуты: SvelteKit перехватывает клик по
  * внутренней ссылке и делает клиентскую навигацию, поэтому модуль не
  * перезагружается и корзина с избранным переживают переход между страницами.
- * Перезагрузку страницы переживает корзина — она читается из localStorage, как
- * тема; избранное живёт до перезагрузки.
+ * Перезагрузку страницы переживают все три: тема, корзина и избранное читаются
+ * из localStorage.
  *
  * createAppState() экспортируется отдельно, чтобы тесты работали на свежих
  * экземплярах и не делили состояние.

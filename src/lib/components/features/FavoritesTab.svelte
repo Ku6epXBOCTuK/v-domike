@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import IconHeart from "~icons/lucide/heart";
 
 	import type { Dish } from "#lib/data/dishes.js";
 	import EmptyState from "#lib/components/ui/EmptyState.svelte";
 	import TabHeading from "#lib/components/ui/TabHeading.svelte";
 	import DishCard from "./DishCard.svelte";
+	import SkeletonCard from "./SkeletonCard.svelte";
 
 	type Props = {
 		dishes: Dish[];
@@ -13,11 +15,28 @@
 	};
 
 	let { dishes, onFavorite, onAdd }: Props = $props();
+
+	/*
+	 * Список избранного живёт в localStorage, а страница пререндерена: сервер
+	 * собрал её со стартовым избранным и не знает, что человек нажимал. Svelte
+	 * при гидрации берёт ноды `{#each}` по позиции и ключи не сверяет, поэтому
+	 * карточки берутся из серверных и получают чужие картинки. Пока не
+	 * примонтировались — рисуем скелетон, потом настоящий список.
+	 */
+	let hydrated = $state(false);
+	onMount(() => {
+		hydrated = true;
+	});
 </script>
 
 <TabHeading eyebrow="Твои сохранённые" title="Любимое" />
 
-{#if dishes.length}
+{#if !hydrated}
+	<div class="favorites__grid">
+		<SkeletonCard />
+		<SkeletonCard />
+	</div>
+{:else if dishes.length}
 	<div class="favorites__grid">
 		{#each dishes as dish (dish.id)}
 			<DishCard

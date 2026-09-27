@@ -4,6 +4,7 @@ import { categories, dishes } from "#lib/data/dishes.js";
 import {
 	createAppState,
 	CART_STORAGE_KEY,
+	FAVORITES_STORAGE_KEY,
 	TABS,
 	THEME_STORAGE_KEY,
 } from "./app.svelte.js";
@@ -28,13 +29,13 @@ describe("createAppState", () => {
 		installDom();
 	});
 
-	it("стартует с категорией «всё», пустой корзиной и одним избранным", () => {
+	it("стартует с категорией «всё» и пустыми корзиной и избранным", () => {
 		const app = createAppState();
 
 		expect(app.category).toBe("all");
 		expect(app.isCartEmpty).toBe(true);
 		expect(app.cartCount).toBe(0);
-		expect(app.favoriteIds).toEqual(["latte"]);
+		expect(app.favoriteIds).toEqual([]);
 	});
 
 	it("TABS покрывает четыре маршрута и совпадает с роутами", () => {
@@ -153,13 +154,13 @@ describe("createAppState", () => {
 		const app = createAppState();
 
 		app.toggleFavorite("ramen");
-		expect(app.favoriteIds).toEqual(["latte", "ramen"]);
-
-		app.toggleFavorite("latte");
 		expect(app.favoriteIds).toEqual(["ramen"]);
 
+		app.toggleFavorite("pizza");
+		expect(app.favoriteIds).toEqual(["ramen", "pizza"]);
+
 		app.toggleFavorite("ramen");
-		expect(app.favoriteIds).toEqual([]);
+		expect(app.favoriteIds).toEqual(["pizza"]);
 	});
 
 	it("favoriteDishes выводится из favoriteIds и идёт в порядке каталога", () => {
@@ -168,12 +169,36 @@ describe("createAppState", () => {
 		app.toggleFavorite("pizza");
 		app.toggleFavorite("ramen");
 
-		expect(app.favoriteIds).toEqual(["latte", "pizza", "ramen"]);
-		expect(app.favoriteDishes.map((d) => d.id)).toEqual([
-			"ramen",
-			"latte",
-			"pizza",
-		]);
+		expect(app.favoriteIds).toEqual(["pizza", "ramen"]);
+		expect(app.favoriteDishes.map((d) => d.id)).toEqual(["ramen", "pizza"]);
+	});
+
+	it("избранное переживает перезагрузку", () => {
+		const { store } = installDom();
+		const app = createAppState();
+
+		app.toggleFavorite("ramen");
+		app.toggleFavorite("pizza");
+		app.toggleFavorite("ramen");
+
+		expect(store.get(FAVORITES_STORAGE_KEY)).toBe('["pizza"]');
+
+		// Новый инстанс — это перезагрузка страницы: модуль создан заново.
+		expect(createAppState().favoriteIds).toEqual(["pizza"]);
+	});
+
+	it("снятая отметка не возвращается после перезагрузки", () => {
+		const { store } = installDom();
+		const app = createAppState();
+
+		app.toggleFavorite("latte");
+		app.toggleFavorite("latte");
+		expect(store.get(FAVORITES_STORAGE_KEY)).toBe("[]");
+
+		const reloaded = createAppState();
+
+		expect(reloaded.favoriteIds).toEqual([]);
+		expect(reloaded.favoriteDishes).toEqual([]);
 	});
 
 	it("toggleTheme() переключает тему и пишет её в DOM и localStorage", () => {
