@@ -903,6 +903,1056 @@
 			"category": "pasta"
 		},
 		{
+			"id": "spaghi-al-carbonara",
+			"name": "Спагетти алла карбонара",
+			"detail": "гуанчиале · яйцо · пекорино",
+			"price": 620,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tagliatelle-s-boloniese",
+			"name": "Теглиателле с болоньезе",
+			"detail": "говядина · томаты · базилик",
+			"price": 590,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pesto-alla-genovese",
+			"name": "Паста с песто",
+			"detail": "кедровые орехи · базилик · пармезан",
+			"price": 560,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "penne-allamatriciana",
+			"name": "Пенне аматричиана",
+			"detail": "панелла · томаты · чили",
+			"price": 580,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tortellini-s-boloniese",
+			"name": "Тортеллини по-болоньски",
+			"detail": "фарш · сливки · пармезан",
+			"price": 610,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "lasagna-s-boloniese",
+			"name": "Лазанья с болоньезе",
+			"detail": "фарш · бешамель · моцарелла",
+			"price": 680,
+			"image": "",
+			"tone": "warm",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "ravioli-s-rikottoy",
+			"name": "Равиоли с рикоттой",
+			"detail": "рикотта · шпинат · пармезан",
+			"price": 640,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gnocchi-s-kartofelem",
+			"name": "Ньокки с картофелем",
+			"detail": "картофель · мускат · пармезан",
+			"price": 550,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "spagetti-s-limonom",
+			"name": "Спагетти с лимоном",
+			"detail": "лимон · чеснок · оливковое масло",
+			"price": 520,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "fettuccine-s-gribami",
+			"name": "Феттучини с грибами",
+			"detail": "грибы · сливки · пармезан",
+			"price": 590,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "cacio-e-pepe",
+			"name": "Спагетти качо э пепе",
+			"detail": "пекорино · перец · макароны",
+			"price": 540,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pasta-s-moreproduktami",
+			"name": "Паста с морепродуктами",
+			"detail": "мидии · кальмар · креветки",
+			"price": 720,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pappardelle-s-vongole",
+			"name": "Паппарелле с вонголе",
+			"detail": "мидии · белое вино · петрушка",
+			"price": 740,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "risotto-s-gribami",
+			"name": "Ризотто с грибами",
+			"detail": "рис · грибы · пармезан",
+			"price": 600,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "risotto-milanskiy",
+			"name": "Ризотто миланский",
+			"detail": "сафранов · пармезан · бульон",
+			"price": 620,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pizza-diabola",
+			"name": "Пицца диабола",
+			"detail": "пепперони · халапеньо",
+			"price": 640,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pizza-chetyre-syra",
+			"name": "Пицца четыре сыра",
+			"detail": "моцарелла · пармезан · горгонцола",
+			"price": 670,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pizza-s-vetchinoy",
+			"name": "Пицца с ветчиной и грибами",
+			"detail": "ветчина · шампиньоны · моцарелла",
+			"price": 690,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pizza-s-gribami",
+			"name": "Пицца с грибами",
+			"detail": "шампиньоны · тимьян · сливки",
+			"price": 620,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "frittata-s-ovoshchami",
+			"name": "Фриттата с овощами",
+			"detail": "яйцо · цукини · паприка",
+			"price": 460,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "parmigiana-iz-baklazhanov",
+			"name": "Пармиджана из баклажанов",
+			"detail": "баклажан · моцарелла · томаты",
+			"price": 580,
+			"image": "",
+			"tone": "blush",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kruassan-slivochnyy",
+			"name": "Круассан сливочный",
+			"detail": "мука · сливочное масло",
+			"price": 290,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kruassan-s-mindalyom",
+			"name": "Круассан с миндалём",
+			"detail": "миндаль · сахар · масло",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pan-o-shokolad",
+			"name": "Пан-о-шоколад",
+			"detail": "шоколад · слоёное тесто",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kish-lorren",
+			"name": "Киш Лорен",
+			"detail": "бекон · яйцо · сливки",
+			"price": 480,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "ratatuyy",
+			"name": "Рататуй",
+			"detail": "баклажан · кабачок · перец",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "galette-breton",
+			"name": "Галетт-бретонь",
+			"detail": "гречневая мука · яйцо · сливки",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "croque-monsieur",
+			"name": "Крок-месье",
+			"detail": "хлеб · сыр · ветчина",
+			"price": 450,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "krepy-s-saharem",
+			"name": "Крепы с сахаром",
+			"detail": "мука · сахар",
+			"price": 280,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "buyabess",
+			"name": "Буйабесс",
+			"detail": "рыба · томаты · шафран",
+			"price": 780,
+			"image": "",
+			"tone": "warm",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tortilya-ispanskaya",
+			"name": "Тортилья испанская",
+			"detail": "картофель · яйцо · лук",
+			"price": 420,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "paellya-valencianskaya",
+			"name": "Паэлья валенсианская",
+			"detail": "рис · морепродукты · шафран",
+			"price": 740,
+			"image": "",
+			"tone": "butter",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pan-s-tomatami",
+			"name": "Пан с томатами",
+			"detail": "хлеб · томат · чеснок",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "churros-s-shokoladom",
+			"name": "Чуррос с шоколадом",
+			"detail": "мука · корица · шоколад",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kroketi-s-hamomom",
+			"name": "Крокеты с хамоном",
+			"detail": "хамон · молоко · панировка",
+			"price": 420,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "fabada-asturianskaya",
+			"name": "Фабада астурианская",
+			"detail": "белая фасоль · чоризо · свинина",
+			"price": 560,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "taco-s-karnitas",
+			"name": "Тако с карнитас",
+			"detail": "свинина · кукурузная тортилья · лайм",
+			"price": 480,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "enchiladas-s-krasnym-sousom",
+			"name": "Энчиладас с красным соусом",
+			"detail": "курица · кукуруза · сметана",
+			"price": 520,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "burrito-s-myasom",
+			"name": "Буррито с мясом",
+			"detail": "говядина · рис · фасоль · кукуруза",
+			"price": 590,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tamales",
+			"name": "Тамале",
+			"detail": "кукурузная масса · свинина · соус",
+			"price": 460,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "elote",
+			"name": "Элоте",
+			"detail": "кукуруза · сыр · чили",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "nachos-s-chili",
+			"name": "Накос с чили",
+			"detail": "кукурузные чипсы · сыр · соус",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "ceviche",
+			"name": "Севиче",
+			"detail": "рыба · лайм · чили",
+			"price": 620,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "mole-s-kuritsey",
+			"name": "Молье с курицей",
+			"detail": "курица · шоколад · чили · рис",
+			"price": 640,
+			"image": "",
+			"tone": "blush",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "shaurma-s-kuritsey",
+			"name": "Шаурма с курицей",
+			"detail": "курица · лаваш · чеснок",
+			"price": 480,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gyros-s-govyadinoy",
+			"name": "Гирос с говядиной",
+			"detail": "говядина · лаваш · соус",
+			"price": 470,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gozleme-s-syrom",
+			"name": "Гёзлеме с сыром",
+			"detail": "тесто · творожный сыр · зелень",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "lahmakun",
+			"name": "Лахмакун",
+			"detail": "тесто · фарш · томаты",
+			"price": 450,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "falafel-v-lavashe",
+			"name": "Фалафель в лаваше",
+			"detail": "нут · зелень · тахини",
+			"price": 420,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tabule",
+			"name": "Табуле",
+			"detail": "булгур · помидоры · мята",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "mansaf",
+			"name": "Мансаф",
+			"detail": "баранина · рис · йогурт",
+			"price": 720,
+			"image": "",
+			"tone": "cream",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "manti-s-govyadinoy",
+			"name": "Манты с говядиной",
+			"detail": "фарш · тесто · сметана",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "manti-s-tvorogom",
+			"name": "Манты с творогом",
+			"detail": "тесто · творог · сметана",
+			"price": 480,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kibbeh",
+			"name": "Киббе",
+			"detail": "булгур · фарш · луковый соус",
+			"price": 540,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "fattoush",
+			"name": "Фатуш",
+			"detail": "хлеб · помидоры · горчица",
+			"price": 400,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "shakshuka",
+			"name": "Шакшука",
+			"detail": "яйцо · томаты · паприка",
+			"price": 450,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "baba-ghanoush",
+			"name": "Баба-ганауш",
+			"detail": "баклажан · тахини · масло",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "par-damby-s-krevetkami",
+			"name": "Пар-дамбы с креветками",
+			"detail": "рисовая мука · креветки · зелень",
+			"price": 460,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "jajangmyeon",
+			"name": "Джаджанмиен",
+			"detail": "лапша · чёрный соус · овощи",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "takoyaki",
+			"name": "Такояки",
+			"detail": "тесто · кальмар · соус",
+			"price": 420,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tempura-s-krevetkami",
+			"name": "Темпура с креветками",
+			"detail": "креветки · кляр · соевый соус",
+			"price": 560,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tempura-s-baklazhanom",
+			"name": "Темпура из баклажана",
+			"detail": "баклажан · кляр · соевый соус",
+			"price": 480,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "katsu-kari",
+			"name": "Котлеты карри с рисом",
+			"detail": "курица · карри · рис",
+			"price": 520,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "belyashi-s-myasom",
+			"name": "Беляши с мясом",
+			"detail": "фарш · тесто · лук",
+			"price": 380,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "khachapuri-po-imeretinski",
+			"name": "Хачапури по-имеретински",
+			"detail": "тесто · сыр · яйцо · масло",
+			"price": 480,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "khachapuri-adzhar",
+			"name": "Хачапури аджар",
+			"detail": "тесто · сыр · яйцо · томаты",
+			"price": 490,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "lhashu-s-kuritsey",
+			"name": "Лхачо с курицей",
+			"detail": "тесто · курица · специи",
+			"price": 490,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "musaka",
+			"name": "Мусака",
+			"detail": "баклажан · фарш · бешамель",
+			"price": 560,
+			"image": "",
+			"tone": "warm",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "spanakopita",
+			"name": "Спанакопита",
+			"detail": "шпинат · фета · слоёное тесто",
+			"price": 520,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "baklava-s-fistuki",
+			"name": "Баклава с фундуком",
+			"detail": "тесто · фундук · мёд",
+			"price": 520,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "ponchiki-s-koritsey",
+			"name": "Пончики с корицей",
+			"detail": "мука · сахар · корица",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "lamingan-s-losingoy",
+			"name": "Ламинган с лососем",
+			"detail": "лосось · тесто · соевый соус",
+			"price": 560,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "grecheskiy-hummus",
+			"name": "Хумус с тахини",
+			"detail": "нут · тахини · лимон",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gigantes-s-fasolyu",
+			"name": "Белые бобы с томатами",
+			"detail": "белая фасоль · томаты · паприка",
+			"price": 420,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "fasulade",
+			"name": "Фасулада",
+			"detail": "белая фасоль · лук · морковь",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pastel-de-batata",
+			"name": "Пастель де батата",
+			"detail": "картофель · мясо · яйцо",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gata-s-kuritsey",
+			"name": "Гата с курицей",
+			"detail": "тесто · курица · орехи",
+			"price": 480,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "paneer-s-sousom-syra",
+			"name": "Панер с соусом сыра",
+			"detail": "панер · томаты · сливки",
+			"price": 440,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "palak-paneer",
+			"name": "Палак-панер",
+			"detail": "шпинат · панер · сливки",
+			"price": 450,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "baranina-rogan-dzhosh",
+			"name": "Баранина роган джош",
+			"detail": "баранина · томаты · имбирь",
+			"price": 620,
+			"image": "",
+			"tone": "blush",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "nutovyy-karri",
+			"name": "Нутовый карри",
+			"detail": "нут · кокос · карри",
+			"price": 430,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "beshbarmak",
+			"name": "Бешбармак",
+			"detail": "лапша · мясо · лук",
+			"price": 580,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "samsa-s-myasom",
+			"name": "Самса с мясом",
+			"detail": "тесто · фарш · лук",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pirozhki-s-myasom",
+			"name": "Пирожки с мясом",
+			"detail": "тесто · фарш · капуста",
+			"price": 360,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "pirozhki-s-yablokami",
+			"name": "Пирожки с яблоками",
+			"detail": "тесто · яблоко · корица",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bliny-s-tvorogom",
+			"name": "Блины с творогом",
+			"detail": "творог · мука · сметана",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bliny-s-gribami",
+			"name": "Блины с грибами",
+			"detail": "грибы · сметана · зелень",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "galusturnyani",
+			"name": "Галустани",
+			"detail": "рис · курица · зелень",
+			"price": 480,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "orzo-s-ovoshchami",
+			"name": "Орзо с овощами",
+			"detail": "рис · овощи · зелень",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"category": "pasta",
+			"eta": "20–25 мин"
+		},
+		{
+			"id": "kleftiko",
+			"name": "Клефтико",
+			"detail": "баранина · картофель · лимон",
+			"price": 620,
+			"image": "",
+			"tone": "warm",
+			"eta": "30–35 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "feta-s-pomidorami",
+			"name": "Фета с помидорами",
+			"detail": "фета · томаты · орегано",
+			"price": 360,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bok-choy-s-ovoshchami",
+			"name": "Бок-чой с овощами",
+			"detail": "бок-чой · морковь · соевый соус",
+			"price": 400,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "vayeng-kari-s-kuritsey",
+			"name": "Вайенг-кари с курицей",
+			"detail": "курица · кокос · зелёный карри",
+			"price": 560,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "som-tam",
+			"name": "Сом там",
+			"detail": "папайя · арахис · чили",
+			"price": 480,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "banh-mi-s-kuritsey",
+			"name": "Бан-ми с курицей",
+			"detail": "багет · курица · морковь",
+			"price": 470,
+			"image": "",
+			"tone": "warm",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "com-tam-s-kuritsey",
+			"name": "Ком-там с курицей",
+			"detail": "рисовая лапша · курица · зелень",
+			"price": 490,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bun-bo-s-vodoroslyami",
+			"name": "Бун-бо с водорослями",
+			"detail": "рисовая лапша · свинина · водоросли",
+			"price": 450,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kimchi-jeon",
+			"name": "Кимчи-джон",
+			"detail": "кимчи · тесто · яйцо",
+			"price": 420,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kimchi-s-zelenym-lukom",
+			"name": "Кимчи с зелёным луком",
+			"detail": "кимчи · зелёный лук · тофу",
+			"price": 410,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "gyeran-mari",
+			"name": "Гиран-мари",
+			"detail": "яйцо · кимчи · зелень",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "kimchi-padjon",
+			"name": "Кимчи-паджон",
+			"detail": "кимчи · блин · свинина",
+			"price": 460,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "tteokbokki",
+			"name": "Ттокпокки",
+			"detail": "рисовая палочка · кимчи · соус",
+			"price": 490,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bossa-s-sladkim-sousom",
+			"name": "Боссам со сладким соусом",
+			"detail": "свинина · сладкий соус",
+			"price": 540,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "bibimbap",
+			"name": "Бибимбап",
+			"detail": "рис · овощи · яйцо · соус",
+			"price": 520,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
+			"id": "ddeok-s-myasom",
+			"name": "Ддеок с мясом",
+			"detail": "рисовые палочки · говядина · соус",
+			"price": 460,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "pasta"
+		},
+		{
 			"id": "dessert",
 			"name": "Клубничный торт",
 			"detail": "сливки · ваниль · ягоды",
