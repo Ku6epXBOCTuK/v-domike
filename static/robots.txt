@@ -1,3 +1,3 @@
-# allow crawling everything by default
+# Приложение публичное и им собираются делиться, поэтому индексуем всё.
 User-agent: *
-Disallow:
+Allow: /

@@ -2,9 +2,12 @@
  * Design tokens — single source of truth for the whole app.
  * Nothing outside this file may hardcode a colour, radius, shadow or duration.
  *
- * Light is the default (:root). Dark overrides every colour token under
- * [data-theme="dark"], which app.html sets before first paint. No token exists
- * in one theme and not the other — scripts/check-contrast.mjs enforces this.
+ * Light is the default (:root). Dark overrides the colour tokens under
+ * [data-theme="dark"], which app.html sets before first paint. Исключение —
+ * --tone-*: они живут только в :root намеренно, это подложка под
+ * mix-blend-mode: multiply у фотографии блюда, см. ниже. Гейт в
+ * scripts/check-contrast.mjs проверяет пары из своего списка и падает, если
+ * тон вдруг появится в тёмном блоке.
  */
 
 :root {
@@ -113,7 +116,7 @@
 	/* ── Type ───────────────────────────────────────────────────────────── */
 	--font-display:
 		"Palatino Linotype", Palatino, "Iowan Old Style", Georgia,
-		"Times New Roman", serif;
+		"Times New Roman", serif, "Noto Serif";
 	/* Знак валюты ✦ (U+2726) есть не во всех системных шрифтах, поэтому в
 	   конце стека стоят шрифты символов. Они сработают только на глифе, которого
 	   не нашлось раньше: обычный текст они не перехватывают. */
