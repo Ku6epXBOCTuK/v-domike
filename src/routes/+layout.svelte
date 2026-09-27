@@ -33,6 +33,6 @@
 	{@render children()}
 
 	{#snippet nav()}
-		<BottomNav badgeOn={app.cartCount > 0 ? "order" : null} />
+		<BottomNav badgeOn={!app.isCartEmpty || app.order ? "order" : null} />
 	{/snippet}
 </AppShell>
