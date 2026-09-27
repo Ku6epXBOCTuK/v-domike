@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from "$app/paths";
 	import type { Dish } from "#lib/data/dishes.js";
 	import AddDishButton from "./AddDishButton.svelte";
 	import FavoriteButton from "./FavoriteButton.svelte";
@@ -17,7 +18,7 @@
 	<div class="dish-card__media" data-tone={dish.tone}>
 		<img
 			class="dish-card__photo"
-			src={dish.image}
+			src={asset(dish.image)}
 			alt={dish.name}
 			width="600"
 			height="682"

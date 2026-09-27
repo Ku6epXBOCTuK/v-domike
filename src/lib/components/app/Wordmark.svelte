@@ -1,5 +1,9 @@
+<script lang="ts">
+	import { resolve } from "$app/paths";
+</script>
+
 <span class="wordmark">
-	<a class="wordmark__name" href="/"
+	<a class="wordmark__name" href={resolve("/")}
 		>В<span class="wordmark__accent">Домике</span></a
 	>
 	<span class="wordmark__tagline">уютная доставка</span>
