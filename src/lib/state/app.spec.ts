@@ -4,7 +4,11 @@ import { categories, dishes } from "#lib/data/dishes.js";
 import {
 	createAppState,
 	CART_STORAGE_KEY,
+	COOK_MS,
+	DELIVER_MS,
 	FAVORITES_STORAGE_KEY,
+	orderPhase,
+	ORDER_STORAGE_KEY,
 	TABS,
 	THEME_STORAGE_KEY,
 } from "./app.svelte.js";
@@ -18,6 +22,9 @@ function installDom(initialTheme = "light") {
 		getItem: (key: string) => store.get(key) ?? null,
 		setItem: (key: string, value: string) => {
 			store.set(key, value);
+		},
+		removeItem: (key: string) => {
+			store.delete(key);
 		},
 	};
 	Object.assign(globalThis, { document: doc, localStorage });
@@ -77,15 +84,28 @@ describe("createAppState", () => {
 		expect([...seen].sort()).toEqual([...declared].sort());
 	});
 
-	it("add() кладёт блюдо в корзину и допускает дубли", () => {
+	it("add() увеличивает количество, remove() уменьшает и убирает на нуле", () => {
 		const app = createAppState();
 
 		app.add("ramen");
 		app.add("ramen");
+		app.add("latte");
 
-		expect(app.cartCount).toBe(2);
-		expect(app.cart.map((d) => d.id)).toEqual(["ramen", "ramen"]);
-		expect(app.cart[0]).toBe(dishes[0]);
+		expect(app.cartLines.map((l) => [l.dish.id, l.count])).toEqual([
+			["ramen", 2],
+			["latte", 1],
+		]);
+		expect(app.cartCount).toBe(3);
+
+		app.remove("ramen");
+		expect(app.cartLines.map((l) => [l.dish.id, l.count])).toEqual([
+			["ramen", 1],
+			["latte", 1],
+		]);
+
+		app.remove("ramen");
+		expect(app.cartLines.map((l) => l.dish.id)).toEqual(["latte"]);
+		expect(app.isCartEmpty).toBe(false);
 	});
 
 	it("add() с неизвестным id не меняет корзину", () => {
@@ -96,31 +116,40 @@ describe("createAppState", () => {
 		expect(app.cartCount).toBe(0);
 	});
 
-	it("корзина переживает перезагрузку: в хранилище id, обратно — ссылки на каталог", () => {
+	it("корзина переживает перезагрузку, в хранилище id и количество", () => {
 		const { store } = installDom();
 		const app = createAppState();
 
 		app.add("ramen");
-		app.add("latte");
 		app.add("ramen");
+		app.add("latte");
 
-		expect(store.get(CART_STORAGE_KEY)).toBe('["ramen","latte","ramen"]');
+		expect(store.get(CART_STORAGE_KEY)).toBe(
+			'[{"id":"ramen","count":2},{"id":"latte","count":1}]',
+		);
 
 		// Новый инстанс — это перезагрузка страницы: модуль создан заново.
 		const reloaded = createAppState();
 
-		expect(reloaded.cart.map((d) => d.id)).toEqual(["ramen", "latte", "ramen"]);
-		expect(reloaded.cart[0]).toBe(dishes.find((d) => d.id === "ramen"));
-		expect(reloaded.isCartEmpty).toBe(false);
+		expect(reloaded.cartLines.map((l) => [l.dish.id, l.count])).toEqual([
+			["ramen", 2],
+			["latte", 1],
+		]);
+		expect(reloaded.cartLines[0].dish).toBe(
+			dishes.find((d) => d.id === "ramen"),
+		);
 	});
 
-	it("выкидывает из хранилища всё, чего нет в каталоге", () => {
+	it("старый формат корзины пересчитывается в количества, мусор отбрасывается", () => {
 		const { store } = installDom();
-		store.set(CART_STORAGE_KEY, '["ramen","нет-такого",42,null,["ramen"]]');
+		store.set(CART_STORAGE_KEY, '["ramen","ramen","latte","нет-такого",42]');
 
 		const app = createAppState();
 
-		expect(app.cart.map((d) => d.id)).toEqual(["ramen"]);
+		expect(app.cartLines.map((l) => [l.dish.id, l.count])).toEqual([
+			["ramen", 2],
+			["latte", 1],
+		]);
 	});
 
 	it("битое значение в хранилище даёт пустую корзину, а не падение", () => {
@@ -141,13 +170,54 @@ describe("createAppState", () => {
 				setItem: () => {
 					throw new Error("QuotaExceededError");
 				},
+				removeItem: () => {},
 			},
 		});
 		const app = createAppState();
 
 		app.add("ramen");
 
-		expect(app.cart.map((d) => d.id)).toEqual(["ramen"]);
+		expect(app.cartLines.map((l) => l.dish.id)).toEqual(["ramen"]);
+	});
+
+	it("placeOrder() переносит состав в заказ, чистит корзину, итог считается по каталогу", () => {
+		const { store } = installDom();
+		const app = createAppState();
+
+		app.add("ramen");
+		app.add("ramen");
+		app.add("latte");
+		app.placeOrder();
+
+		expect(app.isCartEmpty).toBe(true);
+		expect(store.get(CART_STORAGE_KEY)).toBe("[]");
+		expect(app.orderLines.map((l) => [l.dish.id, l.count])).toEqual([
+			["ramen", 2],
+			["latte", 1],
+		]);
+		expect(app.orderTotal).toBe(420 * 2 + 280);
+
+		app.clearOrder();
+
+		expect(app.order).toBe(null);
+		expect(store.get(ORDER_STORAGE_KEY)).toBe(undefined);
+	});
+
+	it("orderPhase: сначала кухня, потом курьер, потом доставлено", () => {
+		const placedAt = 1_000_000;
+
+		expect(orderPhase(placedAt, placedAt)).toBe("cooking");
+		expect(orderPhase(placedAt, placedAt + COOK_MS - 1)).toBe("cooking");
+		expect(orderPhase(placedAt, placedAt + COOK_MS)).toBe("delivering");
+		expect(orderPhase(placedAt, placedAt + COOK_MS + DELIVER_MS - 1)).toBe(
+			"delivering",
+		);
+		expect(orderPhase(placedAt, placedAt + COOK_MS + DELIVER_MS)).toBe(
+			"delivered",
+		);
+		expect(orderPhase(placedAt, placedAt + COOK_MS + DELIVER_MS + 60_000)).toBe(
+			"delivered",
+		);
 	});
 
 	it("toggleFavorite() добавляет и убирает, не плодя дубли", () => {
