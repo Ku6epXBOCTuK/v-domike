@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+	import { dev } from "$app/env";
+	import { onMount } from "svelte";
 	import favicon from "#lib/assets/favicon.svg";
 	import { app } from "#lib/state/app.svelte.js";
 	import AppHeader from "#lib/components/app/AppHeader.svelte";
@@ -11,6 +14,13 @@
 	import "#lib/styles/base.css";
 
 	let { children } = $props();
+
+	// Относительный service-worker.js на вложенной странице искался бы в /v-domike/profile/
+	onMount(() => {
+		if (dev || !("serviceWorker" in navigator)) return;
+		const root = new URL(resolve("/"), location.href);
+		navigator.serviceWorker.register(new URL("service-worker.js", root));
+	});
 </script>
 
 <svelte:head>

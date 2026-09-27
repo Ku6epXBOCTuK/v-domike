@@ -12,7 +12,6 @@ permissions:
 
 concurrency:
   group: pages
-  # Отменять идущий деплой нельзя: сайт остаётся наполовину обновлённым.
   cancel-in-progress: false
 
 jobs:
@@ -21,8 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # pnpm/setup ставит pnpm и Node и выполняет pnpm install сам.
-      # require-lockfile: без него он молча собрал бы по.registry-зависимостям.
       - uses: pnpm/setup@v3
         with:
           version: 12
