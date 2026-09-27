@@ -1,18 +1,51 @@
 <script lang="ts">
 	import IconClock3 from "~icons/lucide/clock-3";
 
+	import type { OrderPhase } from "#lib/state/app.svelte.js";
 	import Overline from "#lib/components/ui/Overline.svelte";
+
+	type Props = {
+		phase: OrderPhase;
+		remaining: number;
+	};
+
+	let { phase, remaining }: Props = $props();
+
+	const overline = $derived(
+		phase === "cooking"
+			? "Готовят и упаковывают"
+			: phase === "delivering"
+				? "Примерное прибытие"
+				: "Дошли",
+	);
+
+	/* Минут остаётся от 1 до 10, поэтому хватает одного правила склонения. */
+	const minutes = $derived(Math.ceil(remaining / 60_000));
+
+	const value = $derived(
+		phase === "delivered"
+			? "заказ у тебя"
+			: minutes <= 1
+				? "меньше минуты"
+				: `около ${minutes} ${minutes < 5 ? "минуты" : "минут"}`,
+	);
 </script>
 
 <section class="eta-panel">
-	<Overline variant="panel">Примерное прибытие</Overline>
+	<Overline variant="panel">{overline}</Overline>
 	<div class="eta-panel__row">
-		<h2 class="eta-panel__value">через 3 минуты</h2>
+		<h2 class="eta-panel__value">{value}</h2>
 		<IconClock3 />
 	</div>
 	<p class="eta-panel__note">
-		Ваш заказ бережно везут.<br />
-		Можно выдохнуть и никуда не спешить.
+		{#if phase === "delivered"}
+			Можно выдохнуть и никуда не спешить.
+		{:else if phase === "cooking"}
+			Шеф бережно собирает бокс.
+		{:else}
+			Ваш заказ бережно везут.<br />
+			Можно выдохнуть и никуда не спешить.
+		{/if}
 	</p>
 </section>
 
