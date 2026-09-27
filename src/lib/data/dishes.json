@@ -154,7 +154,7 @@
 		},
 		{
 			"id": "minestrone",
-			"name": "Минestrone с фасолью",
+			"name": "Минестроне с фасолью",
 			"detail": "фасоль · тыква · шпинат",
 			"price": 360,
 			"image": "",
@@ -1963,11 +1963,1711 @@
 			"category": "desserts"
 		},
 		{
+			"id": "krem-bryule",
+			"name": "Крем-брюле",
+			"detail": "сливки · ваниль · сахар",
+			"price": 390,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "ecler-s-fistukom",
+			"name": "Эклер с фундуком",
+			"detail": "фундук · крем · глазурь",
+			"price": 380,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "ecler-s-vanilyu",
+			"name": "Эклер с ванилью",
+			"detail": "ваниль · крем · глазурь",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "profoli-s-kremom",
+			"name": "Профитроли с кремом",
+			"detail": "заварной крем · хрустящее тесто",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tart-tatin",
+			"name": "Тарт-татен",
+			"detail": "яблоки · карамель · тесто",
+			"price": 420,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "mile-fey",
+			"name": "Мил-фёй",
+			"detail": "слоёное тесто · крем",
+			"price": 430,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "madlen",
+			"name": "Мадлен",
+			"detail": "мука · яйцо · лимон",
+			"price": 260,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "finansie",
+			"name": "Финансье",
+			"detail": "миндаль · яйцо · масло",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kannel",
+			"name": "Каннеле",
+			"detail": "мука · карамель · ром",
+			"price": 350,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pari-brest",
+			"name": "Пари-брест",
+			"detail": "заварное тесто · пралине · кофе",
+			"price": 420,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "opera-tart",
+			"name": "Оперный торт",
+			"detail": "кофе · шоколад · сливки",
+			"price": 460,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "torte-s-klubnikoy",
+			"name": "Торт с клубникой",
+			"detail": "клубника · крем · бисквит",
+			"price": 430,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "flan-karamel",
+			"name": "Провансальский флан",
+			"detail": "яйцо · карамель · сливки",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "religieuse",
+			"name": "Религьеуз",
+			"detail": "трюфель · крем · глазурь",
+			"price": 450,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "baba-au-rhum",
+			"name": "Баба с ромом",
+			"detail": "тесто · ром · ваниль",
+			"price": 420,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tiramisu",
+			"name": "Тирамису",
+			"detail": "маскарпоне · савоярди · кофе",
+			"price": 480,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "panna-cotta",
+			"name": "Панна котта",
+			"detail": "сливки · ваниль · ягоды",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "affogato",
+			"name": "Афогато",
+			"detail": "мороженое · эспрессо",
+			"price": 340,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "gelato-s-fistukom",
+			"name": "Джелато с фундуком",
+			"detail": "фундук · молоко · сахар",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "biscotti-s-mandelyam",
+			"name": "Бискотти с миндалём",
+			"detail": "миндаль · сахар · яйцо",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "panettone",
+			"name": "Паннетон",
+			"detail": "круассан · изюм · апельсин",
+			"price": 450,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "bombolone",
+			"name": "Бомболоне с кремом",
+			"detail": "булочка · крем · сахар",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "canestrelli",
+			"name": "Канестрелли",
+			"detail": "миндаль · мука · сахар",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "zuppa-inglese",
+			"name": "Зуппа инглезе",
+			"detail": "бисквит · крем · вино",
+			"price": 380,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "torta-s-shokoladom",
+			"name": "Торт с шоколадом",
+			"detail": "шоколад · орехи · сливки",
+			"price": 520,
+			"image": "",
+			"tone": "warm",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "chizkeyk-nyu-yorkskiy",
+			"name": "Чизкейк нью-йоркский",
+			"detail": "печенье · сливочный сыр · ягоды",
+			"price": 490,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "shokoladnyy-brauni",
+			"name": "Шоколадный брауни",
+			"detail": "шоколад · масло · орехи",
+			"price": 330,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pechenye-s-shokoladom",
+			"name": "Печенье с шоколадом",
+			"detail": "шоколад · масло · орехи",
+			"price": 290,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "yablochnyy-pirog",
+			"name": "Яблочный пирог",
+			"detail": "яблоки · корица · тесто",
+			"price": 420,
+			"image": "",
+			"tone": "blush",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "limonnyy-tart-meringom",
+			"name": "Лимонный тарт с меренгой",
+			"detail": "лимон · белок · масло",
+			"price": 400,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pirog-s-chernikoy",
+			"name": "Пирог с черникой",
+			"detail": "черника · сахар · тесто",
+			"price": 430,
+			"image": "",
+			"tone": "blush",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "bananovyy-hleb",
+			"name": "Банановый хлеб",
+			"detail": "банан · мука · орехи",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pankeyki-s-klenovym",
+			"name": "Кленовые панкейки",
+			"detail": "мука · кленовый сироп · масло",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pudding-iz-tykvy",
+			"name": "Пудинг из тыквы",
+			"detail": "тыква · сливки · мускат",
+			"price": 390,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pechenyy-batat-s-zefir",
+			"name": "Печёный батат с зефиром",
+			"detail": "батат · зефир · масло",
+			"price": 380,
+			"image": "",
+			"tone": "blush",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "amerikanskoe-pechenye",
+			"name": "Американское печенье",
+			"detail": "шоколад · орехи · сахар",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "brauni-s-orehami",
+			"name": "Брауни с грецким орехом",
+			"detail": "шоколад · грецкий орех",
+			"price": 350,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "medovik",
+			"name": "Медовик",
+			"detail": "коржи · сметана · мёд",
+			"price": 420,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "napoleon-s-vishneyy",
+			"name": "Наполеон с вишней",
+			"detail": "слоёное тесто · вишня · крем",
+			"price": 450,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "vatrushka-s-vishneyy",
+			"name": "Ватрушка с вишней",
+			"detail": "дрожжевое тесто · вишня · сахар",
+			"price": 340,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "sharlotka-s-yablokami",
+			"name": "Шарлотка с яблоками",
+			"detail": "яблоки · бисквит · ваниль",
+			"price": 420,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "syrniki-s-smetanoyt",
+			"name": "Сырники со сметаной",
+			"detail": "творог · яйцо · сметана",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "ptichye-moloko",
+			"name": "Птичье молоко",
+			"detail": "безе · сливочный крем · сахар",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tvorozhnyy-desert-s-medom",
+			"name": "Творожный десерт с мёдом",
+			"detail": "творог · мёд · орехи",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "galki-s-korovkoyt",
+			"name": "Галки с корицей",
+			"detail": "печенье · корица · сахар",
+			"price": 260,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "grechnevye-blinchiki-s-yagodami",
+			"name": "Гречневые блинчики с ягодами",
+			"detail": "гречка · сметана · ягоды",
+			"price": 340,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "krem-s-vanilnoyu-podlivoyt",
+			"name": "Крем с ванильной подливкой",
+			"detail": "сливки · ваниль · мука",
+			"price": 330,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "medovyy-tort-s-orehami",
+			"name": "Медовый торт с орехами",
+			"detail": "орехи · мёд · тесто",
+			"price": 520,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "galaktoboureko",
+			"name": "Галактуреко",
+			"detail": "заварной крем · корица · мёд",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "portokalota",
+			"name": "Портакалота",
+			"detail": "апельсин · яйцо · мука",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "lukoumady",
+			"name": "Лукумады",
+			"detail": "мука · мёд · сахар",
+			"price": 290,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "lukum",
+			"name": "Лукум",
+			"detail": "крахмал · орехи · мёд",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kunafo",
+			"name": "Кунафа",
+			"detail": "тесто · сыр · сироп",
+			"price": 460,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kunzhutnaya-halva",
+			"name": "Кунжутная халва",
+			"detail": "кунжут · сахар · масло",
+			"price": 310,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "finiki-s-orehami",
+			"name": "Финики с орехами",
+			"detail": "финики · миндаль · грецкий орех",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "mukabal",
+			"name": "Мукабаль",
+			"detail": "рис · картофель · луковый соус",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "minchi-tart",
+			"name": "Минчи-тарт",
+			"detail": "печенье · заварной крем · вишня",
+			"price": 450,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "mochi-s-klubnikoy",
+			"name": "Моти с клубникой",
+			"detail": "рисовая мука · клубника · сахар",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "dorandzu",
+			"name": "Дорадзу",
+			"detail": "мандарин · крем · бисквит",
+			"price": 380,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "matcha-tiramisu",
+			"name": "Матча-тирамису",
+			"detail": "маскарпоне · матча · сахар",
+			"price": 490,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "sankichu",
+			"name": "Санрику",
+			"detail": "молоко · желатин · карамель",
+			"price": 340,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kakigori",
+			"name": "Какигори",
+			"detail": "лёд · сироп · красный боб",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "an-mitsu",
+			"name": "Ан-мицу",
+			"detail": "красный боб · желатин · мёд",
+			"price": 310,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "matcha-mochi",
+			"name": "Моти с матча",
+			"detail": "рисовая мука · матча · сахар",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "danpatppang",
+			"name": "Данпатпанг",
+			"detail": "миндаль · мука · яйцо",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "hottek-s-koritsey",
+			"name": "Хотток с корицей",
+			"detail": "тесто · корица · сахар",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "patbingsu",
+			"name": "Патбинсу",
+			"detail": "лёд · фрукты · сироп",
+			"price": 480,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tteok-s-fruktovym",
+			"name": "Тток с фруктами",
+			"detail": "рисовые палочки · фрукты · сироп",
+			"price": 390,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kastanovyy-krem",
+			"name": "Каштановый крем",
+			"detail": "каштан · сливки · сахар",
+			"price": 360,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "medovyy-pudynt-s-kukurusoy",
+			"name": "Медовый пудинг с кукурузой",
+			"detail": "кукуруза · сладкое молоко",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "jalebi",
+			"name": "Джалеби",
+			"detail": "мука · сироп · шафран",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "gulab-jamun",
+			"name": "Гулаб джамун",
+			"detail": "молоко · кардамон · сироп",
+			"price": 390,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kulfi-na-palochke",
+			"name": "Кулфи на палочке",
+			"detail": "молоко · кардамон · орехи",
+			"price": 360,
+			"image": "",
+			"tone": "cream",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "rabri-s-fruktsami",
+			"name": "Рабди с фруктами",
+			"detail": "молоко · фрукты · сахар",
+			"price": 340,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "latki-s-yagodoy",
+			"name": "Латки с ягодой",
+			"detail": "мука · ягоды · масло",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kheer-s-kardamonom",
+			"name": "Кхир с кардамоном",
+			"detail": "рис · молоко · кардамон",
+			"price": 330,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "mango-s-kleyevym-risom",
+			"name": "Манго с клеевым рисом",
+			"detail": "манго · рис · кокос",
+			"price": 450,
+			"image": "",
+			"tone": "butter",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kokosovyy-pudynt",
+			"name": "Кокосовый пудинг",
+			"detail": "кокос · молоко · кардамон",
+			"price": 350,
+			"image": "",
+			"tone": "cream",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tres-leches",
+			"name": "Трес лечес",
+			"detail": "молоко · сгущёнка · мука",
+			"price": 400,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "flan-s-kakhetoyt",
+			"name": "Флан с кахетой",
+			"detail": "молоко · карамель · сыр",
+			"price": 390,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "brigadeiro",
+			"name": "Бригадейру",
+			"detail": "какао · сгущёнка · кокос",
+			"price": 280,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pudim-s-kondensatom",
+			"name": "Пудим сгущённый",
+			"detail": "молоко · яйцо · карамель",
+			"price": 340,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pao-de-mel",
+			"name": "Пан-де-мел",
+			"detail": "мёд · пряники · мука",
+			"price": 320,
+			"image": "",
+			"tone": "warm",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kuchens-s-karamel",
+			"name": "Кученс с карамелью",
+			"detail": "мука · карамель · шоколад",
+			"price": 420,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "flan-de-queso",
+			"name": "Флан с сыром",
+			"detail": "сыр · яйцо · карамель",
+			"price": 400,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kuenko",
+			"name": "Куэнка",
+			"detail": "миндаль · яйцо · сахар",
+			"price": 380,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "tort-s-mandarinom",
+			"name": "Торт с мандарином",
+			"detail": "миндаль · мандарин · крем",
+			"price": 470,
+			"image": "",
+			"tone": "blush",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "pastes-s-mindalyom",
+			"name": "Пастеш с миндалём",
+			"detail": "миндаль · яйцо · корица",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "skore-s-kardamomom",
+			"name": "Скоре с кардамоном",
+			"detail": "дрожжевое тесто · кардамон · сахар",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "20–25 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "daniska-s-koritseyy",
+			"name": "Даниска с корицей",
+			"detail": "сливочное тесто · корица · орехи",
+			"price": 300,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "mindalnoe-pechenye",
+			"name": "Миндальное печенье",
+			"detail": "миндаль · сахар · белок",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kokosovyy-tort",
+			"name": "Кокосовый торт",
+			"detail": "кокос · сливки · мука",
+			"price": 430,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "bananovyy-pudynt",
+			"name": "Банановый пудинг",
+			"detail": "банан · молоко · ваниль",
+			"price": 350,
+			"image": "",
+			"tone": "butter",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "kekk-s-tsukkoyt",
+			"name": "Кекс с цукини",
+			"detail": "мука · цукини · орехи",
+			"price": 330,
+			"image": "",
+			"tone": "cream",
+			"eta": "25–30 мин",
+			"category": "desserts"
+		},
+		{
+			"id": "marshmallow-s-yagodam",
+			"name": "Маршмаллоу с ягодами",
+			"detail": "ягоды · зефир · сливки",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "desserts"
+		},
+		{
 			"id": "latte",
 			"name": "Розовый матча",
 			"detail": "клубника · овсяное молоко",
 			"price": 280,
 			"image": "dishes/latte.webp",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "espresso",
+			"name": "Эспрессо",
+			"detail": "кофе · вода",
+			"price": 160,
+			"image": "",
+			"tone": "warm",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "amerikano",
+			"name": "Американо",
+			"detail": "эспрессо · вода",
+			"price": 180,
+			"image": "",
+			"tone": "warm",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kapuchino",
+			"name": "Капучино",
+			"detail": "эспрессо · молоко · пена",
+			"price": 240,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "flat-white",
+			"name": "Флэт уайт",
+			"detail": "эспрессо · молоко",
+			"price": 260,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kortado",
+			"name": "Кортадо",
+			"detail": "эспрессо · молоко",
+			"price": 250,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "maksyato",
+			"name": "Макиато",
+			"detail": "эспрессо · пена",
+			"price": 220,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "latte-s-ovsyanyym",
+			"name": "Латте на овсяном",
+			"detail": "кофе · овсяное молоко",
+			"price": 280,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "raf-ranitsamiy",
+			"name": "Раф",
+			"detail": "кофе · сливки · мёд",
+			"price": 290,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mokko",
+			"name": "Мокко",
+			"detail": "эспрессо · шоколад · сливки",
+			"price": 300,
+			"image": "",
+			"tone": "warm",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kofe-po-vostochny",
+			"name": "Кофе по-восточному",
+			"detail": "кофе · кардамон · сахар",
+			"price": 280,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "irlandskiy-kofe",
+			"name": "Ирландский кофе",
+			"detail": "виски · кофе · сливки",
+			"price": 320,
+			"image": "",
+			"tone": "warm",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kholodnyy-kofe",
+			"name": "Холодный кофе",
+			"detail": "кофе · молоко · лёд",
+			"price": 270,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "latte-s-kokosom",
+			"name": "Латте с кокосом",
+			"detail": "кофе · кокосовое молоко",
+			"price": 300,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "matcha-latte",
+			"name": "Матча латте",
+			"detail": "матча · овсяное молоко",
+			"price": 300,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chernyy-chay",
+			"name": "Чёрный чай",
+			"detail": "чай · сахар",
+			"price": 180,
+			"image": "",
+			"tone": "warm",
+			"category": "drinks",
+			"eta": "5–10 мин"
+		},
+		{
+			"id": "zelenyy-chay",
+			"name": "Зелёный чай",
+			"detail": "чай · мёд",
+			"price": 190,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "ulun-ulyun",
+			"name": "Улун с молочными нотами",
+			"detail": "чай · сливки",
+			"price": 220,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "puer",
+			"name": "Пуэр",
+			"detail": "чай · тростниковый сахар",
+			"price": 210,
+			"image": "",
+			"tone": "warm",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "zhasminovyy-chay",
+			"name": "Жасминовый чай",
+			"detail": "жасмин · мёд",
+			"price": 200,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "boyskiy-chay",
+			"name": "Бойский чай",
+			"detail": "травы · мёд",
+			"price": 210,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "karakade",
+			"name": "Каркаде",
+			"detail": "гибискус · лайм",
+			"price": 190,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "matye",
+			"name": "Мате",
+			"detail": "чай · сахар",
+			"price": 200,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "molochnyy-ulun",
+			"name": "Молочный улун",
+			"detail": "чай · молоко · сахар",
+			"price": 250,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chay-s-imbirem",
+			"name": "Имбирный чай",
+			"detail": "имбирь · мёд · лимон",
+			"price": 230,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chay-s-oblepihoy",
+			"name": "Чай с облепихой",
+			"detail": "облепиха · апельсин",
+			"price": 240,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chai-s-kurkumoy",
+			"name": "Чай с куркумой",
+			"detail": "куркума · молоко · мёд",
+			"price": 250,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "molochnyy-chay",
+			"name": "Молочный чай",
+			"detail": "чай · молоко · сахар",
+			"price": 250,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "tyulkannyy-chay",
+			"name": "Тюльпановый чай",
+			"detail": "чай · апельсин",
+			"price": 220,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "limonad-veterinarnyy",
+			"name": "Лимонад",
+			"detail": "лимон · мята · содовая",
+			"price": 220,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mors-iz-klyukvy",
+			"name": "Морс из клюквы",
+			"detail": "клюква · апельсин",
+			"price": 210,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mors-iz-oblepihoy",
+			"name": "Морс из облепихи",
+			"detail": "облепиха · сахар",
+			"price": 210,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mohito",
+			"name": "Мохито",
+			"detail": "мята · лайм · ром",
+			"price": 290,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "margarita-s-lyagom",
+			"name": "Соня на облаке",
+			"detail": "лимон · содовая",
+			"price": 230,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "shalabey",
+			"name": "Шалабей",
+			"detail": "лимон · мята",
+			"price": 210,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kvass",
+			"name": "Домашний квас",
+			"detail": "хлеб · солод",
+			"price": 190,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "sbiten",
+			"name": "Сбитень",
+			"detail": "мёд · хмель",
+			"price": 200,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kompot-iz-klyukvy",
+			"name": "Компот из клюквы",
+			"detail": "клюква · сахар",
+			"price": 180,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "ivan-chay-s-medom",
+			"name": "Иван-чай с мёдом",
+			"detail": "кипрей · мёд",
+			"price": 200,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "glintveyn",
+			"name": "Глинтвейн",
+			"detail": "вино · корица · апельсин",
+			"price": 320,
+			"image": "",
+			"tone": "blush",
+			"eta": "15–20 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "punch-s-mangom",
+			"name": "Пунш с манго",
+			"detail": "манго · содовая · мята",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "sangriya-bez-alkogolya",
+			"name": "Сангрия без градусов",
+			"detail": "ягоды · апельсин · содовая",
+			"price": 290,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "ayran",
+			"name": "Айран",
+			"detail": "йогурт · вода",
+			"price": 190,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "serbet-c-limon",
+			"name": "Сироп с лимоном",
+			"detail": "лимон · мята",
+			"price": 210,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kokteyl-s-mangom",
+			"name": "Смузи с манго",
+			"detail": "манго · банан · кокос",
+			"price": 320,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "smuzi-iz-yagod",
+			"name": "Смузи из ягод",
+			"detail": "клубника · черника · йогурт",
+			"price": 310,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "smuzi-iz-banana",
+			"name": "Банановый смузи",
+			"detail": "банан · авокадо · кокос",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "morokovnyy-sok",
+			"name": "Морковный сок",
+			"detail": "морковь · апельсин",
+			"price": 230,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "apelsinovyy-sok",
+			"name": "Свежий апельсиновый сок",
+			"detail": "апельсин · лимон",
+			"price": 260,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "greypfrutovyy-sok",
+			"name": "Грейпфрутовый сок",
+			"detail": "грейпфрут · розмарин",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "yablochnyy-sok",
+			"name": "Яблочный сок",
+			"detail": "яблоко · сельдерей",
+			"price": 230,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kokosovoye-moloko",
+			"name": "Кокосовое молоко",
+			"detail": "кокос · вода",
+			"price": 250,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "soevoe-moloko",
+			"name": "Соевое молоко",
+			"detail": "соя · вода",
+			"price": 240,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "molochnyy-kokteyl",
+			"name": "Молочный коктейль",
+			"detail": "молоко · мороженое",
+			"price": 310,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "raf-ovsyanyyi",
+			"name": "Овсяный раф",
+			"detail": "кофе · овсяные сливки",
+			"price": 300,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "medovyy-kokteyl",
+			"name": "Медовый коктейль",
+			"detail": "мёд · лимон · мята",
+			"price": 280,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "bananovoye-moloko",
+			"name": "Банановое молоко",
+			"detail": "банан · молоко",
+			"price": 250,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kholodnyy-chay-haldonguk",
+			"name": "Травяной чай халдук",
+			"detail": "трава · яблоко",
+			"price": 200,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chay-gun-fu",
+			"name": "Чай гун-фу",
+			"detail": "пуэр · финики",
+			"price": 240,
+			"image": "",
+			"tone": "warm",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "smuzi-taylandskiy",
+			"name": "Тайский смузи",
+			"detail": "манго · кокос · базилик",
+			"price": 320,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "cha-ultimate",
+			"name": "Чай с апельсином и ромом",
+			"detail": "апельсин · ром",
+			"price": 310,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kompot-iz-vinograda",
+			"name": "Компот из винограда",
+			"detail": "виноград · сахар",
+			"price": 190,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mors-iz-cherniki",
+			"name": "Морс из черники",
+			"detail": "черника · сахар",
+			"price": 210,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mors-iz-klyukvy-s-mintoy",
+			"name": "Клюквенный морс с мятой",
+			"detail": "клюква · мята",
+			"price": 220,
+			"image": "",
+			"tone": "blush",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "tonggyul",
+			"name": "Тонгыль",
+			"detail": "красный боб · сахар",
+			"price": 230,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kombucha",
+			"name": "Комбуча",
+			"detail": "чай грибной · лимон",
+			"price": 270,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "limonad-na-mineralke",
+			"name": "Лимонад на минералке",
+			"detail": "лимон · огурец",
+			"price": 220,
+			"image": "",
+			"tone": "cream",
+			"category": "drinks",
+			"eta": "5–10 мин"
+		},
+		{
+			"id": "limonad-iz-lavdy",
+			"name": "Лимонад из лаванды",
+			"detail": "лаванда · лимон",
+			"price": 230,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "mors-iz-abrikosa",
+			"name": "Морс из абрикоса",
+			"detail": "абрикос · сахар",
+			"price": 200,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chai-masala",
+			"name": "Чай масала",
+			"detail": "кардамон · гвоздика · молоко",
+			"price": 270,
+			"image": "",
+			"tone": "warm",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "smuzi-iz-tropicheskikh",
+			"name": "Тропический смузи",
+			"detail": "манго · ананас · кокос",
+			"price": 330,
+			"image": "",
+			"tone": "butter",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "belyy-chay-bergamot",
+			"name": "Белый чай бергамот",
+			"detail": "чай · бергамот",
+			"price": 220,
+			"image": "",
+			"tone": "cream",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "syabli-s-yablokami",
+			"name": "Сбитень с яблоками",
+			"detail": "мёд · яблоко · имбирь",
+			"price": 230,
+			"image": "",
+			"tone": "butter",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "smuzi-kokos-abloko",
+			"name": "Кокосово-яблочный смузи",
+			"detail": "кокос · яблоко · шпинат",
+			"price": 310,
+			"image": "",
+			"tone": "cream",
+			"eta": "5–10 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "chay-s-shipovnikom",
+			"name": "Чай с шиповником",
+			"detail": "шиповник · апельсин",
+			"price": 210,
+			"image": "",
+			"tone": "blush",
+			"eta": "10–15 мин",
+			"category": "drinks"
+		},
+		{
+			"id": "kefir-s-klivom",
+			"name": "Кефир с клубникой",
+			"detail": "кефир · клубника",
+			"price": 180,
+			"image": "",
 			"tone": "blush",
 			"eta": "5–10 мин",
 			"category": "drinks"
