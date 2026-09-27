@@ -13,6 +13,9 @@
 			document.documentElement.dataset.theme =
 				stored === "dark" || stored === "light" ? stored : "light";
 		</script>
+		<!-- assets — это базовый путь хостинга: ссылка останется верной и в корне
+		     домена, и в подкаталоге типа github.io/repo. -->
+		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

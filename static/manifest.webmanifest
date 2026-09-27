@@ -1,0 +1,40 @@
+{
+	"name": "В Домике",
+	"short_name": "В Домике",
+	"description": "Уютный симулятор доставки блюд",
+	"lang": "ru",
+	"start_url": "./",
+	"scope": "./",
+	"display": "standalone",
+	"background_color": "#fffaf5",
+	"theme_color": [
+		{
+			"media": "(prefers-color-scheme: light)",
+			"color": "#fffaf5"
+		},
+		{
+			"media": "(prefers-color-scheme: dark)",
+			"color": "#2b2236"
+		}
+	],
+	"icons": [
+		{
+			"src": "icon-192.jpg",
+			"sizes": "192x192",
+			"type": "image/jpeg",
+			"purpose": "any"
+		},
+		{
+			"src": "icon-512.jpg",
+			"sizes": "512x512",
+			"type": "image/jpeg",
+			"purpose": "any"
+		},
+		{
+			"src": "icon-512.jpg",
+			"sizes": "512x512",
+			"type": "image/jpeg",
+			"purpose": "maskable"
+		}
+	]
+}

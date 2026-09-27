@@ -30,6 +30,7 @@ pnpm dev        # http://localhost:5173
 | Команда             | Что делает                                 |
 | ------------------- | ------------------------------------------ |
 | `pnpm dev`          | dev-сервер                                 |
+| `pnpm dev --host`   | dev-сервер, доступный с телефона           |
 | `pnpm build`        | сборка и пререндер всех страниц в `build/` |
 | `pnpm preview`      | локальный просмотр собранного сайта        |
 | `pnpm check`        | `svelte-check` + тайпчек                   |
@@ -39,6 +40,7 @@ pnpm dev        # http://localhost:5173
 | `pnpm test`         | vitest                                     |
 | `pnpm format`       | prettier --write                           |
 | `pnpm screenshots`  | переснять скриншоты для README             |
+| `pnpm icons`        | пересобрать иконки и манифест из `refs/`   |
 
 `pnpm test:unit` — тот же vitest в watch-режиме.
 
@@ -112,8 +114,22 @@ src/
 
 scripts/
 ├── check-contrast.mjs           контрастный гейт, встроен в lint
-└── screenshots.mjs              скриншоты для README
+├── screenshots.mjs              скриншоты для README
+└── make-icons.mjs               иконки PWA и манифест из refs/
+
+refs/                             исходники иконки, в сборку не попадают
 ```
+
+## Иконки и манифест
+
+`static/manifest.webmanifest` и иконки рядом с ним **генерируются**:
+`pnpm icons` рендерит их из `refs/icon.jpeg` и пишет манифест заново. Правки в
+`static/manifest.webmanifest` руками перетрутся — правится `refs/icon.jpeg` и
+палитра, потом команда прогоняется снова. Что именно делает скрипт и почему
+размеры и форматы такие, написано в его шапке.
+
+Ссылка на манифест в `app.html` идёт через `%sveltekit.assets%`, поэтому
+остаётся верной и в корне домена, и в подкаталоге `github.io/repo`.
 
 ## Скриншоты для README
 
