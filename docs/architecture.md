@@ -186,9 +186,13 @@ Precache сделан через `cache.addAll` и это намеренно: о
 `/v-domike/profile/`. Сама регистрация — в `onMount` корневого `+layout.svelte`,
 в деве пропускается: скрипт там не собирается, и был бы 404 на каждой загрузке.
 
-`src/service-worker.ts` исключён из `tsconfig.json`: worker и странице нужны
-разные DOM-библиотеки, общий конфиг им мешает. `pnpm check` этот файл не видит —
-экспорты `$app/manifest` и `$app/env` проверяет сборка.
+`src/service-worker.ts` **намеренно не исключён** из `tsconfig.json`. SvelteKit
+хочет исключить его (worker и странице нужны разные DOM-библиотеки) и печатает
+при сборке `"src/service-worker" should be added to the "exclude" array` — три
+раза, по одному на окружение. С exclude файл выпадает из tsconfig-проекта, и
+редактор собирает для него inferred project без ambient-модулей `$app/*`: в VS
+Code `$app/env` не находится, а `pnpm check` файл не видит. Расходятся тут
+только внимание к выводу и работоспособность редактора.
 
 ## Тесты
 

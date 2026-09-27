@@ -5,6 +5,5 @@
 		"sourceMap": true,
 		"strict": true
 	},
-	"include": ["src"],
-	"exclude": ["src/service-worker.ts"]
+	"include": ["src"]
 }
