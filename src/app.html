@@ -16,6 +16,13 @@
 		<!-- assets — это базовый путь хостинга: ссылка останется верной и в корне
 		     домена, и в подкаталоге типа github.io/repo. -->
 		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
+		<!-- iOS игнорирует манифест при установке и берёт иконку только отсюда,
+		     причём строго PNG: на SVG отдаст скриншот страницы. -->
+		<link
+			rel="apple-touch-icon"
+			href="%sveltekit.assets%/apple-touch-icon.png"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
