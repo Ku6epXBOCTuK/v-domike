@@ -118,23 +118,29 @@
       повезёт хостинг. Для маленького ритуала офлайн выглядит обязательным. По
       локалке с телефона это не проверить: `http://` на не-localhost адресе не
       secure context, регистрация service-worker'а там не пройдёт — нужен https.
-- [ ] **Деплоя на GitHub Pages нет.** `/build` в `.gitignore`, поэтому «Deploy
-      from a branch» не сработает — нужен Actions-воркфлора: `pnpm build` →
-      upload `build/` → `actions/deploy-pages`. Домен для этого не нужен,
-      `https://<user>.github.io/<repo>/` работает, https из коробки, то есть
-      secure context и service-worker в одном решении. Попутно закрыть две вещи
-      из «Известных проблем» в [`development.md`](development.md): 404 от
-      хостинга лечится `fallback: "404.html"` (Pages подхватит файл), а
-      вложенные маршруты вроде `/repo/profile/history` без расширения Pages
-      может не отдать — навигация внутри приложения клиентская и это не
-      задевает, но проверить надо.
+- [ ] **Деплой на GitHub Pages: воркфлора есть, выкладка не проверена.**
+      `/build` в `.gitignore`, поэтому «Deploy from a branch» не подходит.
+      Закрыто наполовину: `.github/workflows/pages.yml` — пуш в `main` →
+      `pnpm build` → upload artifact → `deploy-pages`; Node и pnpm ставит
+      `pnpm/setup`, `require-lockfile: true` не даёт собрать по зависимостям из
+      реестра. Адрес `https://ku6epxboctuk.is-a.dev/v-domike/`: кастомный домен
+      привязан к Pages проекта, поэтому приложение лежит в подкаталоге
+      `/v-domike/` — это и проверяет относительные ссылки. Отдельный домен не
+      нужен, https Pages выдаёт сам. Осталось: включить `Enforce HTTPS` в
+      Settings → Pages (сертификат уже выдан, переключатель выключен, а по http
+      service-worker не зарегистрируется) и проверить первую выкладку —
+      вложенные маршруты вроде `/v-domike/profile/history` без расширения Pages
+      может не отдать, хотя навигация внутри приложения клиентская и это не
+      задевает. Там же попутно закрыть 404 от хостинга через
+      `fallback: "404.html"` в адаптере — см. «Известные проблемы» в
+      [`development.md`](development.md).
 - [ ] **Четыре ссылки ведут в корень домена.** `href="/"` в `Wordmark.svelte` и
       в трёх `TextButton` (`CartTab`, `ErrorPanel`, `MenuTab` с `/cart`) —
       единственные места, где адрес написан строкой вместо `RouteId` +
       `resolve()`. В деве и на корне домена работает, а в подкаталоге
-      `github.io/repo` уведёт с сайта: `href="/"` станет корнем домена, где
-      приложения нет. Починить, пока не задеплоили, иначе первая же выкладка на
-      GitHub Pages покажет это сразу.
+      `/v-domike/` уведёт с сайта: `href="/"` станет корнем домена, где
+      приложения нет. Починить до первой выкладки, иначе первая же покажет это
+      сразу.
 - [x] **Серифный стек разъезжался на Android.** В `--font-display` стояли
       `Palatino Linotype`, `Palatino`, `Iowan Old Style`, `Georgia`,
       `Times New Roman` — на Android нет ни одного из них, заголовки уезжали на
