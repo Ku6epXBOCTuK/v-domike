@@ -14,18 +14,20 @@
 </script>
 
 <article class="dish-card">
-	<div class="dish-card__media" data-tone={dish.tone}>
-		{#if dish.image}
-			<img
-				class="dish-card__photo"
-				src={dishImage(dish.image)}
-				alt={dish.name}
-				width="600"
-				height="682"
-				loading="lazy"
-				decoding="async"
-			/>
-		{/if}
+	<div
+		class="dish-card__media"
+		data-tone={dish.tone}
+		data-empty={dish.image ? undefined : ""}
+	>
+		<img
+			class="dish-card__photo"
+			src={dishImage(dish.image)}
+			alt={dish.image ? dish.name : ""}
+			width="600"
+			height="682"
+			loading="lazy"
+			decoding="async"
+		/>
 		<FavoriteButton {dish} {favorite} onToggle={onFavorite} />
 		<span class="dish-card__eta">{dish.eta}</span>
 	</div>
@@ -56,19 +58,33 @@
 	}
 
 	.dish-card__media[data-tone="warm"] {
-		background: var(--tone-warm);
+		--tone: var(--tone-warm);
 	}
 
 	.dish-card__media[data-tone="blush"] {
-		background: var(--tone-blush);
+		--tone: var(--tone-blush);
 	}
 
 	.dish-card__media[data-tone="cream"] {
-		background: var(--tone-cream);
+		--tone: var(--tone-cream);
 	}
 
 	.dish-card__media[data-tone="butter"] {
-		background: var(--tone-butter);
+		--tone: var(--tone-butter);
+	}
+
+	.dish-card__media {
+		background: var(--tone);
+	}
+
+	/*
+	 * Подложка под фото обязана остаться светлой: снимок домножается на неё.
+	 * Плейсхолдеру светлота не нужна — он часть интерфейса, поэтому берёт
+	 * темноту экрана и оставляет от тона только подкрас. Иначе карточка без
+	 * снимка светится светлым пятном посреди тёмного экрана.
+	 */
+	.dish-card__media[data-empty] {
+		background: color-mix(in oklab, var(--tone) 25%, var(--surface-sunken));
 	}
 
 	.dish-card__photo {

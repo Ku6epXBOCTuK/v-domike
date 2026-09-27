@@ -30,4 +30,12 @@ export const categories = data.categories as Category[];
 
 export const dishes = data.dishes as Dish[];
 
-export const dishImage = (file: string) => asset(file as AssetPath);
+/*
+ * Плейсхолдер лежит в static/, поэтому AssetPath его знает так же, как любой
+ * снимок. Прозрачный и домножается на тон блюда: у карточки без фотографии
+ * остаётся свой цвет, а не одинаковая плашка.
+ */
+const PLACEHOLDER: AssetPath = "dishes/placeholder.webp";
+
+export const dishImage = (file: string) =>
+	asset((file || PLACEHOLDER) as AssetPath);

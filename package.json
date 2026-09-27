@@ -20,6 +20,7 @@
 		"test": "vitest --run",
 		"screenshots": "node scripts/screenshots.mjs",
 		"icons": "node scripts/make-icons.mjs",
+		"images": "node scripts/make-dish-images.mjs",
 		"og": "node scripts/make-og.mjs"
 	},
 	"devDependencies": {

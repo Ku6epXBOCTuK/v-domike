@@ -27,7 +27,7 @@
 			"name": "Борщ со сметаной",
 			"detail": "свёкла · капуста · сметана",
 			"price": 380,
-			"image": "",
+			"image": "dishes/borsh.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -77,7 +77,7 @@
 			"name": "Холодник с клюквой",
 			"detail": "свёкла · клюква · сметана",
 			"price": 330,
-			"image": "",
+			"image": "dishes/kholodnik.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "soups"
@@ -97,7 +97,7 @@
 			"name": "Уха из трёх видов рыб",
 			"detail": "треска · судак · зелень",
 			"price": 480,
-			"image": "",
+			"image": "dishes/ulyi.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -107,7 +107,7 @@
 			"name": "Куриный бульон с вермишелью",
 			"detail": "курица · вермишель · морковь",
 			"price": 300,
-			"image": "",
+			"image": "dishes/bulon-s-vermishel.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -117,7 +117,7 @@
 			"name": "Грибной суп с пшеницей",
 			"detail": "белые грибы · пшеница · тимьян",
 			"price": 400,
-			"image": "",
+			"image": "dishes/gribnoy-sup.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -147,7 +147,7 @@
 			"name": "Гаспачо из томатов",
 			"detail": "томаты · огурец · базилик",
 			"price": 340,
-			"image": "",
+			"image": "dishes/gazpacho.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "soups"
@@ -157,7 +157,7 @@
 			"name": "Минестроне с фасолью",
 			"detail": "фасоль · тыква · шпинат",
 			"price": 360,
-			"image": "",
+			"image": "dishes/minestrone.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -167,7 +167,7 @@
 			"name": "Крем-суп из тыквы",
 			"detail": "тыква · сливки · мускат",
 			"price": 350,
-			"image": "",
+			"image": "dishes/krem-sup-iz-tykvy.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -177,7 +177,7 @@
 			"name": "Крем-суп из шпината",
 			"detail": "шпинат · картофель · сливки",
 			"price": 340,
-			"image": "",
+			"image": "dishes/krem-sup-iz-shpinata.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -197,7 +197,7 @@
 			"name": "Немецкий суп с колбасой",
 			"detail": "картофель · колбаса · сельдерей",
 			"price": 420,
-			"image": "",
+			"image": "dishes/kartofelnyy-sup-s-kolbasoy.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "soups"
@@ -207,7 +207,7 @@
 			"name": "Чесночный суп с гренками",
 			"detail": "чеснок · картофель · петрушка",
 			"price": 360,
-			"image": "",
+			"image": "dishes/chesnochnyy-sup.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -217,7 +217,7 @@
 			"name": "Суп с фрикадельками",
 			"detail": "фрикадельки · рис · зелень",
 			"price": 410,
-			"image": "",
+			"image": "dishes/sup-s-frikadelkami.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -227,7 +227,7 @@
 			"name": "Томатный суп с базиликом",
 			"detail": "томаты · лук · базилик",
 			"price": 330,
-			"image": "",
+			"image": "dishes/tomatnyy-sup-s-bazilikom.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -267,7 +267,7 @@
 			"name": "Лакса с кокосом",
 			"detail": "курица · кокос · лемонграсс",
 			"price": 500,
-			"image": "",
+			"image": "dishes/laksa.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -287,7 +287,7 @@
 			"name": "Мисо-суп с водорослями",
 			"detail": "мисо · вакамэ · тофу",
 			"price": 400,
-			"image": "",
+			"image": "dishes/miso-sup-s-vodoroslyami.webp",
 			"tone": "warm",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -297,7 +297,7 @@
 			"name": "Вондон с креветками",
 			"detail": "пельмени · креветки · зелень",
 			"price": 430,
-			"image": "",
+			"image": "dishes/vondon-s-krevetkami.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -307,7 +307,7 @@
 			"name": "Суп с тофу и шиитаке",
 			"detail": "тофу · грибы шиитаке · кунжут",
 			"price": 410,
-			"image": "",
+			"image": "dishes/sup-s-tofu-i-shiitake.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -317,7 +317,7 @@
 			"name": "Кимчи-чига",
 			"detail": "свинина · кимчи · тофу",
 			"price": 460,
-			"image": "",
+			"image": "dishes/kimi-chiga.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -367,7 +367,7 @@
 			"name": "Кимби с говядиной",
 			"detail": "рис · говядина · соевый соус",
 			"price": 440,
-			"image": "",
+			"image": "dishes/kimbi.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -377,7 +377,7 @@
 			"name": "Треньян-джорба",
 			"detail": "свинина · тофу · чили",
 			"price": 480,
-			"image": "",
+			"image": "dishes/ttreonyan-jjorba.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -387,7 +387,7 @@
 			"name": "Хотток с сосисками",
 			"detail": "сосиски · спагетти · капуста",
 			"price": 430,
-			"image": "",
+			"image": "dishes/hotteok.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -407,7 +407,7 @@
 			"name": "Юкгехан с чили",
 			"detail": "говядина · редька · чили",
 			"price": 470,
-			"image": "",
+			"image": "dishes/yukgaejang.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "soups"
@@ -417,7 +417,7 @@
 			"name": "Дал со шпинатом",
 			"detail": "чечевица · шпинат · кокос",
 			"price": 380,
-			"image": "",
+			"image": "dishes/dal-so-shpinatom.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -437,7 +437,7 @@
 			"name": "Мендикентюк с айрагом",
 			"detail": "чечевица · айран · лук",
 			"price": 370,
-			"image": "",
+			"image": "dishes/mandikyendyuk.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -447,7 +447,7 @@
 			"name": "Харира с фиником",
 			"detail": "томаты · чечевица · нут",
 			"price": 380,
-			"image": "",
+			"image": "dishes/harira.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -457,7 +457,7 @@
 			"name": "Шурпа из баранины",
 			"detail": "баранина · картофель · нут",
 			"price": 500,
-			"image": "",
+			"image": "dishes/shurpa-iz-baraniny.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "soups"
@@ -467,7 +467,7 @@
 			"name": "Харчо со свининой",
 			"detail": "свинина · рис · кинза",
 			"price": 440,
-			"image": "",
+			"image": "dishes/harcho-so-svininoy.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -497,7 +497,7 @@
 			"name": "Позоле с кукурузой",
 			"detail": "свинина · кукуруза · кинза",
 			"price": 450,
-			"image": "",
+			"image": "dishes/pozole.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "soups"
@@ -507,7 +507,7 @@
 			"name": "Суп с авокадо и чили",
 			"detail": "авокадо · томаты · чили",
 			"price": 340,
-			"image": "",
+			"image": "dishes/sup-s-avokado-i-chili.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "soups"
@@ -517,7 +517,7 @@
 			"name": "Суп с чёрной фасолью",
 			"detail": "фасоль · лук · кинза",
 			"price": 350,
-			"image": "",
+			"image": "dishes/sup-s-chernoy-fasolyu.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -537,7 +537,7 @@
 			"name": "Куриный суп с клецками",
 			"detail": "курица · клецки · зелень",
 			"price": 320,
-			"image": "",
+			"image": "dishes/kurinyy-sup-s-kletskami.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -587,7 +587,7 @@
 			"name": "Морковный суп с имбирём",
 			"detail": "морковь · имбирь · кокос",
 			"price": 330,
-			"image": "",
+			"image": "dishes/morkovnyy-sup-s-imbirem.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -597,7 +597,7 @@
 			"name": "Суп с тыквой и имбирём",
 			"detail": "тыква · имбирь · кокос",
 			"price": 340,
-			"image": "",
+			"image": "dishes/sup-s-tykvoi-i-imbrem.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -617,7 +617,7 @@
 			"name": "Суп с капустой и грибами",
 			"detail": "капуста · белые грибы · сметана",
 			"price": 350,
-			"image": "",
+			"image": "dishes/sup-s-kapustoy-i-grybami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -647,7 +647,7 @@
 			"name": "Овощной суп с рисом",
 			"detail": "рис · морковь · горох",
 			"price": 300,
-			"image": "",
+			"image": "dishes/sup-s-ovoshchami-i-rysoy.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -657,7 +657,7 @@
 			"name": "Суп с говядиной и фасолью",
 			"detail": "говядина · фасоль · сельдерей",
 			"price": 430,
-			"image": "",
+			"image": "dishes/sup-s-govyadinoy-i-fasolyu.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "soups"
@@ -667,7 +667,7 @@
 			"name": "Суп с овощами на куриных сердечках",
 			"detail": "сердечки · морковь · зелень",
 			"price": 410,
-			"image": "",
+			"image": "dishes/sup-s-kurinyimi-serdechkami.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -687,7 +687,7 @@
 			"name": "Суп из тушёной капусты",
 			"detail": "капуста · картофель · лук",
 			"price": 310,
-			"image": "",
+			"image": "dishes/tuskhiy-sup-s-kapustoy.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -727,7 +727,7 @@
 			"name": "Манговый суп с чили",
 			"detail": "манго · чили · кокос",
 			"price": 350,
-			"image": "",
+			"image": "dishes/sup-s-mangom.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -747,7 +747,7 @@
 			"name": "Суп с томатами и йогуртом",
 			"detail": "томаты · йогурт · чеснок",
 			"price": 330,
-			"image": "",
+			"image": "dishes/sup-s-pomidorami-i-yogurtom.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "soups"
@@ -787,7 +787,7 @@
 			"name": "Суп с макаронами и сыром",
 			"detail": "макароны · сыр · зелень",
 			"price": 320,
-			"image": "",
+			"image": "dishes/sup-s-makaronami.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -797,7 +797,7 @@
 			"name": "Суп с овощами и лапшой",
 			"detail": "лапша · морковь · горох",
 			"price": 300,
-			"image": "",
+			"image": "dishes/sup-s-ovoshchami-i-lapshoy.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -807,7 +807,7 @@
 			"name": "Суп с тунцом и яйцом",
 			"detail": "тунец · картофель · яйцо",
 			"price": 330,
-			"image": "",
+			"image": "dishes/sup-s-tuntsom.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -817,7 +817,7 @@
 			"name": "Суп с копчёной рыбой",
 			"detail": "рыба · картофель · лук",
 			"price": 470,
-			"image": "",
+			"image": "dishes/sup-s-kopychenoy-ryboy.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -827,7 +827,7 @@
 			"name": "Суп с курицей и овощами",
 			"detail": "курица · кабачок · морковь",
 			"price": 330,
-			"image": "",
+			"image": "dishes/sup-s-kuritsey-i-ovoshchami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "soups"
@@ -867,7 +867,7 @@
 			"name": "Суп с морской капустой",
 			"detail": "капуста · морковь · яйцо",
 			"price": 300,
-			"image": "",
+			"image": "dishes/sup-s-morskoy-kabely.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "soups"
@@ -907,7 +907,7 @@
 			"name": "Спагетти алла карбонара",
 			"detail": "гуанчиале · яйцо · пекорино",
 			"price": 620,
-			"image": "",
+			"image": "dishes/spaghi-al-carbonara.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -917,7 +917,7 @@
 			"name": "Теглиателле с болоньезе",
 			"detail": "говядина · томаты · базилик",
 			"price": 590,
-			"image": "",
+			"image": "dishes/tagliatelle-s-boloniese.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -927,7 +927,7 @@
 			"name": "Паста с песто",
 			"detail": "кедровые орехи · базилик · пармезан",
 			"price": 560,
-			"image": "",
+			"image": "dishes/pesto-alla-genovese.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -937,7 +937,7 @@
 			"name": "Пенне аматричиана",
 			"detail": "панелла · томаты · чили",
 			"price": 580,
-			"image": "",
+			"image": "dishes/penne-allamatriciana.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -947,7 +947,7 @@
 			"name": "Тортеллини по-болоньски",
 			"detail": "фарш · сливки · пармезан",
 			"price": 610,
-			"image": "",
+			"image": "dishes/tortellini-s-boloniese.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -957,7 +957,7 @@
 			"name": "Лазанья с болоньезе",
 			"detail": "фарш · бешамель · моцарелла",
 			"price": 680,
-			"image": "",
+			"image": "dishes/lasagna-s-boloniese.webp",
 			"tone": "warm",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -967,7 +967,7 @@
 			"name": "Равиоли с рикоттой",
 			"detail": "рикотта · шпинат · пармезан",
 			"price": 640,
-			"image": "",
+			"image": "dishes/ravioli-s-rikottoy.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -977,7 +977,7 @@
 			"name": "Ньокки с картофелем",
 			"detail": "картофель · мускат · пармезан",
 			"price": 550,
-			"image": "",
+			"image": "dishes/gnocchi-s-kartofelem.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1007,7 +1007,7 @@
 			"name": "Спагетти качо э пепе",
 			"detail": "пекорино · перец · макароны",
 			"price": 540,
-			"image": "",
+			"image": "dishes/cacio-e-pepe.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1017,7 +1017,7 @@
 			"name": "Паста с морепродуктами",
 			"detail": "мидии · кальмар · креветки",
 			"price": 720,
-			"image": "",
+			"image": "dishes/pasta-s-moreproduktami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1027,7 +1027,7 @@
 			"name": "Паппарелле с вонголе",
 			"detail": "мидии · белое вино · петрушка",
 			"price": 740,
-			"image": "",
+			"image": "dishes/pappardelle-s-vongole.webp",
 			"tone": "cream",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1037,7 +1037,7 @@
 			"name": "Ризотто с грибами",
 			"detail": "рис · грибы · пармезан",
 			"price": 600,
-			"image": "",
+			"image": "dishes/risotto-s-gribami.webp",
 			"tone": "cream",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1047,7 +1047,7 @@
 			"name": "Ризотто миланский",
 			"detail": "сафранов · пармезан · бульон",
 			"price": 620,
-			"image": "",
+			"image": "dishes/risotto-milanskiy.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1057,7 +1057,7 @@
 			"name": "Пицца диабола",
 			"detail": "пепперони · халапеньо",
 			"price": 640,
-			"image": "",
+			"image": "dishes/pizza-diabola.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1067,7 +1067,7 @@
 			"name": "Пицца четыре сыра",
 			"detail": "моцарелла · пармезан · горгонцола",
 			"price": 670,
-			"image": "",
+			"image": "dishes/pizza-chetyre-syra.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1087,7 +1087,7 @@
 			"name": "Пицца с грибами",
 			"detail": "шампиньоны · тимьян · сливки",
 			"price": 620,
-			"image": "",
+			"image": "dishes/pizza-s-gribami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1097,7 +1097,7 @@
 			"name": "Фриттата с овощами",
 			"detail": "яйцо · цукини · паприка",
 			"price": 460,
-			"image": "",
+			"image": "dishes/frittata-s-ovoshchami.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1107,7 +1107,7 @@
 			"name": "Пармиджана из баклажанов",
 			"detail": "баклажан · моцарелла · томаты",
 			"price": 580,
-			"image": "",
+			"image": "dishes/parmigiana-iz-baklazhanov.webp",
 			"tone": "blush",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -1117,7 +1117,7 @@
 			"name": "Круассан сливочный",
 			"detail": "мука · сливочное масло",
 			"price": 290,
-			"image": "",
+			"image": "dishes/kruassan-slivochnyy.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "pasta"
@@ -1127,7 +1127,7 @@
 			"name": "Круассан с миндалём",
 			"detail": "миндаль · сахар · масло",
 			"price": 340,
-			"image": "",
+			"image": "dishes/kruassan-s-mindalyom.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "pasta"
@@ -1137,7 +1137,7 @@
 			"name": "Пан-о-шоколад",
 			"detail": "шоколад · слоёное тесто",
 			"price": 320,
-			"image": "",
+			"image": "dishes/pan-o-shokolad.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "pasta"
@@ -1157,7 +1157,7 @@
 			"name": "Рататуй",
 			"detail": "баклажан · кабачок · перец",
 			"price": 520,
-			"image": "",
+			"image": "dishes/ratatuyy.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1177,7 +1177,7 @@
 			"name": "Крок-месье",
 			"detail": "хлеб · сыр · ветчина",
 			"price": 450,
-			"image": "",
+			"image": "dishes/croque-monsieur.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1197,7 +1197,7 @@
 			"name": "Буйабесс",
 			"detail": "рыба · томаты · шафран",
 			"price": 780,
-			"image": "",
+			"image": "dishes/buyabess.webp",
 			"tone": "warm",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -1217,7 +1217,7 @@
 			"name": "Паэлья валенсианская",
 			"detail": "рис · морепродукты · шафран",
 			"price": 740,
-			"image": "",
+			"image": "dishes/paellya-valencianskaya.webp",
 			"tone": "butter",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -1227,7 +1227,7 @@
 			"name": "Пан с томатами",
 			"detail": "хлеб · томат · чеснок",
 			"price": 320,
-			"image": "",
+			"image": "dishes/pan-s-tomatami.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "pasta"
@@ -1237,7 +1237,7 @@
 			"name": "Чуррос с шоколадом",
 			"detail": "мука · корица · шоколад",
 			"price": 360,
-			"image": "",
+			"image": "dishes/churros-s-shokoladom.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1287,7 +1287,7 @@
 			"name": "Буррито с мясом",
 			"detail": "говядина · рис · фасоль · кукуруза",
 			"price": 590,
-			"image": "",
+			"image": "dishes/burrito-s-myasom.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1307,7 +1307,7 @@
 			"name": "Элоте",
 			"detail": "кукуруза · сыр · чили",
 			"price": 320,
-			"image": "",
+			"image": "dishes/elote.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1317,7 +1317,7 @@
 			"name": "Накос с чили",
 			"detail": "кукурузные чипсы · сыр · соус",
 			"price": 380,
-			"image": "",
+			"image": "dishes/nachos-s-chili.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "pasta"
@@ -1327,7 +1327,7 @@
 			"name": "Севиче",
 			"detail": "рыба · лайм · чили",
 			"price": 620,
-			"image": "",
+			"image": "dishes/ceviche.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1337,7 +1337,7 @@
 			"name": "Молье с курицей",
 			"detail": "курица · шоколад · чили · рис",
 			"price": 640,
-			"image": "",
+			"image": "dishes/mole-s-kuritsey.webp",
 			"tone": "blush",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1347,7 +1347,7 @@
 			"name": "Шаурма с курицей",
 			"detail": "курица · лаваш · чеснок",
 			"price": 480,
-			"image": "",
+			"image": "dishes/shaurma-s-kuritsey.webp",
 			"tone": "warm",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1357,7 +1357,7 @@
 			"name": "Гирос с говядиной",
 			"detail": "говядина · лаваш · соус",
 			"price": 470,
-			"image": "",
+			"image": "dishes/gyros-s-govyadinoy.webp",
 			"tone": "warm",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1387,7 +1387,7 @@
 			"name": "Фалафель в лаваше",
 			"detail": "нут · зелень · тахини",
 			"price": 420,
-			"image": "",
+			"image": "dishes/falafel-v-lavashe.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1397,7 +1397,7 @@
 			"name": "Табуле",
 			"detail": "булгур · помидоры · мята",
 			"price": 380,
-			"image": "",
+			"image": "dishes/tabule.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1407,7 +1407,7 @@
 			"name": "Мансаф",
 			"detail": "баранина · рис · йогурт",
 			"price": 720,
-			"image": "",
+			"image": "dishes/mansaf.webp",
 			"tone": "cream",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -1447,7 +1447,7 @@
 			"name": "Фатуш",
 			"detail": "хлеб · помидоры · горчица",
 			"price": 400,
-			"image": "",
+			"image": "dishes/fattoush.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1457,7 +1457,7 @@
 			"name": "Шакшука",
 			"detail": "яйцо · томаты · паприка",
 			"price": 450,
-			"image": "",
+			"image": "dishes/shakshuka.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1467,7 +1467,7 @@
 			"name": "Баба-ганауш",
 			"detail": "баклажан · тахини · масло",
 			"price": 360,
-			"image": "",
+			"image": "dishes/baba-ghanoush.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1477,7 +1477,7 @@
 			"name": "Пар-дамбы с креветками",
 			"detail": "рисовая мука · креветки · зелень",
 			"price": 460,
-			"image": "",
+			"image": "dishes/par-damby-s-krevetkami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1487,7 +1487,7 @@
 			"name": "Джаджанмиен",
 			"detail": "лапша · чёрный соус · овощи",
 			"price": 520,
-			"image": "",
+			"image": "dishes/jajangmyeon.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1507,7 +1507,7 @@
 			"name": "Темпура с креветками",
 			"detail": "креветки · кляр · соевый соус",
 			"price": 560,
-			"image": "",
+			"image": "dishes/tempura-s-krevetkami.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1517,7 +1517,7 @@
 			"name": "Темпура из баклажана",
 			"detail": "баклажан · кляр · соевый соус",
 			"price": 480,
-			"image": "",
+			"image": "dishes/tempura-s-baklazhanom.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1537,7 +1537,7 @@
 			"name": "Беляши с мясом",
 			"detail": "фарш · тесто · лук",
 			"price": 380,
-			"image": "",
+			"image": "dishes/belyashi-s-myasom.webp",
 			"tone": "warm",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1547,7 +1547,7 @@
 			"name": "Хачапури по-имеретински",
 			"detail": "тесто · сыр · яйцо · масло",
 			"price": 480,
-			"image": "",
+			"image": "dishes/khachapuri-po-imeretinski.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1577,7 +1577,7 @@
 			"name": "Мусака",
 			"detail": "баклажан · фарш · бешамель",
 			"price": 560,
-			"image": "",
+			"image": "dishes/musaka.webp",
 			"tone": "warm",
 			"eta": "30–35 мин",
 			"category": "pasta"
@@ -1597,7 +1597,7 @@
 			"name": "Баклава с фундуком",
 			"detail": "тесто · фундук · мёд",
 			"price": 520,
-			"image": "",
+			"image": "dishes/baklava-s-fistuki.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1607,7 +1607,7 @@
 			"name": "Пончики с корицей",
 			"detail": "мука · сахар · корица",
 			"price": 300,
-			"image": "",
+			"image": "dishes/ponchiki-s-koritsey.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1617,7 +1617,7 @@
 			"name": "Ламинган с лососем",
 			"detail": "лосось · тесто · соевый соус",
 			"price": 560,
-			"image": "",
+			"image": "dishes/lamingan-s-losingoy.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1697,7 +1697,7 @@
 			"name": "Баранина роган джош",
 			"detail": "баранина · томаты · имбирь",
 			"price": 620,
-			"image": "",
+			"image": "dishes/baranina-rogan-dzhosh.webp",
 			"tone": "blush",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1707,7 +1707,7 @@
 			"name": "Нутовый карри",
 			"detail": "нут · кокос · карри",
 			"price": 430,
-			"image": "",
+			"image": "dishes/nutovyy-karri.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1727,7 +1727,7 @@
 			"name": "Самса с мясом",
 			"detail": "тесто · фарш · лук",
 			"price": 380,
-			"image": "",
+			"image": "dishes/samsa-s-myasom.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1787,7 +1787,7 @@
 			"name": "Орзо с овощами",
 			"detail": "рис · овощи · зелень",
 			"price": 380,
-			"image": "",
+			"image": "dishes/orzo-s-ovoshchami.webp",
 			"tone": "cream",
 			"category": "pasta",
 			"eta": "20–25 мин"
@@ -1847,7 +1847,7 @@
 			"name": "Бан-ми с курицей",
 			"detail": "багет · курица · морковь",
 			"price": 470,
-			"image": "",
+			"image": "dishes/banh-mi-s-kuritsey.webp",
 			"tone": "warm",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1867,7 +1867,7 @@
 			"name": "Бун-бо с водорослями",
 			"detail": "рисовая лапша · свинина · водоросли",
 			"price": 450,
-			"image": "",
+			"image": "dishes/bun-bo-s-vodoroslyami.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1877,7 +1877,7 @@
 			"name": "Кимчи-джон",
 			"detail": "кимчи · тесто · яйцо",
 			"price": 420,
-			"image": "",
+			"image": "dishes/kimchi-jeon.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1887,7 +1887,7 @@
 			"name": "Кимчи с зелёным луком",
 			"detail": "кимчи · зелёный лук · тофу",
 			"price": 410,
-			"image": "",
+			"image": "dishes/kimchi-s-zelenym-lukom.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1897,7 +1897,7 @@
 			"name": "Гиран-мари",
 			"detail": "яйцо · кимчи · зелень",
 			"price": 380,
-			"image": "",
+			"image": "dishes/gyeran-mari.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "pasta"
@@ -1907,7 +1907,7 @@
 			"name": "Кимчи-паджон",
 			"detail": "кимчи · блин · свинина",
 			"price": 460,
-			"image": "",
+			"image": "dishes/kimchi-padjon.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1917,7 +1917,7 @@
 			"name": "Ттокпокки",
 			"detail": "рисовая палочка · кимчи · соус",
 			"price": 490,
-			"image": "",
+			"image": "dishes/tteokbokki.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1927,7 +1927,7 @@
 			"name": "Боссам со сладким соусом",
 			"detail": "свинина · сладкий соус",
 			"price": 540,
-			"image": "",
+			"image": "dishes/bossa-s-sladkim-sousom.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "pasta"
@@ -1937,7 +1937,7 @@
 			"name": "Бибимбап",
 			"detail": "рис · овощи · яйцо · соус",
 			"price": 520,
-			"image": "",
+			"image": "dishes/bibimbap.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1947,7 +1947,7 @@
 			"name": "Ддеок с мясом",
 			"detail": "рисовые палочки · говядина · соус",
 			"price": 460,
-			"image": "",
+			"image": "dishes/ddeok-s-myasom.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "pasta"
@@ -1967,7 +1967,7 @@
 			"name": "Крем-брюле",
 			"detail": "сливки · ваниль · сахар",
 			"price": 390,
-			"image": "",
+			"image": "dishes/krem-bryule.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -1977,7 +1977,7 @@
 			"name": "Эклер с фундуком",
 			"detail": "фундук · крем · глазурь",
 			"price": 380,
-			"image": "",
+			"image": "dishes/ecler-s-fistukom.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -1987,7 +1987,7 @@
 			"name": "Эклер с ванилью",
 			"detail": "ваниль · крем · глазурь",
 			"price": 360,
-			"image": "",
+			"image": "dishes/ecler-s-vanilyu.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -1997,7 +1997,7 @@
 			"name": "Профитроли с кремом",
 			"detail": "заварной крем · хрустящее тесто",
 			"price": 340,
-			"image": "",
+			"image": "dishes/profoli-s-kremom.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2007,7 +2007,7 @@
 			"name": "Тарт-татен",
 			"detail": "яблоки · карамель · тесто",
 			"price": 420,
-			"image": "",
+			"image": "dishes/tart-tatin.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2027,7 +2027,7 @@
 			"name": "Мадлен",
 			"detail": "мука · яйцо · лимон",
 			"price": 260,
-			"image": "",
+			"image": "dishes/madlen.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2037,7 +2037,7 @@
 			"name": "Финансье",
 			"detail": "миндаль · яйцо · масло",
 			"price": 320,
-			"image": "",
+			"image": "dishes/finansie.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2057,7 +2057,7 @@
 			"name": "Пари-брест",
 			"detail": "заварное тесто · пралине · кофе",
 			"price": 420,
-			"image": "",
+			"image": "dishes/pari-brest.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2067,7 +2067,7 @@
 			"name": "Оперный торт",
 			"detail": "кофе · шоколад · сливки",
 			"price": 460,
-			"image": "",
+			"image": "dishes/opera-tart.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2077,7 +2077,7 @@
 			"name": "Торт с клубникой",
 			"detail": "клубника · крем · бисквит",
 			"price": 430,
-			"image": "",
+			"image": "dishes/torte-s-klubnikoy.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2087,7 +2087,7 @@
 			"name": "Провансальский флан",
 			"detail": "яйцо · карамель · сливки",
 			"price": 360,
-			"image": "",
+			"image": "dishes/flan-karamel.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2117,7 +2117,7 @@
 			"name": "Тирамису",
 			"detail": "маскарпоне · савоярди · кофе",
 			"price": 480,
-			"image": "",
+			"image": "dishes/tiramisu.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2127,7 +2127,7 @@
 			"name": "Панна котта",
 			"detail": "сливки · ваниль · ягоды",
 			"price": 360,
-			"image": "",
+			"image": "dishes/panna-cotta.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2137,7 +2137,7 @@
 			"name": "Афогато",
 			"detail": "мороженое · эспрессо",
 			"price": 340,
-			"image": "",
+			"image": "dishes/affogato.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2147,7 +2147,7 @@
 			"name": "Джелато с фундуком",
 			"detail": "фундук · молоко · сахар",
 			"price": 320,
-			"image": "",
+			"image": "dishes/gelato-s-fistukom.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2157,7 +2157,7 @@
 			"name": "Бискотти с миндалём",
 			"detail": "миндаль · сахар · яйцо",
 			"price": 280,
-			"image": "",
+			"image": "dishes/biscotti-s-mandelyam.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2167,7 +2167,7 @@
 			"name": "Паннетон",
 			"detail": "круассан · изюм · апельсин",
 			"price": 450,
-			"image": "",
+			"image": "dishes/panettone.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2177,7 +2177,7 @@
 			"name": "Бомболоне с кремом",
 			"detail": "булочка · крем · сахар",
 			"price": 340,
-			"image": "",
+			"image": "dishes/bombolone.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2187,7 +2187,7 @@
 			"name": "Канестрелли",
 			"detail": "миндаль · мука · сахар",
 			"price": 360,
-			"image": "",
+			"image": "dishes/canestrelli.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2197,7 +2197,7 @@
 			"name": "Зуппа инглезе",
 			"detail": "бисквит · крем · вино",
 			"price": 380,
-			"image": "",
+			"image": "dishes/zuppa-inglese.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2207,7 +2207,7 @@
 			"name": "Торт с шоколадом",
 			"detail": "шоколад · орехи · сливки",
 			"price": 520,
-			"image": "",
+			"image": "dishes/torta-s-shokoladom.webp",
 			"tone": "warm",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2217,7 +2217,7 @@
 			"name": "Чизкейк нью-йоркский",
 			"detail": "печенье · сливочный сыр · ягоды",
 			"price": 490,
-			"image": "",
+			"image": "dishes/chizkeyk-nyu-yorkskiy.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2227,7 +2227,7 @@
 			"name": "Шоколадный брауни",
 			"detail": "шоколад · масло · орехи",
 			"price": 330,
-			"image": "",
+			"image": "dishes/shokoladnyy-brauni.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2247,7 +2247,7 @@
 			"name": "Яблочный пирог",
 			"detail": "яблоки · корица · тесто",
 			"price": 420,
-			"image": "",
+			"image": "dishes/yablochnyy-pirog.webp",
 			"tone": "blush",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2257,7 +2257,7 @@
 			"name": "Лимонный тарт с меренгой",
 			"detail": "лимон · белок · масло",
 			"price": 400,
-			"image": "",
+			"image": "dishes/limonnyy-tart-meringom.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2267,7 +2267,7 @@
 			"name": "Пирог с черникой",
 			"detail": "черника · сахар · тесто",
 			"price": 430,
-			"image": "",
+			"image": "dishes/pirog-s-chernikoy.webp",
 			"tone": "blush",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2277,7 +2277,7 @@
 			"name": "Банановый хлеб",
 			"detail": "банан · мука · орехи",
 			"price": 320,
-			"image": "",
+			"image": "dishes/bananovyy-hleb.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2287,7 +2287,7 @@
 			"name": "Кленовые панкейки",
 			"detail": "мука · кленовый сироп · масло",
 			"price": 360,
-			"image": "",
+			"image": "dishes/pankeyki-s-klenovym.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2307,7 +2307,7 @@
 			"name": "Печёный батат с зефиром",
 			"detail": "батат · зефир · масло",
 			"price": 380,
-			"image": "",
+			"image": "dishes/pechenyy-batat-s-zefir.webp",
 			"tone": "blush",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2317,7 +2317,7 @@
 			"name": "Американское печенье",
 			"detail": "шоколад · орехи · сахар",
 			"price": 300,
-			"image": "",
+			"image": "dishes/amerikanskoe-pechenye.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2327,7 +2327,7 @@
 			"name": "Брауни с грецким орехом",
 			"detail": "шоколад · грецкий орех",
 			"price": 350,
-			"image": "",
+			"image": "dishes/brauni-s-orehami.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2357,7 +2357,7 @@
 			"name": "Ватрушка с вишней",
 			"detail": "дрожжевое тесто · вишня · сахар",
 			"price": 340,
-			"image": "",
+			"image": "dishes/vatrushka-s-vishneyy.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2457,7 +2457,7 @@
 			"name": "Портакалота",
 			"detail": "апельсин · яйцо · мука",
 			"price": 360,
-			"image": "",
+			"image": "dishes/portokalota.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2467,7 +2467,7 @@
 			"name": "Лукумады",
 			"detail": "мука · мёд · сахар",
 			"price": 290,
-			"image": "",
+			"image": "dishes/lukoumady.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2507,7 +2507,7 @@
 			"name": "Финики с орехами",
 			"detail": "финики · миндаль · грецкий орех",
 			"price": 340,
-			"image": "",
+			"image": "dishes/finiki-s-orehami.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2527,7 +2527,7 @@
 			"name": "Минчи-тарт",
 			"detail": "печенье · заварной крем · вишня",
 			"price": 450,
-			"image": "",
+			"image": "dishes/minchi-tart.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2537,7 +2537,7 @@
 			"name": "Моти с клубникой",
 			"detail": "рисовая мука · клубника · сахар",
 			"price": 320,
-			"image": "",
+			"image": "dishes/mochi-s-klubnikoy.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2557,7 +2557,7 @@
 			"name": "Матча-тирамису",
 			"detail": "маскарпоне · матча · сахар",
 			"price": 490,
-			"image": "",
+			"image": "dishes/matcha-tiramisu.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2647,7 +2647,7 @@
 			"name": "Каштановый крем",
 			"detail": "каштан · сливки · сахар",
 			"price": 360,
-			"image": "",
+			"image": "dishes/kastanovyy-krem.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2687,7 +2687,7 @@
 			"name": "Кулфи на палочке",
 			"detail": "молоко · кардамон · орехи",
 			"price": 360,
-			"image": "",
+			"image": "dishes/kulfi-na-palochke.webp",
 			"tone": "cream",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2707,7 +2707,7 @@
 			"name": "Латки с ягодой",
 			"detail": "мука · ягоды · масло",
 			"price": 320,
-			"image": "",
+			"image": "dishes/latki-s-yagodoy.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2727,7 +2727,7 @@
 			"name": "Манго с клеевым рисом",
 			"detail": "манго · рис · кокос",
 			"price": 450,
-			"image": "",
+			"image": "dishes/mango-s-kleyevym-risom.webp",
 			"tone": "butter",
 			"eta": "15–20 мин",
 			"category": "desserts"
@@ -2737,7 +2737,7 @@
 			"name": "Кокосовый пудинг",
 			"detail": "кокос · молоко · кардамон",
 			"price": 350,
-			"image": "",
+			"image": "dishes/kokosovyy-pudynt.webp",
 			"tone": "cream",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2747,7 +2747,7 @@
 			"name": "Трес лечес",
 			"detail": "молоко · сгущёнка · мука",
 			"price": 400,
-			"image": "",
+			"image": "dishes/tres-leches.webp",
 			"tone": "cream",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2757,7 +2757,7 @@
 			"name": "Флан с кахетой",
 			"detail": "молоко · карамель · сыр",
 			"price": 390,
-			"image": "",
+			"image": "dishes/flan-s-kakhetoyt.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2787,7 +2787,7 @@
 			"name": "Пан-де-мел",
 			"detail": "мёд · пряники · мука",
 			"price": 320,
-			"image": "",
+			"image": "dishes/pao-de-mel.webp",
 			"tone": "warm",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2797,7 +2797,7 @@
 			"name": "Кученс с карамелью",
 			"detail": "мука · карамель · шоколад",
 			"price": 420,
-			"image": "",
+			"image": "dishes/kuchens-s-karamel.webp",
 			"tone": "cream",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2807,7 +2807,7 @@
 			"name": "Флан с сыром",
 			"detail": "сыр · яйцо · карамель",
 			"price": 400,
-			"image": "",
+			"image": "dishes/flan-de-queso.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2827,7 +2827,7 @@
 			"name": "Торт с мандарином",
 			"detail": "миндаль · мандарин · крем",
 			"price": 470,
-			"image": "",
+			"image": "dishes/tort-s-mandarinom.webp",
 			"tone": "blush",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2837,7 +2837,7 @@
 			"name": "Пастеш с миндалём",
 			"detail": "миндаль · яйцо · корица",
 			"price": 330,
-			"image": "",
+			"image": "dishes/pastes-s-mindalyom.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2847,7 +2847,7 @@
 			"name": "Скоре с кардамоном",
 			"detail": "дрожжевое тесто · кардамон · сахар",
 			"price": 320,
-			"image": "",
+			"image": "dishes/skore-s-kardamomom.webp",
 			"tone": "butter",
 			"eta": "20–25 мин",
 			"category": "desserts"
@@ -2857,7 +2857,7 @@
 			"name": "Даниска с корицей",
 			"detail": "сливочное тесто · корица · орехи",
 			"price": 300,
-			"image": "",
+			"image": "dishes/daniska-s-koritseyy.webp",
 			"tone": "butter",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2877,7 +2877,7 @@
 			"name": "Кокосовый торт",
 			"detail": "кокос · сливки · мука",
 			"price": 430,
-			"image": "",
+			"image": "dishes/kokosovyy-tort.webp",
 			"tone": "cream",
 			"eta": "25–30 мин",
 			"category": "desserts"
@@ -2907,7 +2907,7 @@
 			"name": "Маршмаллоу с ягодами",
 			"detail": "ягоды · зефир · сливки",
 			"price": 320,
-			"image": "",
+			"image": "dishes/marshmallow-s-yagodam.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "desserts"
@@ -2927,7 +2927,7 @@
 			"name": "Эспрессо",
 			"detail": "кофе · вода",
 			"price": 160,
-			"image": "",
+			"image": "dishes/espresso.webp",
 			"tone": "warm",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -2937,7 +2937,7 @@
 			"name": "Американо",
 			"detail": "эспрессо · вода",
 			"price": 180,
-			"image": "",
+			"image": "dishes/amerikano.webp",
 			"tone": "warm",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -2947,7 +2947,7 @@
 			"name": "Капучино",
 			"detail": "эспрессо · молоко · пена",
 			"price": 240,
-			"image": "",
+			"image": "dishes/kapuchino.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -2967,7 +2967,7 @@
 			"name": "Кортадо",
 			"detail": "эспрессо · молоко",
 			"price": 250,
-			"image": "",
+			"image": "dishes/kortado.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -2987,7 +2987,7 @@
 			"name": "Латте на овсяном",
 			"detail": "кофе · овсяное молоко",
 			"price": 280,
-			"image": "",
+			"image": "dishes/latte-s-ovsyanyym.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3027,7 +3027,7 @@
 			"name": "Ирландский кофе",
 			"detail": "виски · кофе · сливки",
 			"price": 320,
-			"image": "",
+			"image": "dishes/irlandskiy-kofe.webp",
 			"tone": "warm",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3037,7 +3037,7 @@
 			"name": "Холодный кофе",
 			"detail": "кофе · молоко · лёд",
 			"price": 270,
-			"image": "",
+			"image": "dishes/kholodnyy-kofe.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3047,7 +3047,7 @@
 			"name": "Латте с кокосом",
 			"detail": "кофе · кокосовое молоко",
 			"price": 300,
-			"image": "",
+			"image": "dishes/latte-s-kokosom.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3057,7 +3057,7 @@
 			"name": "Матча латте",
 			"detail": "матча · овсяное молоко",
 			"price": 300,
-			"image": "",
+			"image": "dishes/matcha-latte.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3067,7 +3067,7 @@
 			"name": "Чёрный чай",
 			"detail": "чай · сахар",
 			"price": 180,
-			"image": "",
+			"image": "dishes/chernyy-chay.webp",
 			"tone": "warm",
 			"category": "drinks",
 			"eta": "5–10 мин"
@@ -3077,7 +3077,7 @@
 			"name": "Зелёный чай",
 			"detail": "чай · мёд",
 			"price": 190,
-			"image": "",
+			"image": "dishes/zelenyy-chay.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3087,7 +3087,7 @@
 			"name": "Улун с молочными нотами",
 			"detail": "чай · сливки",
 			"price": 220,
-			"image": "",
+			"image": "dishes/ulun-ulyun.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3097,7 +3097,7 @@
 			"name": "Пуэр",
 			"detail": "чай · тростниковый сахар",
 			"price": 210,
-			"image": "",
+			"image": "dishes/puer.webp",
 			"tone": "warm",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3107,7 +3107,7 @@
 			"name": "Жасминовый чай",
 			"detail": "жасмин · мёд",
 			"price": 200,
-			"image": "",
+			"image": "dishes/zhasminovyy-chay.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3117,7 +3117,7 @@
 			"name": "Бойский чай",
 			"detail": "травы · мёд",
 			"price": 210,
-			"image": "",
+			"image": "dishes/boyskiy-chay.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3127,7 +3127,7 @@
 			"name": "Каркаде",
 			"detail": "гибискус · лайм",
 			"price": 190,
-			"image": "",
+			"image": "dishes/karakade.webp",
 			"tone": "blush",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3147,7 +3147,7 @@
 			"name": "Молочный улун",
 			"detail": "чай · молоко · сахар",
 			"price": 250,
-			"image": "",
+			"image": "dishes/molochnyy-ulun.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3157,7 +3157,7 @@
 			"name": "Имбирный чай",
 			"detail": "имбирь · мёд · лимон",
 			"price": 230,
-			"image": "",
+			"image": "dishes/chay-s-imbirem.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3177,7 +3177,7 @@
 			"name": "Чай с куркумой",
 			"detail": "куркума · молоко · мёд",
 			"price": 250,
-			"image": "",
+			"image": "dishes/chai-s-kurkumoy.webp",
 			"tone": "butter",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3207,7 +3207,7 @@
 			"name": "Лимонад",
 			"detail": "лимон · мята · содовая",
 			"price": 220,
-			"image": "",
+			"image": "dishes/limonad-veterinarnyy.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3237,7 +3237,7 @@
 			"name": "Мохито",
 			"detail": "мята · лайм · ром",
 			"price": 290,
-			"image": "",
+			"image": "dishes/mohito.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3247,7 +3247,7 @@
 			"name": "Соня на облаке",
 			"detail": "лимон · содовая",
 			"price": 230,
-			"image": "",
+			"image": "dishes/margarita-s-lyagom.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3257,7 +3257,7 @@
 			"name": "Шалабей",
 			"detail": "лимон · мята",
 			"price": 210,
-			"image": "",
+			"image": "dishes/shalabey.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3297,7 +3297,7 @@
 			"name": "Иван-чай с мёдом",
 			"detail": "кипрей · мёд",
 			"price": 200,
-			"image": "",
+			"image": "dishes/ivan-chay-s-medom.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3307,7 +3307,7 @@
 			"name": "Глинтвейн",
 			"detail": "вино · корица · апельсин",
 			"price": 320,
-			"image": "",
+			"image": "dishes/glintveyn.webp",
 			"tone": "blush",
 			"eta": "15–20 мин",
 			"category": "drinks"
@@ -3337,7 +3337,7 @@
 			"name": "Айран",
 			"detail": "йогурт · вода",
 			"price": 190,
-			"image": "",
+			"image": "dishes/ayran.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3357,7 +3357,7 @@
 			"name": "Смузи с манго",
 			"detail": "манго · банан · кокос",
 			"price": 320,
-			"image": "",
+			"image": "dishes/kokteyl-s-mangom.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3367,7 +3367,7 @@
 			"name": "Смузи из ягод",
 			"detail": "клубника · черника · йогурт",
 			"price": 310,
-			"image": "",
+			"image": "dishes/smuzi-iz-yagod.webp",
 			"tone": "blush",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3387,7 +3387,7 @@
 			"name": "Морковный сок",
 			"detail": "морковь · апельсин",
 			"price": 230,
-			"image": "",
+			"image": "dishes/morokovnyy-sok.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3397,7 +3397,7 @@
 			"name": "Свежий апельсиновый сок",
 			"detail": "апельсин · лимон",
 			"price": 260,
-			"image": "",
+			"image": "dishes/apelsinovyy-sok.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3407,7 +3407,7 @@
 			"name": "Грейпфрутовый сок",
 			"detail": "грейпфрут · розмарин",
 			"price": 280,
-			"image": "",
+			"image": "dishes/greypfrutovyy-sok.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3427,7 +3427,7 @@
 			"name": "Кокосовое молоко",
 			"detail": "кокос · вода",
 			"price": 250,
-			"image": "",
+			"image": "dishes/kokosovoye-moloko.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3447,7 +3447,7 @@
 			"name": "Молочный коктейль",
 			"detail": "молоко · мороженое",
 			"price": 310,
-			"image": "",
+			"image": "dishes/molochnyy-kokteyl.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3457,7 +3457,7 @@
 			"name": "Овсяный раф",
 			"detail": "кофе · овсяные сливки",
 			"price": 300,
-			"image": "",
+			"image": "dishes/raf-ovsyanyyi.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3487,7 +3487,7 @@
 			"name": "Травяной чай халдук",
 			"detail": "трава · яблоко",
 			"price": 200,
-			"image": "",
+			"image": "dishes/kholodnyy-chay-haldonguk.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3507,7 +3507,7 @@
 			"name": "Тайский смузи",
 			"detail": "манго · кокос · базилик",
 			"price": 320,
-			"image": "",
+			"image": "dishes/smuzi-taylandskiy.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3517,7 +3517,7 @@
 			"name": "Чай с апельсином и ромом",
 			"detail": "апельсин · ром",
 			"price": 310,
-			"image": "",
+			"image": "dishes/cha-ultimate.webp",
 			"tone": "blush",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3527,7 +3527,7 @@
 			"name": "Компот из винограда",
 			"detail": "виноград · сахар",
 			"price": 190,
-			"image": "",
+			"image": "dishes/kompot-iz-vinograda.webp",
 			"tone": "cream",
 			"eta": "10–15 мин",
 			"category": "drinks"
@@ -3557,7 +3557,7 @@
 			"name": "Тонгыль",
 			"detail": "красный боб · сахар",
 			"price": 230,
-			"image": "",
+			"image": "dishes/tonggyul.webp",
 			"tone": "cream",
 			"eta": "5–10 мин",
 			"category": "drinks"
@@ -3577,7 +3577,7 @@
 			"name": "Лимонад на минералке",
 			"detail": "лимон · огурец",
 			"price": 220,
-			"image": "",
+			"image": "dishes/limonad-na-mineralke.webp",
 			"tone": "cream",
 			"category": "drinks",
 			"eta": "5–10 мин"
@@ -3617,7 +3617,7 @@
 			"name": "Тропический смузи",
 			"detail": "манго · ананас · кокос",
 			"price": 330,
-			"image": "",
+			"image": "dishes/smuzi-iz-tropicheskikh.webp",
 			"tone": "butter",
 			"eta": "5–10 мин",
 			"category": "drinks"
