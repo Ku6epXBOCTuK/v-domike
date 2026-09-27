@@ -18,7 +18,8 @@
 		"test:unit": "vitest",
 		"test": "vitest --run",
 		"screenshots": "node scripts/screenshots.mjs",
-		"icons": "node scripts/make-icons.mjs"
+		"icons": "node scripts/make-icons.mjs",
+		"og": "node scripts/make-og.mjs"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

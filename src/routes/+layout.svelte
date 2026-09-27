@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from "$app/paths";
+	import { asset, resolve } from "$app/paths";
 	import { dev } from "$app/env";
 	import { onMount } from "svelte";
 	import favicon from "#lib/assets/favicon.svg";
@@ -25,6 +25,17 @@
 
 <svelte:head>
 	<link rel="icon" type="image/svg+xml" href={favicon} />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="В Домике" />
+	<meta property="og:title" content="В Домике — уютная доставка" />
+	<meta
+		property="og:description"
+		content="Уютный симулятор доставки блюд для спокойного вечера."
+	/>
+	<meta property="og:image" content={asset("og.jpg")} />
+	<meta property="og:image:width" content="2400" />
+	<meta property="og:image:height" content="1260" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <AppShell>

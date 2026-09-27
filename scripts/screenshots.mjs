@@ -25,12 +25,13 @@ const skipBuild = process.argv.includes("--skip-build");
 
 const WIDTH = 390;
 const HEIGHT = 920;
+const BASE = "/v-domike";
 
 const PAGES = [
-	{ id: "menu", path: "/" },
-	{ id: "order", path: "/order" },
-	{ id: "favorites", path: "/favorites" },
-	{ id: "profile", path: "/profile" },
+	{ id: "menu", path: `${BASE}/` },
+	{ id: "order", path: `${BASE}/order` },
+	{ id: "favorites", path: `${BASE}/favorites` },
+	{ id: "profile", path: `${BASE}/profile` },
 ];
 
 const TYPES = {
@@ -60,7 +61,10 @@ function build() {
 
 /** adapter-static кладёт маршруты плоско: /order → order.html. */
 function resolve(pathname) {
-	const clean = pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+	const clean = pathname
+		.replace(BASE, "")
+		.replace(/^\/+/, "")
+		.replace(/\/+$/, "");
 	return [
 		join(BUILD, clean),
 		join(BUILD, `${clean}.html`),
@@ -108,7 +112,7 @@ async function settle(page) {
 /** Наполняем корзину кликами, а не сеем localStorage: снимок должен показывать
     то, что видит человек, и не зависеть от прошлого прогона. */
 async function openOrder(page, origin) {
-	await page.goto(`${origin}/`);
+	await page.goto(`${origin}${BASE}/`);
 	await settle(page);
 
 	const add = page.getByRole("button", { name: /^Добавить / });
