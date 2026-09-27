@@ -9,13 +9,13 @@
 		orderPhase,
 	} from "#lib/state/app.svelte.js";
 	import DeliveryTab from "#lib/components/features/DeliveryTab.svelte";
+	import ResultTab from "#lib/components/features/ResultTab.svelte";
 
 	/*
 	 * Страница заказа ничего не показывает сама: статус живёт в localStorage, а
 	 * страница пререндерена, поэтому решение принимается на клиенте. Заказа нет —
-	 * уводим в корзину. Заказ есть — показываем доставку, и на «доставлено» тоже
-	 * доставку: тот, кто прождал десять минут, не должен попасть в пустую
-	 * корзину. Отдельный экран результата появится следующим шагом.
+	 * уводим в корзину, это начало цикла. Заказ есть и ещё в пути — доставка,
+	 * доставлен — результат.
 	 */
 	let decided = $state(false);
 	let now = $state(0);
@@ -38,11 +38,14 @@
 	onMount(() => {
 		now = Date.now();
 		decided = true;
-		if (!app.order) goto("/cart");
 		const timer = setInterval(() => {
 			now = Date.now();
 		}, 1000);
 		return () => clearInterval(timer);
+	});
+
+	$effect(() => {
+		if (decided && !app.order) goto("/cart");
 	});
 </script>
 
@@ -51,10 +54,14 @@
 </svelte:head>
 
 {#if decided}
-	<DeliveryTab
-		lines={app.orderLines}
-		total={app.orderTotal}
-		{phase}
-		{remaining}
-	/>
+	{#if phase === "delivered"}
+		<ResultTab onDone={() => app.clearOrder()} />
+	{:else}
+		<DeliveryTab
+			lines={app.orderLines}
+			total={app.orderTotal}
+			{phase}
+			{remaining}
+		/>
+	{/if}
 {/if}
