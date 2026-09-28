@@ -64,9 +64,8 @@ sw.addEventListener("fetch", (event) => {
 				await cache.put(event.request, response.clone());
 				return response;
 			} catch {
-				return (
-					(await caches.match(`${base}/${PLACEHOLDER}`)) ?? Response.error()
-				);
+				// подменять плейсхолдером нельзя: офлайн должен отличаться от «снимка нет»
+				return Response.error();
 			}
 		})(),
 	);
