@@ -28,6 +28,15 @@ const W = 600;
 const H = 682;
 const QUALITY = 0.8;
 
+/*
+ * Два размера под srcset: карточка на телефоне — 176 CSS px, то есть 450 пикселей
+ * хватает экрану с плотностью до 2,5, а 600 нужен только плотным. Лишний
+ * размер не платит пользователь: браузер берёт один файл, распаковывает один.
+ */
+const WIDTHS = [W, 450];
+
+const suffixOf = (width) => (width === W ? "" : `-${width}`);
+
 const MIME = {
 	".avif": "image/avif",
 	".gif": "image/gif",
@@ -97,32 +106,33 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: W, height: H } });
 await page.setContent(`<style>html,body{margin:0}</style>`);
 
-async function encode(source, { fill }) {
+async function encode(source, { fill, width = W }) {
 	return page.evaluate(
-		async ({ source, fill, w, h, quality }) => {
+		async ({ source, fill, width, quality }) => {
 			const img = new Image();
 			img.src = source;
 			await img.decode();
 
+			const h = Math.round((img.height / img.width) * width);
 			const canvas = document.createElement("canvas");
-			canvas.width = w;
+			canvas.width = width;
 			canvas.height = h;
 			const ctx = canvas.getContext("2d");
 			if (fill) {
 				ctx.fillStyle = fill;
-				ctx.fillRect(0, 0, w, h);
+				ctx.fillRect(0, 0, width, h);
 			}
 
 			// Тот же object-fit: cover, что и в карточке, — иначе фото на экране
 			// отличалось бы от того, что положил скрипт.
-			const scale = Math.max(w / img.width, h / img.height);
+			const scale = Math.max(width / img.width, h / img.height);
 			const dw = img.width * scale;
 			const dh = img.height * scale;
-			ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+			ctx.drawImage(img, (width - dw) / 2, (h - dh) / 2, dw, dh);
 
 			return canvas.toDataURL("image/webp", quality);
 		},
-		{ source, fill, w: W, h: H, quality: QUALITY },
+		{ source, fill, width, quality: QUALITY },
 	);
 }
 
@@ -138,13 +148,18 @@ try {
 
 	for (const { id, file, mime } of photos) {
 		const source = `data:${mime};base64,${readFileSync(file).toString("base64")}`;
-		save(join(OUT, `${id}.webp`), await encode(source, { fill: "#fff" }));
+		for (const width of WIDTHS) {
+			save(
+				join(OUT, `${id}${suffixOf(width)}.webp`),
+				await encode(source, { fill: "#fff", width }),
+			);
+		}
 
 		const dish = byId.get(id);
 		const had = Boolean(dish.image);
 		dish.image = `dishes/${id}.webp`;
 		process.stdout.write(
-			`static/dishes/${id}.webp ${had ? "заменён" : "новый"}\n`,
+			`static/dishes/${id}.webp ${had ? "заменён" : "новый"} + уменьшенная копия\n`,
 		);
 	}
 

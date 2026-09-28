@@ -23,6 +23,10 @@
 	--surface-sunken: #f0e3e0;
 	--surface-warm: #fff3e8;
 	--surface-glass: rgb(255 250 248 / 0.85);
+	/* Стекло без блюра. В меню бейджей два на каждой из 365 карточек, и
+	   backdrop-filter на таком количестве элементов съедал кадр прокрутки,
+	   поэтому здесь плотнее: 15% фото просвечивает, но не пачкает иконку. */
+	--surface-glass-flat: rgb(255 250 248 / 0.94);
 	--surface-inverse: #2d2928;
 	--surface-map: #e8e1dd;
 
@@ -83,6 +87,7 @@
 	--surface-sunken: #4a3047;
 	--surface-warm: #3e2e4b;
 	--surface-glass: rgb(58 45 73 / 0.85);
+	--surface-glass-flat: rgb(58 45 73 / 0.94);
 	--surface-inverse: #fff2f1;
 	--surface-map: #49344b;
 

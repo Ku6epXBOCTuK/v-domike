@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { dishImage, type Dish } from "#lib/data/dishes.js";
+	import { dishImage, dishSrcset, type Dish } from "#lib/data/dishes.js";
 	import AddDishButton from "./AddDishButton.svelte";
 	import FavoriteButton from "./FavoriteButton.svelte";
 
@@ -22,10 +22,16 @@
 		<img
 			class="dish-card__photo"
 			src={dishImage(dish.image)}
+			srcset={dishSrcset(dish.image)}
+			sizes="(min-width: 640px) 170px, calc(50vw - 30px)"
 			alt={dish.image ? dish.name : ""}
 			width="600"
 			height="682"
-			loading="lazy"
+			/* Плейсхолдер один на всё меню и весит 6 КБ: lazily он в окне
+			   проступал на кадр позже тона, а по приоритету вставал в очередь
+			   за тяжёлыми фотографиями. Поэтому он eager и с высоким приоритетом. */
+			loading={dish.image ? "lazy" : "eager"}
+			fetchpriority={dish.image ? "auto" : "high"}
 			decoding="async"
 		/>
 		<FavoriteButton {dish} {favorite} onToggle={onFavorite} />
@@ -107,8 +113,7 @@
 		left: 10px;
 		padding: var(--space-2) 10px;
 		border-radius: var(--radius-pill);
-		background: var(--surface-glass);
-		backdrop-filter: blur(8px);
+		background: var(--surface-glass-flat);
 		color: var(--content-ui);
 		font-size: var(--text-badge);
 		letter-spacing: var(--tracking-wide);

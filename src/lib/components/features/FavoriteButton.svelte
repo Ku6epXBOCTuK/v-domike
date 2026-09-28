@@ -35,8 +35,7 @@
 		width: 32px;
 		height: 32px;
 		border-radius: var(--radius-pill);
-		background: var(--surface-glass);
-		backdrop-filter: blur(8px);
+		background: var(--surface-glass-flat);
 		color: var(--content-accent);
 		transition:
 			background-color var(--duration-fast) ease,

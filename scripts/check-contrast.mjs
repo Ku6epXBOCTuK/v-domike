@@ -71,6 +71,18 @@ const PAIRS = [
 	["content-inverse", "surface-inverse", GRAPHIC_MIN, "иконка курьера"],
 	["content-ui", "surface-map", GRAPHIC_MIN, "текст подписи на карте (glass)"],
 	["content-ui", "surface-glass", GRAPHIC_MIN, "текст бейджа времени (glass)"],
+	[
+		"content-ui",
+		"surface-glass-flat",
+		GRAPHIC_MIN,
+		"текст бейджа времени на карточке (без блюра)",
+	],
+	[
+		"content-accent",
+		"surface-glass-flat",
+		GRAPHIC_MIN,
+		"сердечко на карточке (без блюра)",
+	],
 ];
 
 const THEMES = { light: ":root", dark: '[data-theme="dark"]' };
@@ -177,8 +189,9 @@ for (const [fgName, bgName, min, note] of PAIRS) {
 		// потому что фактический фон под ними — соседняя поверхность.
 		let bg = parseColor(bgRaw);
 		if (bg[3] < 1) {
-			const under =
-				bgName === "surface-glass" ? "surface-base" : "surface-raised";
+			const under = bgName.startsWith("surface-glass")
+				? "surface-base"
+				: "surface-raised";
 			bg = composite(bg, parseColor(tokens[`--${under}`]));
 		}
 		let fg = parseColor(fgRaw);

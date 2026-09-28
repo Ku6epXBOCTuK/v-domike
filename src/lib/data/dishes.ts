@@ -39,3 +39,15 @@ const PLACEHOLDER: AssetPath = "dishes/placeholder.webp";
 
 export const dishImage = (file: string) =>
 	asset((file || PLACEHOLDER) as AssetPath);
+
+/*
+ * Уменьшенная копия лежит рядом: `-450`. Её пишет pnpm images, поэтому файла
+ * может не быть — тогда srcset пуст и карточка берёт обычный. Пути собираются
+ * через asset(): написанный руками srcset пререндер разрешил бы относительно
+ * текущего маршрута, а не базы.
+ */
+export const dishSrcset = (file: string) => {
+	if (!file) return undefined;
+	const small = file.replace(/\.webp$/, "-450.webp") as AssetPath;
+	return `${asset(small)} 450w, ${asset(file as AssetPath)} 600w`;
+};

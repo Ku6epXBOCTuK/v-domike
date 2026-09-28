@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { dishImage, type Dish } from "#lib/data/dishes.js";
+	import { dishImage, dishSrcset, type Dish } from "#lib/data/dishes.js";
 
 	type Props = {
 		dish: Dish;
@@ -16,10 +16,12 @@
 	<img
 		class="dish-thumb__photo"
 		src={dishImage(dish.image)}
+		srcset={dishSrcset(dish.image)}
+		sizes="56px"
 		alt=""
 		width="120"
 		height="120"
-		loading="lazy"
+		loading={dish.image ? "lazy" : "eager"}
 		decoding="async"
 	/>
 </span>

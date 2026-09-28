@@ -3,6 +3,7 @@
 
 	import type { CategoryId, Dish } from "#lib/data/dishes.js";
 	import { categories } from "#lib/data/dishes.js";
+	import { VirtualGrid } from "#lib/state/virtual-grid.svelte.js";
 	import Chip from "#lib/components/ui/Chip.svelte";
 	import SectionHeader from "#lib/components/ui/SectionHeader.svelte";
 	import TabHeading from "#lib/components/ui/TabHeading.svelte";
@@ -28,6 +29,53 @@
 		onFavorite,
 		onAdd,
 	}: Props = $props();
+
+	const COLUMNS = 2;
+	const grid = new VirtualGrid(COLUMNS);
+
+	let gridEl: HTMLElement | undefined = $state();
+	let rowsBefore = -1;
+
+	const visible = $derived(
+		dishes.slice(grid.firstItem, grid.firstItem + grid.visibleCount),
+	);
+
+	$effect(() => {
+		if (!gridEl) return;
+
+		const rows = Math.ceil(dishes.length / COLUMNS);
+		if (rows !== rowsBefore) {
+			rowsBefore = rows;
+			grid.reset(rows);
+			grid.setGap(parseFloat(getComputedStyle(gridEl).rowGap) || 0);
+		}
+
+		const apply = () => {
+			if (!gridEl) return;
+			grid.update(
+				gridEl.getBoundingClientRect().top + scrollY,
+				scrollY,
+				innerHeight,
+			);
+		};
+
+		/* Класс карточки достаётся селектором: компонент в scoped-CSS оставляет
+		   исходное имя в class, а bind:this на 40 карточках обошёлся бы дороже. */
+		grid.measure(gridEl.querySelectorAll(".dish-card"), grid.firstItem);
+		apply();
+
+		const onResize = () => {
+			grid.forget();
+			apply();
+		};
+
+		addEventListener("scroll", apply, { passive: true });
+		addEventListener("resize", onResize);
+		return () => {
+			removeEventListener("scroll", apply);
+			removeEventListener("resize", onResize);
+		};
+	});
 </script>
 
 <TabHeading
@@ -50,8 +98,11 @@
 	<TextButton href="/cart">Корзина <IconArrowRight /></TextButton>
 </SectionHeader>
 
-<div class="menu__grid">
-	{#each dishes as dish (dish.id)}
+<div class="menu__grid" bind:this={gridEl}>
+	{#if grid.topSpacer > 0}
+		<div class="menu__spacer" style:height="{grid.topSpacer}px"></div>
+	{/if}
+	{#each visible as dish (dish.id)}
 		<DishCard
 			{dish}
 			favorite={favoriteIds.includes(dish.id)}
@@ -59,6 +110,9 @@
 			onAdd={() => onAdd(dish.id)}
 		/>
 	{/each}
+	{#if grid.bottomSpacer > 0}
+		<div class="menu__spacer" style:height="{grid.bottomSpacer}px"></div>
+	{/if}
 </div>
 
 {#if cartIsEmpty}
@@ -86,6 +140,11 @@
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		column-gap: var(--space-5);
 		row-gap: var(--space-7);
+	}
+
+	/* Распорка занимает весь ряд: иначе она заняла бы ячейку и сдвинула сетку. */
+	.menu__spacer {
+		grid-column: 1 / -1;
 	}
 
 	.menu__quote {
