@@ -98,6 +98,38 @@ ol {
 	border: 0;
 }
 
+/*
+ * Блик загрузки: стекло едет по подложке слева направо. Общий, потому что
+ * одинаково нужен заглушке карточки (SkeletonCard) и фотографии, которая ещё
+ * не приехала (DishCard) — вторая копия анимации разъехалась бы с первой при
+ * правке скорости. В тёмной теме стекло темнее подложки и тоже читается как
+ * движение; разбавлено, иначе блок наполовину стирается.
+ */
+.sheen {
+	position: relative;
+	overflow: hidden;
+}
+
+.sheen::after {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		color-mix(in srgb, var(--surface-glass) 45%, transparent),
+		transparent
+	);
+	content: "";
+	transform: translateX(-100%);
+	animation: sheen var(--duration-slow) var(--ease-out) infinite;
+}
+
+@keyframes sheen {
+	to {
+		transform: translateX(100%);
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

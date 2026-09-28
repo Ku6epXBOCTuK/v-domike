@@ -7,10 +7,10 @@
 </script>
 
 <div class="skeleton-card">
-	<div class="skeleton-card__photo"></div>
-	<div class="skeleton-card__name"></div>
-	<div class="skeleton-card__detail"></div>
-	<div class="skeleton-card__price"></div>
+	<div class="skeleton-card__photo sheen"></div>
+	<div class="skeleton-card__name sheen"></div>
+	<div class="skeleton-card__detail sheen"></div>
+	<div class="skeleton-card__price sheen"></div>
 </div>
 
 <style>
@@ -49,39 +49,5 @@
 		width: 28%;
 		height: 10px;
 		margin-top: var(--space-5);
-	}
-
-	/* Блик — стекло поверх подложки, ровно как подписи на карте и бейдж
-	   времени на фото. В тёмной теме стекло темнее подложки и тоже читается
-	   как движение. Разбавлено, иначе блок наполовину стирается. */
-	.skeleton-card__photo::after,
-	.skeleton-card__name::after,
-	.skeleton-card__detail::after,
-	.skeleton-card__price::after {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			90deg,
-			transparent,
-			color-mix(in srgb, var(--surface-glass) 45%, transparent),
-			transparent
-		);
-		content: "";
-		transform: translateX(-100%);
-		animation: skeleton-sheen var(--duration-slow) var(--ease-out) infinite;
-	}
-
-	.skeleton-card__photo,
-	.skeleton-card__name,
-	.skeleton-card__detail,
-	.skeleton-card__price {
-		position: relative;
-		overflow: hidden;
-	}
-
-	@keyframes skeleton-sheen {
-		to {
-			transform: translateX(100%);
-		}
 	}
 </style>
