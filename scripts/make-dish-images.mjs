@@ -81,12 +81,15 @@ await page.setContent(`<style>html,body{margin:0}</style>`);
 
 async function encode(source, { fill, width = W }) {
 	return page.evaluate(
-		async ({ source, fill, width, quality }) => {
+		async ({ source, fill, width, quality, ratio }) => {
 			const img = new Image();
 			img.src = source;
 			await img.decode();
 
-			const h = Math.round((img.height / img.width) * width);
+			// Кадр всегда W×H, иначе у соседних карточек разная высота и
+			// `width`/`height` в разметке перестают совпадать с файлом. Источник
+			// режется по центру, лишнее закрывает белый фон.
+			const h = Math.round(ratio * width);
 			const canvas = document.createElement("canvas");
 			canvas.width = width;
 			canvas.height = h;
@@ -103,7 +106,7 @@ async function encode(source, { fill, width = W }) {
 
 			return canvas.toDataURL("image/webp", quality);
 		},
-		{ source, fill, width, quality: QUALITY },
+		{ source, fill, width, quality: QUALITY, ratio: H / W },
 	);
 }
 

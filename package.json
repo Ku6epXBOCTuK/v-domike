@@ -21,6 +21,7 @@
 		"screenshots": "node scripts/screenshots.mjs",
 		"icons": "node scripts/make-icons.mjs",
 		"images": "node scripts/make-dish-images.mjs",
+		"review:photos": "node scripts/make-photo-review.mjs",
 		"og": "node scripts/make-og.mjs"
 	},
 	"devDependencies": {

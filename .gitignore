@@ -12,6 +12,11 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Исходники снимков: что в refs/dishes/, тем же `pnpm photos` набирается заново
+# по refs/photo-sources.json, в репозитории им не место
+/refs/dishes/*
+!/refs/dishes/README.md
+
 # Env
 .env
 .env.*
