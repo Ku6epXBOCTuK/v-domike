@@ -21,6 +21,9 @@
 
 	let photo = $state<HTMLImageElement>();
 	let photoReady = $state(false);
+	let photoMissing = $state(false);
+
+	const missing = $derived(!dish.image || photoMissing);
 
 	const loading = $derived(
 		forceLoading || (Boolean(dish.image) && !photoReady),
@@ -35,24 +38,27 @@
 	<div
 		class="dish-card__media"
 		data-tone={dish.tone}
-		data-empty={dish.image ? undefined : ""}
+		data-empty={missing ? "" : undefined}
 		data-loading={loading ? "" : undefined}
 	>
 		{#if !forceLoading}
 			<img
 				bind:this={photo}
 				class="dish-card__photo"
-				src={dishImage(dish.image)}
-				srcset={dishSrcset(dish.image)}
+				src={dishImage(missing ? "" : dish.image)}
+				srcset={dishSrcset(missing ? "" : dish.image)}
 				sizes="(min-width: 640px) 170px, calc(50vw - 30px)"
-				alt={dish.image ? dish.name : ""}
+				alt={missing ? "" : dish.name}
 				width="600"
 				height="682"
-				loading={dish.image ? "lazy" : "eager"}
-				fetchpriority={dish.image ? "auto" : "high"}
+				loading={missing ? "eager" : "lazy"}
+				fetchpriority={missing ? "high" : "auto"}
 				decoding="async"
 				onload={() => (photoReady = true)}
-				onerror={() => (photoReady = true)}
+				onerror={() => {
+					photoMissing = true;
+					photoReady = true;
+				}}
 			/>
 		{/if}
 		{#if dish.image || forceLoading}
@@ -61,6 +67,9 @@
 				data-done={loading ? undefined : ""}
 				aria-hidden="true"
 			></span>
+		{/if}
+		{#if photoMissing}
+			<p class="dish-card__note">фото не загружено</p>
 		{/if}
 		<FavoriteButton {dish} {favorite} onToggle={onFavorite} />
 		<span class="dish-card__eta">{dish.eta}</span>
@@ -155,6 +164,21 @@
 		color: var(--content-ui);
 		font-size: var(--text-badge);
 		letter-spacing: var(--tracking-wide);
+	}
+
+	/* 69% — середина между подошвой купола и низом кадра в placeholder.webp:
+	   подпись встаёт под рисунком и не заезжает на бейдж времени */
+	.dish-card__note {
+		position: absolute;
+		top: 69%;
+		left: 50%;
+		margin: 0;
+		transform: translateX(-50%);
+		color: var(--content-on-sunken-muted);
+		font-size: var(--text-meta);
+		letter-spacing: var(--tracking-wide);
+		white-space: nowrap;
+		pointer-events: none;
 	}
 
 	.dish-card__body {

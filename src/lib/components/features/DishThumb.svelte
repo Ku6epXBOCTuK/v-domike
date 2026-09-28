@@ -6,23 +6,26 @@
 	};
 
 	let { dish }: Props = $props();
+
+	let missing = $state(false);
 </script>
 
 <span
 	class="dish-thumb"
 	data-tone={dish.tone}
-	data-empty={dish.image ? undefined : ""}
+	data-empty={!dish.image || missing ? "" : undefined}
 >
 	<img
 		class="dish-thumb__photo"
-		src={dishImage(dish.image)}
-		srcset={dishSrcset(dish.image)}
+		src={dishImage(missing ? "" : dish.image)}
+		srcset={dishSrcset(missing ? "" : dish.image)}
 		sizes="56px"
 		alt=""
 		width="120"
 		height="120"
-		loading={dish.image ? "lazy" : "eager"}
+		loading={dish.image && !missing ? "lazy" : "eager"}
 		decoding="async"
+		onerror={() => (missing = true)}
 	/>
 </span>
 
