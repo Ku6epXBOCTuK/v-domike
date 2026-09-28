@@ -59,8 +59,6 @@
 			);
 		};
 
-		/* Класс карточки достаётся селектором: компонент в scoped-CSS оставляет
-		   исходное имя в class, а bind:this на 40 карточках обошёлся бы дороже. */
 		grid.measure(gridEl.querySelectorAll(".dish-card"), grid.firstItem);
 		apply();
 
@@ -142,7 +140,6 @@
 		row-gap: var(--space-7);
 	}
 
-	/* Распорка занимает весь ряд: иначе она заняла бы ячейку и сдвинула сетку. */
 	.menu__spacer {
 		grid-column: 1 / -1;
 	}

@@ -27,8 +27,6 @@
 </span>
 
 <style>
-	/* Тон под фотографией — обязателен: снимок умножается на подложку, и без неё
-	   в тёмной теме фото гаснет вместе с фоном. */
 	.dish-thumb {
 		display: block;
 		flex: none;
@@ -58,7 +56,6 @@
 		background: var(--tone);
 	}
 
-	/* Как в DishCard: плейсхолдер берёт темноту экрана, фото — светлый тон. */
 	.dish-thumb[data-empty] {
 		background: color-mix(in oklab, var(--tone) 25%, var(--surface-sunken));
 	}

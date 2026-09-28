@@ -15,7 +15,6 @@
 
 	let { children } = $props();
 
-	// Относительный service-worker.js на вложенной странице искался бы в /v-domike/profile/
 	onMount(() => {
 		if (dev || !("serviceWorker" in navigator)) return;
 		const root = new URL(resolve("/"), location.href);

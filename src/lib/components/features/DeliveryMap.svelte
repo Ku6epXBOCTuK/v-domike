@@ -30,9 +30,6 @@
 		background: var(--surface-map);
 	}
 
-	/* В рефе .map-grid был пустым div без фона — слой не рендерился вовсе,
-	   хотя в globals.css ему задавали opacity и filter. Здесь это настоящая
-	   сетка: единственное намеренное визуальное добавление к порту. */
 	.delivery-map__grid {
 		position: absolute;
 		inset: 0;

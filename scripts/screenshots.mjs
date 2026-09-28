@@ -1,14 +1,3 @@
-/*
- * Скриншоты для README. Снимает 4 экрана в двух темах из настоящей статической
- * сборки — то, что реально уедет на хостинг, а не из dev-сервера.
- *
- *   node scripts/screenshots.mjs                собрать и снять
- *   node scripts/screenshots.mjs --skip-build   снять из готового build/
- *
- * Ключ темы продублирован из src/lib/state/app.svelte.ts (THEME_STORAGE_KEY).
- * Скрипт проверяет, что data-theme реально применился, и падает, если нет.
- */
-
 import { spawnSync } from "node:child_process";
 import { createReadStream, existsSync, mkdirSync, statSync } from "node:fs";
 import { createServer } from "node:http";
@@ -59,7 +48,6 @@ function build() {
 	if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-/** adapter-static кладёт маршруты плоско: /order → order.html. */
 function resolve(pathname) {
 	const clean = pathname
 		.replace(BASE, "")
@@ -109,8 +97,6 @@ async function settle(page) {
 	await page.waitForTimeout(150);
 }
 
-/** Наполняем корзину кликами, а не сеем localStorage: снимок должен показывать
-    то, что видит человек, и не зависеть от прошлого прогона. */
 async function openOrder(page, origin) {
 	await page.goto(`${origin}${BASE}/`);
 	await settle(page);

@@ -1,9 +1,3 @@
-/*
- * Base layer — reset and element defaults only.
- * Every value here comes from tokens.css; no literal colours, sizes or
- * durations. Component-specific rules live in each component's scoped block.
- */
-
 *,
 *::before,
 *::after {
@@ -80,7 +74,6 @@ ol {
 	outline-offset: 2px;
 }
 
-/* Global hook injected into every unplugin-icons <svg> via defaultClass. */
 .icon {
 	display: block;
 	flex: none;
@@ -98,13 +91,6 @@ ol {
 	border: 0;
 }
 
-/*
- * Блик загрузки: стекло едет по подложке слева направо. Общий, потому что
- * одинаково нужен заглушке карточки (SkeletonCard) и фотографии, которая ещё
- * не приехала (DishCard) — вторая копия анимации разъехалась бы с первой при
- * правке скорости. В тёмной теме стекло темнее подложки и тоже читается как
- * движение; разбавлено, иначе блок наполовину стирается.
- */
 .sheen {
 	position: relative;
 	overflow: hidden;
@@ -121,7 +107,7 @@ ol {
 	);
 	content: "";
 	transform: translateX(-100%);
-	animation: sheen var(--duration-slow) var(--ease-out) infinite;
+	animation: sheen var(--duration-sheen) var(--ease-out) infinite;
 }
 
 @keyframes sheen {

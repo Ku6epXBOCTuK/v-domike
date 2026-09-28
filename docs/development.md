@@ -112,9 +112,10 @@ src/
     ├── order/+page.svelte       /order       заказ (распределитель по статусу)
     ├── favorites/+page.svelte   /favorites   любимое
     ├── profile/+page.svelte     /profile     профиль
-    └── profile/
-        ├── history/+page.svelte   история заказов
-        └── notifications/+page.svelte
+    ├── profile/
+    │   ├── history/+page.svelte   история заказов
+    │   └── notifications/+page.svelte
+    └── skeletons/+page.svelte   /skeletons   разбор состояний загрузки (временная)
 
 scripts/
 ├── check-contrast.mjs           контрастный гейт, встроен в lint

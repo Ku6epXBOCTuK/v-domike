@@ -1,19 +1,6 @@
-﻿/*
- * Design tokens — single source of truth for the whole app.
- * Nothing outside this file may hardcode a colour, radius, shadow or duration.
- *
- * Light is the default (:root). Dark overrides the colour tokens under
- * [data-theme="dark"], which app.html sets before first paint. Исключение —
- * --tone-*: они живут только в :root намеренно, это подложка под
- * mix-blend-mode: multiply у фотографии блюда, см. ниже. Гейт в
- * scripts/check-contrast.mjs проверяет пары из своего списка и падает, если
- * тон вдруг появится в тёмном блоке.
- */
-
-:root {
+﻿:root {
 	color-scheme: light;
 
-	/* ── Surfaces ──────────────────────────────────────────────────────── */
 	--surface-canvas: #f2e8df;
 	--surface-canvas-glow: #fff6ed;
 	--canvas-glow-at: 15% 8%;
@@ -23,24 +10,15 @@
 	--surface-sunken: #f0e3e0;
 	--surface-warm: #fff3e8;
 	--surface-glass: rgb(255 250 248 / 0.85);
-	/* Стекло без блюра. В меню бейджей два на каждой из 365 карточек, и
-	   backdrop-filter на таком количестве элементов съедал кадр прокрутки,
-	   поэтому здесь плотнее: 15% фото просвечивает, но не пачкает иконку. */
 	--surface-glass-flat: rgb(255 250 248 / 0.94);
 	--surface-inverse: #2d2928;
 	--surface-map: #e8e1dd;
 
-	/* ── Dish tones ─────────────────────────────────────────────────────── */
-	/* Это НЕ поверхности интерфейса, а подложка под mix-blend-mode: multiply
-	   у фотографии блюда. Умножение на тёмный цвет гасит снимок до ~23%
-	   яркости, поэтому тон обязан быть светлым в обеих темах. В рефе так и
-	   было: тёмная тема не трогала тона блюд. */
 	--tone-warm: #f0e4df;
 	--tone-blush: #eee4e7;
 	--tone-cream: #f2e5e1;
 	--tone-butter: #eee5d9;
 
-	/* ── Content ────────────────────────────────────────────────────────── */
 	--content-primary: #2d2928;
 	--content-secondary: #736462;
 	--content-ui: #5e514e;
@@ -52,11 +30,9 @@
 	--content-on-sunken: #73595a;
 	--content-on-sunken-muted: #7a5859;
 
-	/* ── Borders ────────────────────────────────────────────────────────── */
 	--border-subtle: #e8dfdb;
 	--border-strong: #ead8cf;
 
-	/* ── Elevation ──────────────────────────────────────────────────────── */
 	--shadow-shell: 0 30px 100px rgb(64 45 37 / 0.15);
 	--shadow-nav: 0 12px 35px rgb(64 45 37 / 0.14);
 	--shadow-pin:
@@ -64,11 +40,9 @@
 	--shadow-marker:
 		0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-	/* ── Map grid ───────────────────────────────────────────────────────── */
 	--map-grid-line: rgb(61 45 43 / 0.08);
 	--map-grid-size: 22px;
 
-	/* ── Delivery map illustration ──────────────────────────────────────── */
 	--delivery-map-height: 285px;
 	--map-marker-size: 44px;
 	--map-route-angle: -22deg;
@@ -90,8 +64,6 @@
 	--surface-glass-flat: rgb(58 45 73 / 0.94);
 	--surface-inverse: #fff2f1;
 	--surface-map: #49344b;
-
-	/* --tone-* намеренно НЕ переопределяются: см. комментарий в :root. */
 
 	--content-primary: #fff2f1;
 	--content-secondary: #c1a2b4;
@@ -118,29 +90,25 @@
 }
 
 :root {
-	/* ── Type ───────────────────────────────────────────────────────────── */
 	--font-display:
 		"Palatino Linotype", Palatino, "Iowan Old Style", Georgia,
 		"Times New Roman", serif, "Noto Serif";
-	/* Знак валюты ✦ (U+2726) есть не во всех системных шрифтах, поэтому в
-	   конце стека стоят шрифты символов. Они сработают только на глифе, которого
-	   не нашлось раньше: обычный текст они не перехватывают. */
 	--font-sans:
 		ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, sans-serif, "Segoe UI Symbol",
 		"Noto Sans Symbols 2";
 
-	--text-display: 2.125rem; /* 34px — заголовок таба */
-	--text-hero: 1.6875rem; /* 27px — ETA */
-	--text-section: 1.5rem; /* 24px — заголовок секции */
-	--text-wordmark: 1.3125rem; /* 21px — логотип */
-	--text-emphasis: 1.125rem; /* 18px — имя в профиле, пустое состояние */
-	--text-card: 1rem; /* 16px — название блюда */
-	--text-quote: 0.8125rem; /* 13px — курсивная цитата */
-	--text-row: 0.75rem; /* 12px — строки списков */
-	--text-meta: 0.6875rem; /* 11px — подписи, чипы, цены */
-	--text-label: 0.625rem; /* 10px — микро-лейблы */
-	--text-badge: 0.5625rem; /* 9px  — бейдж времени */
+	--text-display: 2.125rem;
+	--text-hero: 1.6875rem;
+	--text-section: 1.5rem;
+	--text-wordmark: 1.3125rem;
+	--text-emphasis: 1.125rem;
+	--text-card: 1rem;
+	--text-quote: 0.8125rem;
+	--text-row: 0.75rem;
+	--text-meta: 0.6875rem;
+	--text-label: 0.625rem;
+	--text-badge: 0.5625rem;
 
 	--leading-none: 1;
 	--leading-tight: 1.15;
@@ -159,7 +127,6 @@
 	--weight-regular: 400;
 	--weight-medium: 500;
 
-	/* ── Space ──────────────────────────────────────────────────────────── */
 	--space-0: 0;
 	--space-1: 2px;
 	--space-2: 4px;
@@ -173,7 +140,6 @@
 	--space-10: 40px;
 	--space-11: 48px;
 
-	/* ── Radius ─────────────────────────────────────────────────────────── */
 	--radius-xs: 6px;
 	--radius-sm: 12px;
 	--radius-md: 16px;
@@ -182,31 +148,22 @@
 	--radius-2xl: 30px;
 	--radius-pill: 999px;
 
-	/* ── Motion ─────────────────────────────────────────────────────────── */
 	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 	--duration-fast: 180ms;
-	--duration-slow: 500ms; /* fade-in таба */
-	--duration-image: 700ms; /* hover-scale картинки */
+	--duration-slow: 500ms;
+	--duration-sheen: 1200ms;
+	--duration-image: 700ms;
 
-	/* ── Layers ─────────────────────────────────────────────────────────── */
 	--z-nav: 10;
 
-	/* ── Frame ──────────────────────────────────────────────────────────── */
 	--frame-max: 430px;
 	--frame-min-height: 850px;
 	--nav-max: 406px;
-	/* Высота навигации: поля 8+8, иконка 16, gap 4, строка подписи 14, поля
-	   пункта 6+6. Объявлена токеном, потому что от неё зависит нижний отступ
-	   контента — иначе полоса наезжает на последний экран. */
 	--nav-height: 62px;
 	--content-bottom-pad: calc(
 		var(--nav-height) + var(--space-9) + var(--safe-bottom)
 	);
 
-	/* ── Safe areas ─────────────────────────────────────────────────────── */
-	/* Вырез камеры и домашняя полоса. Без viewport-fit=cover в app.html все
-	   инсеты равны нулю, поэтому токены безопасны и в десктопном превью, и в
-	   обычном браузере, и в landscape с вырезом. */
 	--safe-top: env(safe-area-inset-top, 0px);
 	--safe-right: env(safe-area-inset-right, 0px);
 	--safe-bottom: env(safe-area-inset-bottom, 0px);

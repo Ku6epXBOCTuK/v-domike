@@ -79,9 +79,6 @@
 		color: var(--content-accent-soft);
 	}
 
-	/* Иконка чипа наследует color от .profile-row__chip, шеврон — прямой
-	   потомок ссылки, поэтому ему нужен собственный селектор. Через
-	   :global(svg), потому что ~icons не получает scope-хэш компонента. */
 	.profile-row :global(svg) {
 		width: 16px;
 		height: 16px;

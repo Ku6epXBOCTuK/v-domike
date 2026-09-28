@@ -46,10 +46,6 @@
 		color: var(--content-accent-strong);
 	}
 
-	/* Заливка «включённого» сердца. Селектор по :global(svg g), потому что
-	   unplugin-icons кладёт fill="none" именно на обёртку <g>. Ключ — по
-	   aria-pressed, а не по data-pressed: тот атрибут есть в разметке,
-	   поэтому svelte-check не считает селектор неиспользуемым. */
 	.favorite[aria-pressed="true"] :global(svg g) {
 		fill: currentColor;
 	}

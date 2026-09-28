@@ -1,13 +1,3 @@
-/*
- * OG-картинка: слева иконка с названием, справа настоящий экран приложения.
- *
- *   node scripts/make-og.mjs              собрать и снять
- *   node scripts/make-og.mjs --skip-build  снять из готового build/
- *
- * Экран берётся из build/, а не рисуется руками: картинка повторяет то, что
- * реально уедет на хостинг. Поменялась вёрстка или ассеты — прогони `pnpm og`.
- */
-
 import { spawnSync } from "node:child_process";
 import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
@@ -51,8 +41,6 @@ function build() {
 	if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-/** Палитра из токенов, иначе картинка разойдётся с приложением после смены темы.
-    Берётся первое вхождение: цвета живут в первом :root, шрифты — во втором. */
 function token(name) {
 	const found = readFileSync(TOKENS, "utf8").match(
 		new RegExp(`--${name}:([^;]+);`),
@@ -65,7 +53,6 @@ function isFile(file) {
 	return existsSync(file) && statSync(file).isFile();
 }
 
-/** adapter-static кладёт маршруты плоско: /order → order.html. */
 function resolve(pathname) {
 	const clean = pathname
 		.replace(BASE, "")

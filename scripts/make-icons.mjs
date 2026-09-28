@@ -1,9 +1,3 @@
-/*
- * Иконки PWA и манифест — временный набор из refs/, почему такой и что заменяем:
- * в docs/backlog.md, «Иконку приложения надо переделать». Правки в
- * static/manifest.webmanifest руками перетрутся.
- */
-
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,13 +10,11 @@ const SOURCE = join(ROOT, "refs", "icon.jpeg");
 const TOKENS = join(ROOT, "src", "lib", "styles", "tokens.css");
 
 const ICONS = [
-	// 512 и 192 — JPEG: PNG этой иллюстрации весил 200 КБ. iOS оставлен на PNG.
 	{ file: "icon-512.jpg", size: 512, quality: 92 },
 	{ file: "icon-192.jpg", size: 192, quality: 92 },
 	{ file: "apple-touch-icon.png", size: 180 },
 ];
 
-/** Поверхность под шапкой: телефон красит ею полосу состояния. */
 function surfaceBase(theme) {
 	const source = readFileSync(TOKENS, "utf8");
 	const selector = theme === "dark" ? '[data-theme="dark"]' : ":root";
@@ -39,7 +31,7 @@ const manifest = {
 	short_name: "В Домике",
 	description: "Уютный симулятор доставки блюд",
 	lang: "ru",
-	// Относительные пути: приложение лежит в подкаталоге /v-domike/.
+
 	start_url: "./",
 	scope: "./",
 	display: "standalone",

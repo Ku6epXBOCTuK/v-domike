@@ -19,7 +19,6 @@
 				: "Дошли",
 	);
 
-	/* Минут остаётся от 1 до 10, поэтому хватает одного правила склонения. */
 	const minutes = $derived(Math.ceil(remaining / 60_000));
 
 	const value = $derived(
@@ -73,8 +72,6 @@
 		letter-spacing: var(--tracking-section);
 	}
 
-	/* Иконка приходит из ~icons, scope-хэш ей не достаётся — размер и цвет
-	   задаются через :global(svg) по родителю. */
 	.eta-panel__row :global(svg) {
 		width: 20px;
 		height: 20px;

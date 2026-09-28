@@ -7,7 +7,6 @@ const LARGE_MIN = 3;
 const GRAPHIC_MIN = 3;
 
 const PAIRS = [
-	// [foreground, background, minimum, note]
 	["content-primary", "surface-base", TEXT_MIN, "заголовки, названия блюд"],
 	["content-primary", "surface-canvas", TEXT_MIN, "текст страницы"],
 	["content-primary", "surface-raised", TEXT_MIN, "строки профиля"],
@@ -50,10 +49,8 @@ const PAIRS = [
 	["content-on-sunken", "surface-sunken", TEXT_MIN, "ETA-заголовок"],
 	["content-on-sunken-muted", "surface-sunken", TEXT_MIN, "ETA-лейбл 10px"],
 
-	// Крупный текст >= 24px: 34px «Что сегодня», 24px «Маленькие радости»
 	["content-accent", "surface-base", LARGE_MIN, "«для души?» 34px курсив"],
 
-	// Нетекстовые: иконки и маршрут на карте, WCAG 1.4.11
 	["content-accent", "surface-base", GRAPHIC_MIN, "иконка сердца"],
 	["content-accent", "surface-raised", GRAPHIC_MIN, "иконка Home на пине"],
 	[
@@ -185,8 +182,7 @@ for (const [fgName, bgName, min, note] of PAIRS) {
 			failed++;
 			continue;
 		}
-		// Полупрозрачные поверхности композитим над their own base-родителем,
-		// потому что фактический фон под ними — соседняя поверхность.
+
 		let bg = parseColor(bgRaw);
 		if (bg[3] < 1) {
 			const under = bgName.startsWith("surface-glass")
@@ -213,9 +209,6 @@ for (const r of rows) {
 	);
 }
 
-// Тона блюд — не поверхности, а подложка под mix-blend-mode: multiply у фотографии.
-// Умножение на тёмный цвет гасит снимок примерно до 23% яркости, поэтому токен
-// обязан оставаться светлым в обеих темах. Ловим возврат тёмных значений.
 console.log("");
 const darkTones = Object.keys(parsed.dark).filter((name) =>
 	name.startsWith("--tone-"),
@@ -235,10 +228,6 @@ if (darkTones.length > 0) {
 	);
 }
 
-// Инверсные токены обязаны МЕНЯТЬ РОЛЬ между темами. «Выделенная кнопка в тёмной
-// теме светлая» — это инвариант, а не разовое совпадение, поэтому проверяем явно.
-// Пара взаимодополняющая и потому флипает в противоположные стороны:
-// фон тёмный -> светлый, текст на нём светлый -> тёмный.
 console.log("");
 const MUST_FLIP = [
 	{

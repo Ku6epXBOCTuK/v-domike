@@ -5,8 +5,6 @@ export type PastOrder = {
 	note: string;
 };
 
-/* Блюда хранятся ссылкой на каталог. Цен нет намеренно: деньги в этом
-   приложении не показываются, см. design.md. */
 export const pastOrders: PastOrder[] = [
 	{
 		id: "ramen-1",

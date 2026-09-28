@@ -26,8 +26,6 @@
 
 	const current = $derived(page.url.pathname);
 
-	/* Раздел активен и на своих вложенных страницах: /profile/history — это
-	   всё ещё профиль, просто глубже. Отсюда же и «назад» работает. */
 	function isActive(path: string) {
 		return current === path || current.startsWith(`${path}/`);
 	}
@@ -48,8 +46,7 @@
 <style>
 	.bottom-nav {
 		position: fixed;
-		/* inset вместо left: 50% + transform: полоса центрируется полями, и в
-		   landscape с вырезом не заезжает под него. */
+
 		inset-inline: max(var(--space-5), var(--safe-left))
 			max(var(--space-5), var(--safe-right));
 		bottom: calc(var(--safe-bottom) + var(--space-5));

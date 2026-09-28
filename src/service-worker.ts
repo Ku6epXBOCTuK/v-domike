@@ -7,8 +7,6 @@ import { assets, immutable, prerendered } from "$app/manifest";
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
-// Пути из манифеста отсчитаны от корня сайта, а приложение лежит в подкаталоге:
-// база — это scope регистрации, resolve() в воркере её не знает.
 const base = new URL(sw.registration.scope).pathname.replace(/\/$/, "");
 
 const CACHE = `v-domike-${version}`;
@@ -42,7 +40,6 @@ sw.addEventListener("fetch", (event) => {
 
 	event.respondWith(
 		(async () => {
-			// ignoreSearch: по имени файла версию не различить.
 			const cached = await caches.match(event.request, { ignoreSearch: true });
 			return cached ?? fetch(event.request);
 		})(),

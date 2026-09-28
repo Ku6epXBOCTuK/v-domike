@@ -6,7 +6,6 @@
 
 	const catalog = new Map(dishes.map((dish) => [dish.id, dish]));
 
-	/* Заказ без блюда в каталоге пропускается: падать из-за данных нельзя. */
 	const rows = pastOrders.flatMap((order) => {
 		const dish = catalog.get(order.dishId);
 		return dish ? [{ ...order, dish }] : [];

@@ -1,13 +1,3 @@
-/*
- * Проверка меню, встроена в pnpm lint.
- *
- *   node scripts/check-dishes.mjs
- *
- * JSON типизируется как `string` на любое поле, поэтому форму блюда и наличие
- * снимка проверяет этот скрипт, а не компилятор. Структурные ошибки роняют
- * линт; недостающие снимки — нет, они список в конце, их работа владельца.
- */
-
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";

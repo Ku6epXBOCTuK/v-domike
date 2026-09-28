@@ -1,18 +1,4 @@
-/*
- * Окно отрисовки меню: в DOM живут только ряды у экрана, а место остальных
- * держит распорка. Полная сетка из 365 карточек стоила ~2 с главного потока при
- * открытии и ~6 с на прокрутке 20 000 px — при живых фото, где каждый ряд ещё и
- * умножается на тон.
- *
- * Высота ряда не константа: название занимает от одной до трёх строк. Меряем
- * отрисованные ряды, остальные считаем по среднему — разброс 259–309 px, то
- * есть оценка ошибается меньше чем на один ряд.
- */
-
 const INITIAL_ROWS = 4;
-
-/* Запас снизу важнее запаса сверху: фото качаются по сети, и если ряд появится
-   за 300 px до экрана, человек увидит плейсхолдер. */
 const OVERSCAN = 1200;
 const FALLBACK_ROW_HEIGHT = 300;
 
@@ -49,7 +35,6 @@ export class VirtualGrid {
 		this.#place();
 	}
 
-	/** Ширина изменилась — прошлые замеры больше не годятся. */
 	forget() {
 		this.#heights = [];
 		this.#average = FALLBACK_ROW_HEIGHT;
@@ -61,7 +46,6 @@ export class VirtualGrid {
 		this.#place();
 	}
 
-	/** Элементы окна идут в DOM по порядку, поэтому ряд считается по позиции. */
 	measure(items: ArrayLike<HTMLElement>, firstItem: number) {
 		for (let i = 0; i < items.length; i++) {
 			const row = Math.floor((firstItem + i) / this.#columns);
@@ -85,9 +69,6 @@ export class VirtualGrid {
 
 	update(gridTop: number, scrollY: number, viewport: number) {
 		const offsets = this.#offsets();
-		/* Отступ окна в координатах сетки. Запас с обеих сторон: сверху он
-		   нужен, чтобы при возврате назад не ждать, снизу — чтобы фото начали
-		   качаться до того, как ряд доедет до экрана. */
 		const start = scrollY - gridTop;
 		const from = start - OVERSCAN;
 		const to = start + viewport + OVERSCAN;

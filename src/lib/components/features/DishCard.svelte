@@ -8,15 +8,24 @@
 		favorite: boolean;
 		onFavorite: () => void;
 		onAdd: () => void;
+		forceLoading?: boolean;
 	};
 
-	let { dish, favorite, onFavorite, onAdd }: Props = $props();
+	let {
+		dish,
+		favorite,
+		onFavorite,
+		onAdd,
+		forceLoading = false,
+	}: Props = $props();
 
 	let photo = $state<HTMLImageElement>();
 	let photoReady = $state(false);
 
-	/* Снимок из кэша готов ещё до первой отрисовки, и блик не должен мигать на
-	   карточке, которая уже прогружена. */
+	const loading = $derived(
+		forceLoading || (Boolean(dish.image) && !photoReady),
+	);
+
 	$effect(() => {
 		if (photo?.complete && photo.naturalWidth > 0) photoReady = true;
 	});
@@ -27,30 +36,29 @@
 		class="dish-card__media"
 		data-tone={dish.tone}
 		data-empty={dish.image ? undefined : ""}
-		data-loading={dish.image && !photoReady ? "" : undefined}
+		data-loading={loading ? "" : undefined}
 	>
-		<img
-			bind:this={photo}
-			class="dish-card__photo"
-			src={dishImage(dish.image)}
-			srcset={dishSrcset(dish.image)}
-			sizes="(min-width: 640px) 170px, calc(50vw - 30px)"
-			alt={dish.image ? dish.name : ""}
-			width="600"
-			height="682"
-			/* Плейсхолдер один на всё меню и весит 6 КБ: lazily он в окне
-			   проступал на кадр позже тона, а по приоритету вставал в очередь
-			   за тяжёлыми фотографиями. Поэтому он eager и с высоким приоритетом. */
-			loading={dish.image ? "lazy" : "eager"}
-			fetchpriority={dish.image ? "auto" : "high"}
-			decoding="async"
-			onload={() => (photoReady = true)}
-			onerror={() => (photoReady = true)}
-		/>
-		{#if dish.image}
+		{#if !forceLoading}
+			<img
+				bind:this={photo}
+				class="dish-card__photo"
+				src={dishImage(dish.image)}
+				srcset={dishSrcset(dish.image)}
+				sizes="(min-width: 640px) 170px, calc(50vw - 30px)"
+				alt={dish.image ? dish.name : ""}
+				width="600"
+				height="682"
+				loading={dish.image ? "lazy" : "eager"}
+				fetchpriority={dish.image ? "auto" : "high"}
+				decoding="async"
+				onload={() => (photoReady = true)}
+				onerror={() => (photoReady = true)}
+			/>
+		{/if}
+		{#if dish.image || forceLoading}
 			<span
 				class="dish-card__loading sheen"
-				data-done={photoReady ? "" : undefined}
+				data-done={loading ? undefined : ""}
 				aria-hidden="true"
 			></span>
 		{/if}
@@ -103,21 +111,10 @@
 		background: var(--tone);
 	}
 
-	/*
-	 * Подложка под фото обязана остаться светлой: снимок домножается на неё.
-	 * Плейсхолдеру светлота не нужна — он часть интерфейса, поэтому берёт
-	 * темноту экрана и оставляет от тона только подкрас. Иначе карточка без
-	 * снимка светится светлым пятном посреди тёмного экрана.
-	 */
 	.dish-card__media[data-empty] {
 		background: color-mix(in oklab, var(--tone) 25%, var(--surface-sunken));
 	}
 
-	/*
-	 * Пока фото едет, блок становится тем же скелетоном, что и в SkeletonCard.
-	 * Тон блюда здесь читается как «фото есть, но пустое» — тёмная подкраска
-	 * светлой пастели путается с настоящей едой на соседней карточке.
-	 */
 	.dish-card__media[data-loading] {
 		background: var(--surface-sunken);
 	}
@@ -136,12 +133,6 @@
 		transform: scale(1.05);
 	}
 
-	/*
-	 * Пока фото едет, на его месте едет блик: с окном отрисовки карточка
-	 * появляется на 12 рядов раньше экрана, и без этого меню выглядело как
-	 * сетка пустых квадратов. Лежит поверх снимка, а не под ним: у фото
-	 * mix-blend-mode: multiply, и подложка под ним должна остаться ровной.
-	 */
 	.dish-card__loading {
 		position: absolute;
 		inset: 0;

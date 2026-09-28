@@ -128,7 +128,6 @@ describe("createAppState", () => {
 			'[{"id":"ramen","count":2},{"id":"latte","count":1}]',
 		);
 
-		// Новый инстанс — это перезагрузка страницы: модуль создан заново.
 		const reloaded = createAppState();
 
 		expect(reloaded.cartLines.map((l) => [l.dish.id, l.count])).toEqual([
@@ -253,7 +252,6 @@ describe("createAppState", () => {
 
 		expect(store.get(FAVORITES_STORAGE_KEY)).toBe('["pizza"]');
 
-		// Новый инстанс — это перезагрузка страницы: модуль создан заново.
 		expect(createAppState().favoriteIds).toEqual(["pizza"]);
 	});
 

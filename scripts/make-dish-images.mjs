@@ -1,18 +1,3 @@
-/*
- * Снимки блюд: плейсхолдер и приведение фотографий к формату приложения.
- *
- *   pnpm images
- *
- * Владелец кладёт снимки в refs/dishes/ под именем блюда — `borsh.jpg`,
- * `tiramisu.png` — и запускает команду. Скрипт режет фото по центру в 600×682,
- * кодирует webp, кладёт в static/dishes/ и проставляет `image` в dishes.json.
- * Расширение любое из тех, что Chromium открывает. Исходники не трогает: тот же
- * файл можно перезалить, если кадр не понравился.
- *
- * Рисуем Chromium'ом, а не sharp: sharp в проекте нет, а playwright уже стоит
- * ради иконок, OG и скриншотов.
- */
-
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,11 +13,6 @@ const W = 600;
 const H = 682;
 const QUALITY = 0.8;
 
-/*
- * Два размера под srcset: карточка на телефоне — 176 CSS px, то есть 450 пикселей
- * хватает экрану с плотностью до 2,5, а 600 нужен только плотным. Лишний
- * размер не платит пользователь: браузер берёт один файл, распаковывает один.
- */
 const WIDTHS = [W, 450];
 
 const suffixOf = (width) => (width === W ? "" : `-${width}`);
@@ -46,12 +26,6 @@ const MIME = {
 	".webp": "image/webp",
 };
 
-/*
- * Плейсхолдер — купол над блюдом, обведённый тонкой линией. Прозрачный и
- * домножается на тон блюда, поэтому у карточек без снимка остаётся свой цвет,
- * а не одинаковая серая плашка. Рисунок держим в среднем квадрате 600×600:
- * миниатюра в корзине кадрирует квадрат и не должна срезать купол.
- */
 const PLACEHOLDER = `
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <g fill="none" stroke="#7a5a44" stroke-opacity="0.55" stroke-width="18" stroke-linecap="round">
@@ -75,7 +49,6 @@ const photos = dropped
 	}))
 	.sort((a, b) => a.id.localeCompare(b.id));
 
-// Молча пропущенный файл — это снимок, который не доедет до приложения.
 for (const entry of dropped) {
 	if (entry.isFile() && !entry.name.startsWith(".")) {
 		const ext = extname(entry.name).toLowerCase();
@@ -123,8 +96,6 @@ async function encode(source, { fill, width = W }) {
 				ctx.fillRect(0, 0, width, h);
 			}
 
-			// Тот же object-fit: cover, что и в карточке, — иначе фото на экране
-			// отличалось бы от того, что положил скрипт.
 			const scale = Math.max(width / img.width, h / img.height);
 			const dw = img.width * scale;
 			const dh = img.height * scale;

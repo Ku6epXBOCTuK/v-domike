@@ -11,12 +11,6 @@
 	import DeliveryTab from "#lib/components/features/DeliveryTab.svelte";
 	import ResultTab from "#lib/components/features/ResultTab.svelte";
 
-	/*
-	 * Страница заказа ничего не показывает сама: статус живёт в localStorage, а
-	 * страница пререндерена, поэтому решение принимается на клиенте. Заказа нет —
-	 * уводим в корзину, это начало цикла. Заказ есть и ещё в пути — доставка,
-	 * доставлен — результат.
-	 */
 	let decided = $state(false);
 	let now = $state(0);
 
