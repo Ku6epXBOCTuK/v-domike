@@ -232,21 +232,21 @@ Vercel — из коробки.
 объявлена явно. Побочный эффект: dev-сервер тоже отвечает под `/v-domike/`, а в
 HTML ссылки остаются относительными.
 
-`.github/workflows/pages.yml`: пуш в `main` → `pnpm build` →
+`.github/workflows/pages.yml`: пуш в `main` →
+`pnpm check && pnpm lint && pnpm test` → `pnpm build` →
 `actions/upload-pages-artifact` → `actions/deploy-pages`. Ручной запуск — кнопка
 Run workflow на вкладке Actions. Отдельный `pnpm install` в шагах не нужен:
 `pnpm/setup` ставит pnpm и Node и выполняет установку сам, с
 `require-lockfile: true` — без `pnpm-lock.yaml` шаг упал бы, а не разрешил бы
 зависимости из реестра.
 
+Проверки в воркфлоу те же, что перед коммитом локально: порядок «проверил →
+запушил» теперь держит пайплайн, а не владелец.
+
 Адрес: **`https://ku6epxboctuk.is-a.dev/v-domike/`**. Кастомный домен привязан к
 Pages проекта, поэтому приложение лежит не в корне домена, а в подкаталоге
 `/v-domike/`. Отдельный домен покупать не нужно: https Pages выдаёт сам, по
 сертификату Let's Encrypt, `Enforce HTTPS` включён.
-
-Чего воркфлоу не делает: не гоняет `pnpm check`, `pnpm lint` и `pnpm test` перед
-выкладкой. Пока это не сделано, порядок «проверил локально → запушил» держится
-на владельце.
 
 ## Известные проблемы
 
