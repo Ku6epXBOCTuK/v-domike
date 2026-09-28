@@ -92,7 +92,7 @@
 	{/each}
 </div>
 
-<SectionHeader overline="Curated for you" title="Маленькие радости">
+<SectionHeader overline="Не торопись" title="Маленькие радости">
 	<TextButton href="/cart">Корзина <IconArrowRight /></TextButton>
 </SectionHeader>
 

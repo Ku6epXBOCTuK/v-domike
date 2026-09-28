@@ -1,45 +1,24 @@
-import { spawnSync } from "node:child_process";
-import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
-import { createServer } from "node:http";
-import { extname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import { chromium } from "playwright";
 
-const ROOT = fileURLToPath(new URL("..", import.meta.url));
-const BUILD = join(ROOT, "build");
+import {
+	BASE,
+	ROOT,
+	THEME_KEY,
+	ensureBuild,
+	serve,
+	settle,
+} from "./static-server.mjs";
+
 const STATIC = join(ROOT, "static");
 const SOURCE = join(ROOT, "refs", "icon.jpeg");
 const TOKENS = join(ROOT, "src", "lib", "styles", "tokens.css");
-const THEME_KEY = "vb-theme";
-const BASE = "/v-domike";
-const skipBuild = process.argv.includes("--skip-build");
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 const SCALE = 2;
-
-const TYPES = {
-	".html": "text/html; charset=utf-8",
-	".css": "text/css; charset=utf-8",
-	".js": "text/javascript; charset=utf-8",
-	".json": "application/json; charset=utf-8",
-	".webmanifest": "application/manifest+json",
-	".svg": "image/svg+xml",
-	".webp": "image/webp",
-	".png": "image/png",
-	".jpg": "image/jpeg",
-	".txt": "text/plain; charset=utf-8",
-};
-
-function build() {
-	const result = spawnSync("pnpm", ["build"], {
-		cwd: ROOT,
-		shell: true,
-		stdio: "inherit",
-	});
-	if (result.status !== 0) process.exit(result.status ?? 1);
-}
 
 function token(name) {
 	const found = readFileSync(TOKENS, "utf8").match(
@@ -48,46 +27,6 @@ function token(name) {
 	if (!found) throw new Error(`в tokens.css нет --${name}`);
 	return found[1].trim();
 }
-
-function isFile(file) {
-	return existsSync(file) && statSync(file).isFile();
-}
-
-function resolve(pathname) {
-	const clean = pathname
-		.replace(BASE, "")
-		.replace(/^\/+/, "")
-		.replace(/\/+$/, "");
-	return [
-		join(BUILD, clean),
-		join(BUILD, `${clean}.html`),
-		join(BUILD, clean, "index.html"),
-	].find(isFile);
-}
-
-function serve() {
-	const server = createServer((req, res) => {
-		const { pathname } = new URL(req.url, "http://localhost");
-		const file = resolve(pathname);
-
-		if (!file) {
-			res.writeHead(404).end("not found");
-			return;
-		}
-		res.writeHead(200, {
-			"content-type": TYPES[extname(file)] ?? "application/octet-stream",
-			"cache-control": "no-store",
-		});
-		createReadStream(file).pipe(res);
-	});
-
-	return new Promise((done) => {
-		server.listen(0, "127.0.0.1", () =>
-			done({ server, port: server.address().port }),
-		);
-	});
-}
-
 function markup(origin) {
 	const icon = `data:image/jpeg;base64,${readFileSync(SOURCE).toString("base64")}`;
 
@@ -174,21 +113,7 @@ function markup(origin) {
 </html>`;
 }
 
-async function settle(page) {
-	await page.waitForLoadState("networkidle");
-	await page.evaluate(async () => {
-		await document.fonts.ready;
-		await Promise.all(
-			[...document.images]
-				.filter((img) => !img.complete)
-				.map((img) => new Promise((done) => (img.onload = img.onerror = done))),
-		);
-	});
-	await page.waitForTimeout(400);
-}
-
-if (!skipBuild || !existsSync(BUILD)) build();
-if (!existsSync(BUILD)) throw new Error("нет build/ — сначала pnpm build");
+ensureBuild();
 
 const { server, port } = await serve();
 const origin = `http://127.0.0.1:${port}`;
@@ -208,6 +133,7 @@ try {
 	const page = await context.newPage();
 	await page.setContent(markup(origin), { waitUntil: "load" });
 	await settle(page);
+	await page.waitForTimeout(300);
 	await page.screenshot({
 		path: join(STATIC, "og.jpg"),
 		type: "jpeg",

@@ -12,7 +12,7 @@ export type ProfileLink = {
 export const profile = {
 	initial: "А",
 	name: "Аня",
-	memberSince: "Member since 2024",
+	memberSince: "В Домике с 2024",
 };
 
 export const profileLinks: ProfileLink[] = [

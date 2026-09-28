@@ -12,9 +12,10 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint . && node scripts/check-contrast.mjs && node scripts/check-dishes.mjs",
-		"check:tokens": "node scripts/check-contrast.mjs",
+		"lint": "prettier --check . && eslint . && node scripts/check-tokens.mjs && node scripts/check-dishes.mjs",
+		"check:tokens": "node scripts/check-tokens.mjs",
 		"check:dishes": "node scripts/check-dishes.mjs",
+		"verify": "node scripts/verify.mjs",
 		"format": "prettier --write . --log-level=warn",
 		"test:unit": "vitest",
 		"test": "vitest --run",
@@ -25,6 +26,7 @@
 		"og": "node scripts/make-og.mjs"
 	},
 	"devDependencies": {
+		"@axe-core/playwright": "^4.13.0",
 		"@eslint/js": "^10.0.1",
 		"@iconify-json/lucide": "^1.2.136",
 		"@sveltejs/adapter-static": "next",

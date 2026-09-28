@@ -68,6 +68,10 @@
 		width: 6px;
 		height: 6px;
 		border-radius: var(--radius-pill);
-		background: var(--content-accent);
+		background: var(--content-accent-strong);
+	}
+
+	.nav-item[data-active="true"] .nav-item__badge {
+		background: var(--content-inverse);
 	}
 </style>

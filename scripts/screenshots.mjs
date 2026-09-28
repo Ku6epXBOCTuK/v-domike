@@ -1,20 +1,19 @@
-import { spawnSync } from "node:child_process";
-import { createReadStream, existsSync, mkdirSync, statSync } from "node:fs";
-import { createServer } from "node:http";
-import { extname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { mkdirSync } from "node:fs";
+import { join } from "node:path";
 
 import { chromium } from "playwright";
 
-const ROOT = fileURLToPath(new URL("..", import.meta.url));
-const BUILD = join(ROOT, "build");
-const OUT = join(ROOT, "docs", "images");
-const THEME_KEY = "vb-theme";
-const skipBuild = process.argv.includes("--skip-build");
+import {
+	BASE,
+	OUT,
+	THEME_KEY,
+	ensureBuild,
+	serve,
+	settle,
+} from "./static-server.mjs";
 
 const WIDTH = 390;
 const HEIGHT = 920;
-const BASE = "/v-domike";
 
 const PAGES = [
 	{ id: "menu", path: `${BASE}/` },
@@ -22,80 +21,6 @@ const PAGES = [
 	{ id: "favorites", path: `${BASE}/favorites` },
 	{ id: "profile", path: `${BASE}/profile` },
 ];
-
-const TYPES = {
-	".html": "text/html; charset=utf-8",
-	".css": "text/css; charset=utf-8",
-	".js": "text/javascript; charset=utf-8",
-	".json": "application/json; charset=utf-8",
-	".svg": "image/svg+xml",
-	".webp": "image/webp",
-	".png": "image/png",
-	".txt": "text/plain; charset=utf-8",
-	".ico": "image/x-icon",
-};
-
-function isFile(file) {
-	return existsSync(file) && statSync(file).isFile();
-}
-
-function build() {
-	const result = spawnSync("pnpm", ["build"], {
-		cwd: ROOT,
-		shell: true,
-		stdio: "inherit",
-	});
-	if (result.status !== 0) process.exit(result.status ?? 1);
-}
-
-function resolve(pathname) {
-	const clean = pathname
-		.replace(BASE, "")
-		.replace(/^\/+/, "")
-		.replace(/\/+$/, "");
-	return [
-		join(BUILD, clean),
-		join(BUILD, `${clean}.html`),
-		join(BUILD, clean, "index.html"),
-	].find(isFile);
-}
-
-function serve() {
-	const server = createServer((req, res) => {
-		const { pathname } = new URL(req.url, "http://localhost");
-		const file = resolve(pathname);
-
-		if (!file) {
-			res.writeHead(404).end("not found");
-			return;
-		}
-
-		res.writeHead(200, {
-			"content-type": TYPES[extname(file)] ?? "application/octet-stream",
-			"cache-control": "no-store",
-		});
-		createReadStream(file).pipe(res);
-	});
-
-	return new Promise((done) => {
-		server.listen(0, "127.0.0.1", () =>
-			done({ server, port: server.address().port }),
-		);
-	});
-}
-
-async function settle(page) {
-	await page.waitForLoadState("networkidle");
-	await page.evaluate(async () => {
-		await document.fonts.ready;
-		await Promise.all(
-			[...document.images]
-				.filter((img) => !img.complete)
-				.map((img) => new Promise((done) => (img.onload = img.onerror = done))),
-		);
-	});
-	await page.waitForTimeout(150);
-}
 
 async function openOrder(page, origin) {
 	await page.goto(`${origin}${BASE}/`);
@@ -142,8 +67,7 @@ async function shoot(context, origin, theme, { id, path }) {
 	await page.close();
 }
 
-if (!skipBuild || !existsSync(BUILD)) build();
-if (!existsSync(BUILD)) throw new Error("нет build/ — сначала pnpm build");
+ensureBuild();
 
 mkdirSync(OUT, { recursive: true });
 const { server, port } = await serve();

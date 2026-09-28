@@ -22,25 +22,26 @@ pnpm dev        # http://localhost:5173/v-domike/
 
 ## Команды
 
-| Команда              | Что делает                                  |
-| -------------------- | ------------------------------------------- |
-| `pnpm dev`           | dev-сервер                                  |
-| `pnpm dev --host`    | dev-сервер, доступный с телефона            |
-| `pnpm build`         | сборка и пререндер всех страниц в `build/`  |
-| `pnpm preview`       | локальный просмотр собранного сайта         |
-| `pnpm check`         | `svelte-check` + тайпчек                    |
-| `pnpm check:watch`   | то же в watch-режиме                        |
-| `pnpm lint`          | prettier, eslint, **контраст и форма меню** |
-| `pnpm check:tokens`  | только контраст и инварианты токенов        |
-| `pnpm check:dishes`  | форма и снимки меню                         |
-| `pnpm test`          | vitest                                      |
-| `pnpm test:unit`     | тот же vitest в watch-режиме                |
-| `pnpm format`        | prettier --write                            |
-| `pnpm screenshots`   | скриншоты для README                        |
-| `pnpm icons`         | пересобрать иконки и манифест из `refs/`    |
-| `pnpm images`        | собрать снимки блюд из `refs/dishes/`       |
-| `pnpm review:photos` | пересобрать `refs/dishes-review.md`         |
-| `pnpm og`            | переснять OG-картинку из текущего `build/`  |
+| Команда              | Что делает                                            |
+| -------------------- | ----------------------------------------------------- |
+| `pnpm dev`           | dev-сервер                                            |
+| `pnpm dev --host`    | dev-сервер, доступный с телефона                      |
+| `pnpm build`         | сборка и пререндер всех страниц в `build/`            |
+| `pnpm preview`       | локальный просмотр собранного сайта                   |
+| `pnpm check`         | `svelte-check` + тайпчек                              |
+| `pnpm check:watch`   | то же в watch-режиме                                  |
+| `pnpm lint`          | prettier, eslint, **инварианты токенов и форма меню** |
+| `pnpm check:tokens`  | только инварианты токенов                             |
+| `pnpm check:dishes`  | форма и снимки меню                                   |
+| `pnpm verify`        | axe-core по 11 экранам в обеих темах (CI)             |
+| `pnpm test`          | vitest                                                |
+| `pnpm test:unit`     | тот же vitest в watch-режиме                          |
+| `pnpm format`        | prettier --write                                      |
+| `pnpm screenshots`   | скриншоты для README                                  |
+| `pnpm icons`         | пересобрать иконки и манифест из `refs/`              |
+| `pnpm images`        | собрать снимки блюд из `refs/dishes/`                 |
+| `pnpm review:photos` | пересобрать `refs/dishes-review.md`                   |
+| `pnpm og`            | переснять OG-картинку из текущего `build/`            |
 
 Перед коммитом:
 
@@ -48,9 +49,11 @@ pnpm dev        # http://localhost:5173/v-domike/
 pnpm check && pnpm lint && pnpm test
 ```
 
-`pnpm lint` включает `scripts/check-contrast.mjs` (разбирает `tokens.css` и
-прогоняет зарегистрированные пары по формуле WCAG, полупрозрачные поверхности
-считает поверх родителя) и `scripts/check-dishes.mjs`. Провал роняет линт.
+`pnpm lint` включает `scripts/check-tokens.mjs` (тон и переворот
+`--surface-inverse` ↔ `--content-inverse`) и `scripts/check-dishes.mjs`. Провал
+роняет линт. Контраст и разметку проверяет `pnpm verify` через axe-core — он
+нужен в CI, локально запускать не обязательно, см. «Проверка доступности» в
+[`design.md`](design.md).
 
 ## Структура
 
@@ -88,8 +91,10 @@ src/
     └── skeletons/+page.svelte   /skeletons   разбор состояний загрузки (временная)
 
 scripts/
-├── check-contrast.mjs           контрастный гейт, встроен в lint
+├── check-tokens.mjs              инварианты токенов, встроен в lint
 ├── check-dishes.mjs             форма меню и наличие снимков, встроен в lint
+├── verify.mjs                   axe-core по экранам, гоняется в CI
+├── static-server.mjs            раздача build/ и сборка, общая для скриптов
 ├── screenshots.mjs              скриншоты для README
 ├── make-icons.mjs               иконки PWA и манифест из refs/
 ├── make-dish-images.mjs         снимки блюд и плейсхолдер из refs/dishes/
@@ -198,7 +203,9 @@ pnpm review:photos   # пересобрать refs/dishes-review.md — спис
 ## Скриншоты для README
 
 `pnpm screenshots` собирает проект, поднимает раздачу `build/` и снимает экраны
-в двух темах в `docs/images/`. Ровно то, что уедет на хостинг.
+в двух темах в `docs/images/`. Ровно то, что уедет на хостинг. Сборку и раздачу
+даёт `scripts/static-server.mjs` — тем же модулем пользуются `pnpm verify` и
+`pnpm og`.
 
 - Раздача живёт по базовому пути `/v-domike` — тем же, что и на хостинге.
 - Тема ставится через `localStorage` **до** загрузки страницы, скрипт падает,
@@ -234,14 +241,17 @@ HTML ссылки остаются относительными.
 
 `.github/workflows/pages.yml`: пуш в `main` →
 `pnpm check && pnpm lint && pnpm test` → `pnpm build` →
-`actions/upload-pages-artifact` → `actions/deploy-pages`. Ручной запуск — кнопка
-Run workflow на вкладке Actions. Отдельный `pnpm install` в шагах не нужен:
-`pnpm/setup` ставит pnpm и Node и выполняет установку сам, с
+`pnpm exec playwright install --with-deps chromium` → `pnpm verify --skip-build`
+→ `actions/upload-pages-artifact` → `actions/deploy-pages`. Ручной запуск —
+кнопка Run workflow на вкладке Actions. Отдельный `pnpm install` в шагах не
+нужен: `pnpm/setup` ставит pnpm и Node и выполняет установку сам, с
 `require-lockfile: true` — без `pnpm-lock.yaml` шаг упал бы, а не разрешил бы
 зависимости из реестра.
 
 Проверки в воркфлоу те же, что перед коммитом локально: порядок «проверил →
-запушил» теперь держит пайплайн, а не владелец.
+запушил» теперь держит пайплайн, а не владелец. `pnpm verify` идёт после сборки
+и с `--skip-build`, чтобы `build/` не собирался дважды; браузник для него
+ставится отдельным шагом, локально он уже есть вместе с Playwright.
 
 Адрес: **`https://ku6epxboctuk.is-a.dev/v-domike/`**. Кастомный домен привязан к
 Pages проекта, поэтому приложение лежит не в корне домена, а в подкаталоге
