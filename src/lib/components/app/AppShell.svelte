@@ -23,7 +23,18 @@
 <style>
 	.app {
 		min-height: 100dvh;
-		background: var(--surface-base);
+		/* Свет держится у верхнего левого угла экрана, а не растягивается на всю
+		   высоту страницы: на длинном меню градиент иначе размазывается в ровную
+		   заливку. `fixed` держит его на экране при прокрутке, а `size` остаётся
+		   страховкой для браузеров, которые его игнорируют. */
+		background: radial-gradient(
+			circle var(--canvas-glow-radius) at var(--canvas-glow-at),
+			var(--surface-canvas-glow) 0,
+			transparent var(--canvas-glow-extent)
+		);
+		background-repeat: no-repeat;
+		background-size: 100% 100dvh;
+		background-attachment: fixed;
 		color: var(--content-primary);
 	}
 
@@ -31,7 +42,6 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100dvh;
-		background: var(--surface-base);
 	}
 
 	.app__content {
@@ -44,13 +54,6 @@
 	@media (min-width: 640px) {
 		.app {
 			padding: var(--space-9) var(--space-10);
-			background:
-				radial-gradient(
-					circle at var(--canvas-glow-at),
-					var(--surface-canvas-glow) 0,
-					transparent var(--canvas-glow-extent)
-				),
-				var(--surface-canvas);
 		}
 
 		.app__frame {
@@ -58,6 +61,7 @@
 			max-width: var(--frame-max);
 			min-height: var(--frame-min-height);
 			margin-inline: auto;
+			background: var(--surface-base);
 			border: 1px solid var(--border-strong);
 			border-radius: var(--radius-2xl);
 			box-shadow: var(--shadow-shell);
